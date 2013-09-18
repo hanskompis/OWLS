@@ -12,9 +12,9 @@
 \contentsline {subsubsection}{\numberline {3.2.2}Tuottajainformaatio}{5}{subsubsection.3.2.2}
 \contentsline {subsubsection}{\numberline {3.2.3}Toiminnallinen kuvaus}{6}{subsubsection.3.2.3}
 \contentsline {subsubsection}{\numberline {3.2.4}Toimintaa kuvaavat ominaisuudet}{6}{subsubsection.3.2.4}
-\contentsline {subsection}{\numberline {3.3}Prosessi}{6}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Maadoitus}{6}{subsection.3.4}
-\contentsline {section}{L\IeC {\"a}hteet}{6}{section*.2}
+\contentsline {subsection}{\numberline {3.3}Prosessi}{7}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Maadoitus}{7}{subsection.3.4}
+\contentsline {section}{L\IeC {\"a}hteet}{7}{section*.2}
 \select@language {finnish}
 \select@language {finnish}
 \select@language {finnish}

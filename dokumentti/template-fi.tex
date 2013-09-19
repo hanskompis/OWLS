@@ -135,7 +135,17 @@ instanssi
 
 suhde
 
+aliluokka
+
+alisuhde
+
 import
+
+union
+
+disjointWith
+
+risuaitaviittaukset
 
 
 \section{Webpalveluiden kuvauskieli OWL-S}
@@ -252,11 +262,149 @@ Edellisessä esimerkissä on poimittu ainoastaan muutamia toiminnallisia määri
 
 Edellisessä aliluvussa luettelimme palvelun toiminnallisia ominaisuuksia.
 
-Ontologiassa on myös mahdollista ilmoittaa palvelun luokitus jossain ontologiassa määriteltyä, mahdollisesti ulkopuolista luokitusta tai taksonomiaa käyttäen. Luokitus ilmaistaan \texttt{serviceCategory}-tagien sisällä ja arvo on \texttt{ServiceCategory}-luokan ilmentymän.  \texttt{ServiceCategory} luokalla on ominaisuuksia kategorian nimen, koodin jne ilmaisuun. ESIMERKKI?
+Ontologiassa on myös mahdollista ilmoittaa palvelun luokitus jossain ontologiassa määriteltyä, mahdollisesti ulkopuolista luokitusta tai taksonomiaa käyttäen. Luokitus ilmaistaan \texttt{serviceCategory}-tagien sisällä ja arvo on \texttt{ServiceCategory}-luokan ilmentymän.  \texttt{ServiceCategory} luokalla on ominaisuuksia kategorian nimen, koodin jne ilmaisuun\cite{OWLS}. ESIMERKKI?
 
-Profiilissa voidaan myös ilmaista palvelun tarjoajan tärkeäksi kokemia vapaavalintaisia attribuutteja \texttt{serviceParameter}-ominaisuudella. Parametrille annetaan aina nimi, joka on datatyyppiominaisuus sekä arvo, joka on jonkin olion instanssi. Esimerkiksi palvelulle voidaan määritellä ominaisuus ''BravoAir Geographic Radius'' ja se saa arvoksen ontologiassa määritetyn alueen \texttt{jenkkilä}.
+Profiilissa voidaan myös ilmaista palvelun tarjoajan tärkeäksi kokemia vapaavalintaisia attribuutteja \texttt{serviceParameter}-ominaisuudella. Parametrille annetaan aina nimi, joka on datatyyppiominaisuus sekä arvo, joka on jonkin olion instanssi\cite{OWLS}. Esimerkiksi palvelulle voidaan määritellä ominaisuus ''BravoAir Geographic Radius'' ja se saa arvoksen ontologiassa määritetyn alueen \texttt{jenkkilä}.
+
+SERVICE CLASsIFICATION JA SERVICE PRODUCT?
 
 \subsection{Prosessi}
+
+Jotta voidaan tarjota yksityiskohtaista tietoa siitä, miten olla vuorovaikutuksessa palvelun kanssa, esitetään se OWL-S:ssä myös \textit{prosessina}. On tärkeää tietää, että prosessimalli ei ole suortettava ojelma, vaan ainoastaan kuvaus siitä\cite{OWLS}. Se kertoo, kuinka asiakasohjelmisto voi kommunikoida palvelun kanssa. 
+
+Prosessikuvaukset jaetaan kolmeen kategoriaan\cite{OWLS}:
+\begin{enumerate}
+\item \textit{atominen prosessi} on sellaisen prosessin kuvaus, joka ottaa vastaan yhden viestin ja palautta yhden viestin. 
+\item \textit{komposiittiprosessi} kuvaa prosessia, joka koostuu useasta eri atomisesta prosessista, ja joka ylläpitää tilatietoa. 
+\item \textit{yksinkertainen prosessi} ei ole suoritettavissa eikä se kytkeydy maadoitukseen. Sen rooli on on toimia abstraktiona atomisille prosesseille tai komposiittiprosessien yksinkertaistuksena. 
+\end{enumerate}
+
+Prosesseilla voi olla määräämätön määrä syötteitä ja tulosteita. Samoin prosesseilla voi olla määräämätön määrä esiehtoja, joiden täytyy toteutua, jotta prosessi voidaan suorittaa. Vastaavasti voi olla määräämätön määrä vaikutuksia, joita prosessi aiheuttaa\cite{OWLS}.
+
+ESIMERKKI ATMICEISTA JA KOMPOSIITEISTÄ
+
+Seuraavassa käydään läpi prosessin kuvausta jälleen BravoAir-esimerkin\cite{daml} avulla.
+
+\subsubsection{Osapuolet}
+
+Prosessilla on ainakin kaksi osapuolta (participant): asiakas (client) tai tai palvelin (server). Asiakas käyttää palvelimen tarjoamia palveluja\cite{OWLS}.
+Jos prosessilla on myös muita osapuolia, ne ilmaistaan \texttt{hasParticipant} suhteen avulla:
+ESIMERKKI? prosessi - hasParticipant - osapuoli
+
+\subsubsection{Syötteet ja tulosteet}
+
+Syötteet kuvaavat prosessin sisään tuleva tietoa\cite{OWLS}. Atomisilla prosesseilla syöte on asiakkaan antama kun taas komposiittiprosesseilla osa syötteistä on asiakkaalta ja osa proessin edeltävän vaiheen tuottamaa. 
+
+Vaikka atomisille prosesseille sallitaan ainoastaan yksi syöte, se voi todellisuudessa koostua useasta syötteestä, koska syötteitä voi BUNDLATA yhdeksi \cite{OWLS}. Tällöin pitää ymmärtää käsite \textit{viesti}, joka on usean syötteen BUNDLATTU kokonaisuus. BUNDLAUS määritellään palvelun maadoituksessa luvussa nnn. 
+
+BravoAirin prosessikuvauksessa on atominen prosessi \texttt{SelectAvailableFlight}, joka kuvaa prosessin, jossa asiakas valitsee haluamansa lennon saatavilla olevista vaihtoehdoista \cite{daml}. Sillä on on yksi syöte, lista tarjolla olevista lennoista (\textit{SelectAvailableFlight\_FlightsAvailable}), sekä yksi paluuarvo, valittu lento (\textit{SelectAvailableFlight\_SelectedFlight}). Syöte määritellään \textit{hasInput}-tägien sisällä ja vastaavasti paluuarvo \textit{hasOutput} -tägien sisässä\cite{daml}:
+
+\
+\begin{verbatim}
+<process:AtomicProcess rdf:ID="SelectAvailableFlight">
+    <rdfs:label>SelectAvailableFlight (ATOMIC)</rdfs:label>
+        <rdfs:comment>
+            Get users prefered flight choice from available itineraries
+        </rdfs:comment>
+        <process:hasInput>
+            <process:Input rdf:ID="SelectAvailableFlight_FlightsAvailable">
+                <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+                    http://www.daml.org/services/owl-s/1.2/Concepts.owl#FlightList
+                </process:parameterType>
+            </process:Input>
+        </process:hasInput>
+        <process:hasOutput>
+            <process:Output rdf:ID="SelectAvailableFlight_SelectedFlight">
+                <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+                    http://www.daml.org/services/owl-s/1.2/Concepts.owl#FlightItineraryList
+                </process:parameterType>
+            </process:Output>
+        </process:hasOutput>
+</process:AtomicProcess>
+\end{verbatim}
+
+
+Esimerkissä määritellään atominen prosessi tunnuksella \texttt{SelectAvailableFlight}. Sillä on yksi syöte, joka on tyypiltään XMLSchemassa määritelty  URI ja arvoltaan lista lennoista (\texttt{Concepts.owl\#FlightList}) sekä yksi paluuarvo, joka on samaa tyyppiä ja arvoltaan valittu lento (\texttt{Concepts.owl\#FlightItineraryList}). 
+
+
+\subsubsection{Esiehdot ja tulokset}
+
+Prosessia ei voi suorittaa, jos sille määrätty esiehto ei täyty\cite{OWLS}. Esiehto on prosessin ominaisuus ja se saa arvokseen lausekkeen (\textit{expression}). ESIMERKKI?
+
+Prosessin onnistuminen voi aiheuttaa muutoksen mailman tilassa tai sen, että palvelun kutsuja saa jotain informaatiota palvelulta. Tulos ilmaistaan termillä \textit{Result} ja se liittyy prosessiin ominaisuudella \textit{hasResult}. OWL-S:ssä ei sidota tulosta erikseen paluuarvoon tai muutokseen tilassa, vaan se määritellään \textit{Result}in sisällä\cite{OWLS}. 
+
+Seuraavassa aliluvussa käydään läpi koko tuloksen muodostus.
+
+\subsubsection{Ehdollisten palautusarvojen ja vaikutusten kuvaus}
+
+Kun tulos (\texttt{Result}) on määritelty, prosessimalli voi kuvailla sitä neljällä eri ominaisuudella\cite{OWLS}: \texttt{inCondition}, \texttt{hasResultVar}, \texttt{withOutput} ja \texttt{hasEffect}\cite{OWLS}.  \texttt{inCondition} kertoo ehdon jonka vallitessa joku tulos on mahdollinen (eikä joku toinen tulos). \texttt{withOutput} ja \texttt{hasEffect} puolestaan määrittelevät mitä seuraa siitä, että ehto on tosi. \texttt{hasResultVar} esittelee muuttujat, jotka sidotaan \texttt{inCondition}in määrittelemään ehtoon.  Näitä muuttujia käytetään myös tulosten muodostamiseen\cite{OWLS}. 
+
+Seuraavassa esimerkissä esitetään tuloksen muodostuminen \cite{daml}. Esimerkki liitty prosessiin, jossa varataan lento. \texttt{hasResult} kuvaa tuloksen muodostuksen, jossa onnistuneen ostotapahtuman jälkeen palautetaan paluuarvona lentosuunnitelma (\texttt{\#BookFlight\_PreferredFlightItinerary"}) sekä varaustunnus (\texttt{\#CompleteReservation\_ReservationID}). 
+
+\begin{verbatim}
+<process:hasResult>
+    <process:Result>
+        <process:inCondition rdf:resource=
+        "http://www.daml.org/services/owl-s/1.2/generic/Expression.owl#AlwaysTrue"/>
+            <process:withOutput>
+                <process:OutputBinding>
+                    <process:toParam rdf:resource=
+                        "#BookFlight_PreferredFlightItinerary"/>
+                     <process:valueSource>
+                          <process:ValueOf>
+                              <process:theVar rdf:resource=
+                                  "#CompleteReservation_PreferredFlightItinerary"/>
+                              <process:fromProcess rdf:resource=
+                                  "#PerformCompleteReservation"/>
+                          </process:ValueOf>
+                     </process:valueSource>
+                 </process:OutputBinding>
+             </process:withOutput>
+             <process:withOutput>
+                 <process:OutputBinding>
+                     <process:toParam rdf:resource="#BookFlight_ReservationID"/>
+                     <process:valueSource>
+                         <process:ValueOf>
+                             <process:theVar rdf:resource=
+                                 "#CompleteReservation_ReservationID"/>
+                             <process:fromProcess rdf:resource=
+                                 "#PerformCompleteReservation"/>
+                         </process:ValueOf>
+                     </process:valueSource>
+                 </process:OutputBinding>
+             </process:withOutput>
+    </process:Result>
+</process:hasResult>
+\end{verbatim}
+
+
+Esimerkissä ilmaistaan ominaisuudella \texttt{inCondition} ehto, jolla kyseinen tulos muodostetaan. Tässä tapauksessa ehto on aina tosi, mikä tarkoittaa, että kyseisen prosessin suorituksessa tämä tulos muodostetaan aina. \texttt{withOutput}-ominaisuuksilla kuvataan kuinka paluuarvot sidotaan muuttujiin. Muuttujien arvot saadaan \texttt{valueOf}in sisällä määritettyjen prosessien tuottamana. 
+
+\subsubsection{Komposiittiprosessit ja kontrollirakenteet}
+
+Komposiittiprosessi voidaan hajoittaa atomisiksi prosesseiksi tai komposiittiprosesseiksi\cite{OWLS}. Tämä hajoittaminen voidaan ilmaista kontrollirakenteilla kuten \texttt{Sequence} tai \texttt{If-Then-Else}. Vaikka kontrollirakenteen nimet muistuttavat ohjelmointikielistä tuttuja nimityksiä, on syytä muistaa, että ne \textit{eivät kerro} kuinka niiden kuvaam palvelu toimii vaan miten se \textit{mahdollisesti} toimii\cite{OWLS}. 
+
+OWL-S määrittelee luokan \texttt{compositeProcess}, jolla on tasan yksi \texttt{composedOf} -ominaisuus, joka saa arvokseen \texttt{ControlConstruct} - luokan ilmentymän. Jokaisella \texttt{ControlConstruct}:lla on ominaisuus \texttt{components}, joka saa arvokseen toisia kontrollirakenteita\cite{OWLS}. Kontrollirakenteet muodostavat siis puumaisen rakenteen, jonka solmut, jotka eivät ole lehtiä, ovat kontrollirakenteita. Puun lehdet ovat prosessien suoritusta kuvaavia luokkia nimeltään \texttt{Perform}. Jokaisella \texttt{Perform} -luokalla on ominaisuus \texttt{process}, joka viittaa suoritettavaan prosessiin\cite{OWLS}.  Prosessin saamat syötteet määräävät, koska se suoritetaan osana suurempaa kontrollirakennetta. Datavuohon palataan tarkemmin seuraavassa kappaleessa.
+
+Komposiittirakennetta voidaan voidaan ajatella ''black boxina'', jolloin se voidaan nähdä abstraktina yksinkertaisena prosessina (\textit{simple process}). Vastaavasti yksinkertainen prosessi voidaan nähdä komposiittirakenteena, ''white boxina'' \cite{OWLS}. 
+
+Seuraavassa luetellaan OWL-S:n kontrollirakenteita lyhyiden selostusten kera:      
+ 
+ \begin{itemize}
+\item \textbf{Sequence} on lista kontrollirakenteita, jotka suoritetaan sarjana. 
+\item \textbf{Split} mahdollistaa prosessien suorituksen rinnakkaisesti. Rakenteet poimitaan kontrollirakennesäiliöstä, \texttt{ControlConstructBag}istä.
+\item \textbf{Split+Join} toimii samoin kuin Sequence, mutta prosessien suorituksen jälkeen suoritetaan puomisynkronointi. Myös tässä prosessit poimitaan säiliöstä. 
+\item \textbf{Any-Order} -rakenne mahdollistaa prosessien suorituksen määräämättömässä järjestyksessä mutta ei samanaikaiseti. 
+\item \textbf{Choice} toimii siten, että poimitaan joku yksi säiliön prosessi suoritettavaksi.
+\item \textbf{If-ThenElse} -luokassa on ominaisuus \texttt{ifCondition}, jolle annetaan ehto \texttt{Condition}. Jos ehto on tosi, suoritetaan \texttt{Else} -ominaisuuden arvona oleva kontrollirakenne tai prosessi, jos epätosi, suoritetaan \texttt{Else} -ominaisuuden arvona oleva rakenne tai prosessi. 
+\item \textbf{Repeat-While ja Repeat-Until} luokat ovate luokan \texttt{Iterate} aliluokkia. Ne toimivat samaan tapaan kuin perinteisten proseduraalisten kielten while- ja do-while -rakenteet.   
+\end{itemize}
+
+
+
+input-output-local
+hasInput hasOutput hasLocal
+ 
 
 \subsection{Maadoitus}
 % Write some science here.

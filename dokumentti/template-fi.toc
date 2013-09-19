@@ -13,8 +13,13 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Toiminnallinen kuvaus}{6}{subsubsection.3.2.3}
 \contentsline {subsubsection}{\numberline {3.2.4}Toimintaa kuvaavat ominaisuudet}{6}{subsubsection.3.2.4}
 \contentsline {subsection}{\numberline {3.3}Prosessi}{7}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Maadoitus}{7}{subsection.3.4}
-\contentsline {section}{L\IeC {\"a}hteet}{7}{section*.2}
+\contentsline {subsubsection}{\numberline {3.3.1}Osapuolet}{7}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Sy\IeC {\"o}tteet ja tulosteet}{7}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Esiehdot ja tulokset}{8}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Ehdollisten palautusarvojen ja vaikutusten kuvaus}{9}{subsubsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.5}Komposiittiprosessit ja kontrollirakenteet}{10}{subsubsection.3.3.5}
+\contentsline {subsection}{\numberline {3.4}Maadoitus}{11}{subsection.3.4}
+\contentsline {section}{L\IeC {\"a}hteet}{11}{section*.2}
 \select@language {finnish}
 \select@language {finnish}
 \select@language {finnish}

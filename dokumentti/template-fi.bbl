@@ -23,6 +23,15 @@
 \newblock {\latintext
   \btxurlfont{http://portal.acm.org/citation.cfm?id=1035167.1035209}}.
 
+\bibitem {WSDL}
+\btxnamefont {\btxlastnamefont {Christensen}, Erik}, \btxnamefont
+  {\btxlastnamefont {Curbera}, Francisco}, \btxnamefont {\btxlastnamefont
+  {Meredith}, Greg}\btxandcomma {} \btxandlong {}\ \btxnamefont
+  {\btxlastnamefont {Weerawarana}, Sanjiva}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Web service definition language (wsdl)}{Web Service
+  Definition Language (WSDL)}}, 2001.
+\newblock {\latintext \btxurlfont{http://www.w3.org/TR/wsdl}}.
+
 \bibitem {OWLS}
 \btxnamefont {\btxlastnamefont {Martin}, David}, \btxnamefont {\btxlastnamefont
   {Burstein}, Mark}, \btxnamefont {\btxlastnamefont {Hobbs}, Jerry},

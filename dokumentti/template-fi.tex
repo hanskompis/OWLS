@@ -337,9 +337,13 @@ Seuraavassa aliluvussa käydään läpi koko tuloksen muodostus.
 
 \subsubsection{Ehdollisten palautusarvojen ja vaikutusten kuvaus}
 
-Kun tulos (\texttt{Result}) on määritelty, prosessimalli voi kuvailla sitä neljällä eri ominaisuudella\cite{OWLS}: \texttt{inCondition}, \texttt{hasResultVar}, \texttt{withOutput} ja \texttt{hasEffect}\cite{OWLS}.  \texttt{inCondition} kertoo ehdon jonka vallitessa joku tulos on mahdollinen (eikä joku toinen tulos). \texttt{withOutput} ja \texttt{hasEffect} puolestaan määrittelevät mitä seuraa siitä, että ehto on tosi. \texttt{hasResultVar} esittelee muuttujat, jotka sidotaan \texttt{inCondition}in määrittelemään ehtoon.  Näitä muuttujia käytetään myös tulosten muodostamiseen\cite{OWLS}. 
+Kun tulos (\texttt{Result}) on määritelty, prosessimalli voi kuvailla sitä neljällä eri ominaisuudella\cite{OWLS}: \texttt{inCondition}, \texttt{hasResultVar}, \texttt{withOutput} ja \texttt{hasEffect}\cite{OWLS}.  
 
-Seuraavassa esimerkissä esitetään tuloksen muodostuminen \cite{daml}. Esimerkki liitty prosessiin, jossa varataan lento. \texttt{hasResult} kuvaa tuloksen muodostuksen, jossa onnistuneen ostotapahtuman jälkeen palautetaan paluuarvona lentosuunnitelma (\texttt{\#BookFlight\_PreferredFlightItinerary"}) sekä varaustunnus (\texttt{\#CompleteReservation\_ReservationID}). 
+\texttt{inCondition} kertoo ehdon jonka vallitessa joku tulos on mahdollinen (eikä joku toinen tulos). 
+
+\texttt{withOutput} ja \texttt{hasEffect} puolestaan määrittelevät mitä seuraa siitä, että ehto on tosi. \texttt{hasResultVar} esittelee muuttujat, jotka sidotaan \texttt{inCondition}in määrittelemään ehtoon.  Näitä muuttujia käytetään myös tulosten muodostamiseen\cite{OWLS}. 
+
+Seuraavassa esimerkissä esitetään tuloksen muodostuminen \cite{daml}. Esimerkki liitty prosessiin, jossa varataan lento. \texttt{hasResult} kuvaa tuloksen muodostuksen, jossa onnistuneen ostotapahtuman jälkeen palautetaan paluuarvona lentosuunnitelma (\texttt{\#BookFlight\_PreferredFlightItinerary"}) sekä varaustunnus (\texttt{\#BookFlight\_ReservationID}). 
 
 \begin{verbatim}
 <process:hasResult>
@@ -378,7 +382,15 @@ Seuraavassa esimerkissä esitetään tuloksen muodostuminen \cite{daml}. Esimerk
 \end{verbatim}
 
 
-Esimerkissä ilmaistaan ominaisuudella \texttt{inCondition} ehto, jolla kyseinen tulos muodostetaan. Tässä tapauksessa ehto on aina tosi, mikä tarkoittaa, että kyseisen prosessin suorituksessa tämä tulos muodostetaan aina. \texttt{withOutput}-ominaisuuksilla kuvataan kuinka paluuarvot sidotaan muuttujiin. Muuttujien arvot saadaan \texttt{valueOf}in sisällä määritettyjen prosessien tuottamana. 
+Esimerkissä ilmaistaan ominaisuudella \texttt{inCondition} ehto, jolla kyseinen tulos muodostetaan. Tässä tapauksessa ehto on aina tosi, mikä tarkoittaa, että kyseisen prosessin suorituksessa tämä tulos muodostetaan aina. \texttt{withOutput}-ominaisuuksilla kuvataan kuinka paluuarvot sidotaan muuttujiin. Tämä tuo mukaan OWL-S:n datavuoaspektin. 
+
+OWL-S:ssä datavuo toimii periaatteella ''kuluttaja pyytää'', eli mikään prosessi (tuottaja) ei työnnä dataa toiselle prosessille (kuluttaja) vaan kuluttajaprosessi pyytää sitä kuten esimerkkitapauksessamme \texttt{OutputBinding} -oliossa. Esimerkissä ylemmän \texttt{OutputBinding}in \texttt{toParam} -ominaisuuden arvo kertoo, että sidomme palautettavan arvon paluuarvomuuttujaan \textit{\#BookFlight\_PreferredFlightItinerary}. Muuttujan saama arvo määrätään tulevaksi prosessin  \texttt{\#PerformCompleteReservation} muuttujasta \texttt{\#CompleteReservation\_PreferredFlightItinerary}. 
+
+Yksinkertaistettuna datavuo prosessilta prosessille kulkee seuraavalla tavalla: 
+
+Prosessilla \textit{p2} on paluuarvomuuttujan määritys (\texttt{toParam}) nimeltään ''o2''. Määritellään, että kyseisen paluuarvomuuttujan arvo saadaan prosessin (\texttt{fromProcess} ) \textit{p1} muuttujasta (\texttt{theVar}) ''\textit{o1}''.  
+
+KUVA!!!
 
 \subsubsection{Komposiittiprosessit ja kontrollirakenteet}
 
@@ -400,16 +412,54 @@ Seuraavassa luetellaan OWL-S:n kontrollirakenteita lyhyiden selostusten kera:
 \item \textbf{Repeat-While ja Repeat-Until} luokat ovate luokan \texttt{Iterate} aliluokkia. Ne toimivat samaan tapaan kuin perinteisten proseduraalisten kielten while- ja do-while -rakenteet.   
 \end{itemize}
 
-
-
-input-output-local
-hasInput hasOutput hasLocal
- 
-
 \subsection{Maadoitus}
-% Write some science here.
 
-Esimerkkilause ja lähdeviite~\cite{pitfalls}.
+Palvelun maadoitus kertoo (grounding) kuinka palvelu on saavutettavissa käytännön tasolla. Tärkeimmät maadoitusdokumentin ilmaisemat asiat ovat viestien muoto, viestiprotokollat, sarjallistaminen, osoitteet jne\cite{OWLS}. Voidaan ajatella, että palvelun käytön abstrakti kuvaus MÄPÄTÄÄN  konkreettiselle, käytännön tasolle\cite{OWLS}. 
+
+OWL-S:n maadoituksen tärkein tehtävä on kertoa kuinka atomisten prosessien syötteet ja paluuarvot muutetaan viesteiksi, jotka voidaan kuljettaa jollain menetelmällä, esim. html-protokollan avulla \cite{OWLS}. 
+
+%:
+OWL-S nojaa viestien määrittelyssä vahvasti jo olemassa olevaan WSDL -kieleen, jonka puitteissa on tehty paljon kehitystyötä konkreettisen viestinmäärittelyn aikaansaamiseksi. WSDL tulee sanoista Web Services Description Language ja on XML-formaatti web-palveluiden kuvaamiseksi ENDPOINTEINA, jotka käsittelevät viestejä. WSDL:ssä ENDPOINTIT ja viestit määritellään abstraktilla tasolla, mutta MÄPÄTÄÄN konkreettisiksi viestiprotokolliksi ja viestiformaateiksi \cite{WSDL}    
+
+WSDL:n sopivuus perustuu siihen, että OWL-S:n maadoitus on melko yhdenmukainen WSDL:n \textit{sitomisen} kanssa\cite{OWLS}. Kuitenkin molempia kieliä pitää käyttää toisiaan täydentävästi, koska kumpikaan ei yksinään tarjoa kaikkia ominaisuuksia. 
+
+%\subsubsection{Grounding }
+
+Koska maadoituksen tarkoituksena on MÄPÄTÄ abstrakti kuvaus konkreettisiksi viestinkuljetusoperatioiksi, tulee muodostaa ikään kuin silta OWLS-n ja WSDL:n välille. Siltana toimii OWL-S:n maadoitusdokumentti. \texttt{Grounding} -luokan aliluokan \texttt{WSDLGrounding} ilmentymässä kuvataan \texttt{WSDLAtomicProcessGrounding} -ilmentymiä. Näissä em. ilmentymissä märitellään viitteet OWL-S:n  prosesseista, syötteistä ja paluuarvoista WSDL:n vastaaviin, konkreettisiin määrityksin. 
+
+Seuraavat \texttt{WSDLAtomicProcessGrounding}in ominaisuudet MÄPPÄÄVÄT OWL-S:n konstruktioita WSDL:n vastaaviin (kaikkia ei esitelty):
+
+\begin{itemize}
+\item \texttt{wsdlDocument} kertoo käytössä olevan WSDL-dokumentin URIn. Kaikki seuraavat viittaukset wsdl-määrityksiin viittaavat tähän dokumenttiin. 
+
+\item \texttt{wsdlOperation} viittaa wsdl-dokumentissa määriteltyyn operaatioon, joka vastaa OWL-S:n  atomista prosessia. BravoAir-esimerkissä MÄPÄTÄÄN 
+prosessikuvauksessa oleva \textit{BravoAirProcess.owl\#LogIn} -prosessi WSDL-määrityksen vastaavaan operaatioon \texttt{\#LogIn\_operation}. 
+
+\begin{verbatim}
+<grounding:owlsProcess rdf:resource="http://www.daml.org/services/owl-s/1.2/BravoAirProcess.owl#LogIn"/>
+<grounding:wsdlOperation rdf:resource="#LogIn_operation"/>
+\end{verbatim}
+
+WSDL:n operaatiomäärityksiä ei voi sisällyttää tähän raporttiin joten niiden rakennetta voi tutkia lähteistä \cite{daml} ja \cite{WSDL}. 
+
+\item \texttt{wsdlInputMessage} on olio, johon on talletettu sen  WSDL-määrityksen URI, joka ilmaisee syötteitä kuljettavien viestien muodon.  
+
+\item \texttt{wsdlInput} -oliossa MÄPÄTÄÄN jokainen mäpättävän prosessin syöte WSDL:ssä  määritetyn viestin osaksi. Ideaalitapauksessa jokaista syötettä vastaa yksi WSDL:n viestin osa. Alla olevassa esimerkissä. MÄPÄTÄÄN BravoAirin prosessikuvauksen syöte \texttt{\#LogIn\_AcctName} WSDL-määritykseen  \texttt{\#acctName}. Viittaus jälleen URI:n avulla. 
+%\small
+\begin{verbatim}
+<grounding:wsdlInput>
+    <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="http://www.daml.org/services/owl-s/1.2/BravoAirProcess.owl#LogIn\_AcctName"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+            http://www.daml.org/services/owl-s/1.2/BravoAirGrounding.wsdl#acctName
+        </grounding:wsdlMessagePart>
+    </grounding:WsdlInputMessageMap>
+</grounding:wsdlInput>
+\end{verbatim}
+%\normalsize
+
+\item \texttt{wsdlOutput} ja \texttt{wsdlOutputMessage} toimivat vastaavasti kuin edelliset, mutta MÄPPÄÄVÄT prosessin paluuarvoja.
+\end{itemize}
 
 
 % --- Back matter ---

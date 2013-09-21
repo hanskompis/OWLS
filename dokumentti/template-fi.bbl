@@ -13,15 +13,14 @@
   \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
 
 \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
-\bibitem {pitfalls}
-\btxnamefont {\btxlastnamefont {Balzer}, Steffen}, \btxnamefont
-  {\btxlastnamefont {Liebig}, Thorsten}\btxandcomma {} \btxandlong {}\
-  \btxnamefont {\btxlastnamefont {Wagner}, Matthias}\btxauthorcolon\
-  \btxtitlefont {Pitfalls of OWL-S: a practical semantic web use case},
-  \btxpagelong {}\ 289–298.
-\newblock \btxpublisherfont {ACM}, 2004.
+\bibitem {semweb}
+\btxnamefont {\btxlastnamefont {Berners-Lee}, Tim}, \btxnamefont
+  {\btxlastnamefont {Hendler}, James}\btxandcomma {} \btxandlong {}\
+  \btxnamefont {\btxlastnamefont {Lassila}, Ora}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {The semantic web}{The Semantic Web}}.
+\newblock \btxjournalfont {Scientific American}, 284(5):34--43, 2001.
 \newblock {\latintext
-  \btxurlfont{http://portal.acm.org/citation.cfm?id=1035167.1035209}}.
+  \btxurlfont{http://www.nature.com/doifinder/10.1038/scientificamerican0501-34}}.
 
 \bibitem {WSDL}
 \btxnamefont {\btxlastnamefont {Christensen}, Erik}, \btxnamefont
@@ -47,6 +46,22 @@
 \newblock \btxjournalfont {W3C Member Submission}, 22(2008-01-07):2007–04,
   2004.
 \newblock {\latintext \btxurlfont{http://eprints.soton.ac.uk/262687/}}.
+
+\bibitem {with_owls}
+\btxnamefont {\btxlastnamefont {Martin}, David}, \btxnamefont {\btxlastnamefont
+  {Burstein}, Mark}, \btxnamefont {\btxlastnamefont {McDermott}, Drew},
+  \btxnamefont {\btxlastnamefont {McIlraith}, Sheila}, \btxnamefont
+  {\btxlastnamefont {Paolucci}, Massimo}, \btxnamefont {\btxlastnamefont
+  {Sycara}, Katia}, \btxnamefont {\btxlastnamefont {McGuinness},
+  Deborah\btxfnamespacelong L}, \btxnamefont {\btxlastnamefont {Sirin},
+  Evren}\btxandcomma {} \btxandlong {}\ \btxnamefont {\btxlastnamefont
+  {Srinivasan}, Naveen}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase
+  {Bringing semantics to web services with owl-s}{Bringing Semantics to Web
+  Services with OWL-S}}.
+\newblock \btxjournalfont {World Wide Web Internet And Web Information
+  Systems}, 10(3):243--277, 2007.
+\newblock {\latintext
+  \btxurlfont{http://www.springerlink.com/index/10.1007/s11280-007-0033-x}}.
 
 \bibitem {daml}
 \btxnamefont {\btxlastnamefont {OWL-S-Coalition}}\btxauthorcolon\ \btxtitlefont

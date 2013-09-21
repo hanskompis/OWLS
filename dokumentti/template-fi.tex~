@@ -23,7 +23,7 @@
 %
 % rubber: module pdftex
 
-% --- General packages ---
+% --- General packages ---1
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}

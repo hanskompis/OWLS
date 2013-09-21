@@ -1,25 +1,22 @@
 \select@language {finnish}
 \contentsline {section}{\numberline {1}Johdanto}{3}{section.1}
-\contentsline {section}{\numberline {2}Web-ontologiakieli OWL}{3}{section.2}
-\contentsline {subsection}{\numberline {2.1}Teknologiat, jotka mahdollistavat OWL:n}{3}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}XML}{3}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}RDF/RDFS}{3}{subsubsection.2.1.2}
-\contentsline {subsection}{\numberline {2.2}tarpeelliset OWL-konstruktiot OWL-S:n ymm\IeC {\"a}rt\IeC {\"a}miseen}{3}{subsection.2.2}
-\contentsline {section}{\numberline {3}Webpalveluiden kuvauskieli OWL-S}{3}{section.3}
-\contentsline {subsection}{\numberline {3.1}Korkean abstraktiotason rakenne}{3}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Profiili}{4}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Ontologioiden tuonti ja viitteet prosessimalliin sek\IeC {\"a} palveluun}{5}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Tuottajainformaatio}{5}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Toiminnallinen kuvaus}{6}{subsubsection.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.4}Toimintaa kuvaavat ominaisuudet}{6}{subsubsection.3.2.4}
-\contentsline {subsection}{\numberline {3.3}Prosessi}{7}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Osapuolet}{7}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Sy\IeC {\"o}tteet ja tulosteet}{7}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Esiehdot ja tulokset}{8}{subsubsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.4}Ehdollisten palautusarvojen ja vaikutusten kuvaus}{9}{subsubsection.3.3.4}
-\contentsline {subsubsection}{\numberline {3.3.5}Komposiittiprosessit ja kontrollirakenteet}{10}{subsubsection.3.3.5}
-\contentsline {subsection}{\numberline {3.4}Maadoitus}{11}{subsection.3.4}
-\contentsline {section}{L\IeC {\"a}hteet}{13}{section*.2}
+\contentsline {section}{\numberline {2}Web-ontologiakieli OWL}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}tarpeelliset OWL-konstruktiot OWL-S:n ymm\IeC {\"a}rt\IeC {\"a}miseen}{4}{subsection.2.1}
+\contentsline {section}{\numberline {3}Webpalveluiden kuvauskieli OWL-S}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Korkean abstraktiotason rakenne}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Profiili}{5}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Ontologioiden tuonti ja viitteet prosessimalliin sek\IeC {\"a} palveluun}{6}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Tuottajainformaatio}{6}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Toiminnallinen kuvaus}{7}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Toimintaa kuvaavat ominaisuudet}{7}{subsubsection.3.2.4}
+\contentsline {subsection}{\numberline {3.3}Prosessi}{8}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Osapuolet}{8}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Sy\IeC {\"o}tteet ja tulosteet}{8}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Esiehdot ja tulokset}{9}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Ehdollisten palautusarvojen ja vaikutusten kuvaus}{10}{subsubsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.5}Komposiittiprosessit ja kontrollirakenteet}{11}{subsubsection.3.3.5}
+\contentsline {subsection}{\numberline {3.4}Maadoitus}{12}{subsection.3.4}
+\contentsline {section}{L\IeC {\"a}hteet}{14}{section*.2}
 \select@language {finnish}
 \select@language {finnish}
 \select@language {finnish}

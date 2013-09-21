@@ -116,16 +116,36 @@
 % --- Main matter ---
 
 \section{Johdanto}
+
+World Wide Web (WWW) tarjoaa staattisen informaation lisäksi palveluita. Web-palvelu voi yksinkertaisimmillaan palauttaa informaatiota pyynnön saatuaan tai monimutkaisemmassa tapauksessa voidaan tehdä  esimerkiksi ostos, jossa veloitetaan luottokorttia ja muodostetaan toimitettava tilaus\cite{with_owls}. 
+
+Ohjelmoijan on varsin helppo tuottaa ohjelma, joka käyttää web-palvelua. Tekniikoita palveluiden käyttämiseen on monia, mutta yleinen tapa on lähettää palvelulle viesti, joka on koodattu sovitulla tavalla, esimerkiksi XML:llä tai Jsonilla. Erilaiset datatyypit ja viestien (ja niiden osien) muodot voidaan  selostaa esimerkikisi WSDL-dokumentissa \cite{WSDL}. Edellä mainittujen tekniikoiden toteuttaminen ei nykyaikaisilla ohjelmistokirjastiolle ja IDE:illä ole edes monimutkaista. Mutta olipa tekniikka mikä tahansa, tässä muodossa palvelun käyttö vaatii aina \textit{ihmisen} puuttumisen asiaan. \textit{ihminen} on se, joka hakee palvelun. \textit{ihminen} on se, joka tutkii palvelun kuvauksen ja muokkaa oman ohjelmansa (tai palvelun) käyttämään sitä. 
+
+Mutta mitä \textit{emme} voi löytää WSDL-kuvauksesta, on se, mitä palvelussa tapahtuu, kun sitä käytetään\cite{with_owls}. Jotta voidaan välttää ihmisen osallistumien web-palvelujen orkestrointiin, tulee olla \textit{automaattisia ohjelmistoagentteja}, jotka etsivät oikeat palvelut ja käyttävät niitä automaattisesti, ilman ihmisen puuttumista asiaan\cite{with_owls}.
+
+Automaattinen ohjelmistoagentti mahdollistaisi esimerkiksi:
+
+\begin{itemize}
+\item \textit{Presentaation pitäjä haluaa lähettää esitysmateriaalinsa kaikkien osanottajien käyttöön. Hän voisi tehdä sen yhdellä lähetysnapin painalluksella riippumatta siitä, mitä teknologioita ja protokollia vastaanottajat käyttävät}\cite{with_owls}.
+
+\item \textit{Kuluttaja haluaa löytää haluamansa tuotteen mahdollisimman halvalla jostain verkkokauasta. Ohjelmistoagenttia hyödyntävä ohjelma hakee tuotteen hintaa ja saatavuutta useista verkkokaupoista, jotka ovat koodanneet kataloginsa jotain standardoitua sanastoa käyttäen. Sanastojen ei edes tarvitse olla samat eri verkkokaupoilla}\cite{with_owls}. 
+\end{itemize}
+
+Ohjelmistoagenteille tulisi siis pystyä antamaan tarvittava informaatio muodossa, jota se ymmärtää. \textit{Semanttinen web} voi tarjota ratkaisun tähän. Vuonna 2001 Tim Berners-Lee, James Hendler ja Ora Lassila julkaisivat artikkelin "the Semantic Web", jossa he
+luonnehtivat semanttista webiä seuraavasti:
+\begin{quote}
+"Semanttinen web ei ole erillinen web vaan
+laajennos tämänhetkiseen webiin, jossa informaatiolle on annettu hyvin muotoiltu
+merkitys mahdollistaen koneiden ja ihmisten paremman yhteistyön.[suomennos kirjoittajan]\cite{semweb}
+\end{quote}
+
+Ohjelmistoagenttien tulee pystyä \textit{ymmärtämään} \textit{mitä} palveluntarjoaja tarjoaa ja \textit{miten} palvelu tuotetaan. Tunnetusti kone ei ymmärrä ihmisen ymmärtämää teksti-informaatiota. Koneelle pitää siis tarjota mahdollisuus ymmärtää käsitteitä, antaa mahdollisuus luoda uutta ymmärrystä käsitteiden ja käsitteiden välisten suhteiden pohjalta. Koneen tulee pystyä ymmärtämään \textit{semantiikoita}. 
+
+Webissä semantiikoita ilmaistaa ontologioilla, jotka tietojenkäsittelytieteessä ymmärretään dokumentteina, joissa kerrotaan asioiden välisistä yhteyksistä\cite{semweb}. Kun web-palveluita kuvataan ontologioiden avulla, tulee käytössä olla kuvaamiseen soveltuva \textit{sanasto}, ontologia. Yksi mahdollinen tällainen sanasto on OWL-S, joka tulee sanoista Web Ontology Language for Services. OWL-S tarjoaa luokat ja ominaisuudet, joiden avulla web-palvelu voidaan kuvata koneen ymmärtämässä muodossa. Jotta voimme ymmärtää OWL-S:llä tuotettuja ontologioita, pitää ensin tutustua hieman OWL (Web Ontology Language) :ään ja sen kostruktioihin, joiden avulla web-palveluontologioita voidaan muodostaa. 
+
 \section{Web-ontologiakieli OWL}
 
 pieni alustus, että miksi käsitellään owl ja mitä konstruktioita tarvitsemme owl-s:n ymmärtämiseen
-
-\subsection{Teknologiat, jotka mahdollistavat OWL:n}
-\subsubsection{XML}
-
-onko tarpeen?
-
-\subsubsection{RDF/RDFS}
 
 \subsection{tarpeelliset OWL-konstruktiot OWL-S:n ymmärtämiseen}
 
@@ -150,7 +170,7 @@ risuaitaviittaukset
 
 \section{Webpalveluiden kuvauskieli OWL-S}
 
-UDDI
+UDDI löytäminen, käyttö, monitorointi
 
 \subsection{Korkean abstraktiotason rakenne}
 

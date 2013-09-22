@@ -141,13 +141,32 @@ merkitys mahdollistaen koneiden ja ihmisten paremman yhteistyön.[suomennos kirj
 
 Ohjelmistoagenttien tulee pystyä \textit{ymmärtämään} \textit{mitä} palveluntarjoaja tarjoaa ja \textit{miten} palvelu tuotetaan. Tunnetusti kone ei ymmärrä ihmisen ymmärtämää teksti-informaatiota. Koneelle pitää siis tarjota mahdollisuus ymmärtää käsitteitä, antaa mahdollisuus luoda uutta ymmärrystä käsitteiden ja käsitteiden välisten suhteiden pohjalta. Koneen tulee pystyä ymmärtämään \textit{semantiikoita}. 
 
-Webissä semantiikoita ilmaistaa ontologioilla, jotka tietojenkäsittelytieteessä ymmärretään dokumentteina, joissa kerrotaan asioiden välisistä yhteyksistä\cite{semweb}. Kun web-palveluita kuvataan ontologioiden avulla, tulee käytössä olla kuvaamiseen soveltuva \textit{sanasto}, ontologia. Yksi mahdollinen tällainen sanasto on OWL-S, joka tulee sanoista Web Ontology Language for Services. OWL-S tarjoaa luokat ja ominaisuudet, joiden avulla web-palvelu voidaan kuvata koneen ymmärtämässä muodossa. Jotta voimme ymmärtää OWL-S:llä tuotettuja ontologioita, pitää ensin tutustua hieman OWL (Web Ontology Language) :ään ja sen kostruktioihin, joiden avulla web-palveluontologioita voidaan muodostaa. 
+Webissä semantiikoita ilmaistaa ontologioilla, jotka tietojenkäsittelytieteessä ymmärretään dokumentteina, joissa kerrotaan asioiden välisistä yhteyksistä\cite{semweb}. Kun web-palveluita kuvataan ontologioiden avulla, tulee käytössä olla kuvaamiseen soveltuva \textit{sanasto}, ontologia. Yksi mahdollinen tällainen sanasto on OWL-S, joka tulee sanoista Web Ontology Language for Services. OWL-S tarjoaa luokat ja ominaisuudet, joiden avulla web-palvelu voidaan kuvata koneen ymmärtämässä muodossa. Jotta voimme ymmärtää OWL-S:llä tuotettuja ontologioita, pitää ensin tutustua soveltuvin osin OWL (Web Ontology Language) :ään ja sen kostruktioihin, joiden avulla web-palveluontologioita voidaan muodostaa. 
 
 \section{Web-ontologiakieli OWL}
 
-pieni alustus, että miksi käsitellään owl ja mitä konstruktioita tarvitsemme owl-s:n ymmärtämiseen
+World Wide Web Consortium on antanut OWL:lle suosituksen standardiksi vuonna 2004\cite{owlguide}. Uudempi suositus on OWL 2:lle vuodelta 2012. OWL kielenä perustuu muutamiin jo aiemmin määriteltyihin merkintätapoihin ja konsepteihin, kuten XML:ään ja RDF:ään ja URI:in .
 
-\subsection{tarpeelliset OWL-konstruktiot OWL-S:n ymmärtämiseen}
+\subsection{URI, XML ja RDF}
+
+Semanttisessa webissä määritettyjä luokkia, ilmentymiä ja niiden välisiä suhetita identifioidaan URI:en avulla\cite{semweb}.
+URI (Uniform Resource Identifier) on standardi resurssien identifioimiseen. Useimmiten URI:na käytetään tavallista URL:ia (Uniform Resource Locator). Identifiointi on tärkeää, koska näin pystytään erottelemaan jo luodut resurssit itse luoduista resursseista. 
+
+XML-kieli on notaatio rakenteisen kielen esittämiseen. Useimmiten semanttisessa webissä tietoa kuvataan nimenomaan XML-tiedostoina, koska ne ovat helposti koneen tulkittavissa. XML:n nimiavaruudet helpottavat resurssien identifioimista URI:en avulla. 
+
+RDF (Resource Description Framework) on yksinkertainen tapa kuvailla webissä olevaa tietoa kolmikoiden avulla\cite{RDFP}. RDF-kolmikon muodostavat subjekti, objekti ja predikaatti\cite{RDFP}. Subjekti on asia, jota kuvataan, predikaatti on ominaisuus, jolla asiaa kuvataan ja objekti on ominaisuuden arvo. Esimerkiksi tieto ''Matin veli on Teppo'' voidaan kuvata kolmikolla 
+
+
+ESIMERKKI
+
+
+Esimerkistä voimme havaita, että kuvailtava asia on subjekti nimeltään \textit{matti}, jota kuvataan suhteella \textit{veli} joka saa arvokseen \textit{teppo}. Tämänkaltainen XML-kielinen notaatio on OWL:n (ja OWL-S:n) ontologioiden kuvaamisen syntaktinen ydin. Pelkkä RDF -syntaksi ei kuitenkaan riitä, koska ontologioiden (semantiikoiden) kuvaamiseen tarvitaan myös monimutkaisempia abstraktioita, kuten \textit{luokka}, \textit{aliluokka}, \textit{ilmentymä}, \textit{suhde} ja \textit{alisuhde}. Nämä konstruktiot tarjoaa RDF:n semanttinen laajennos RDF Schema (RDFS) sekä OWL, joka käyttää suurta osaa RDFS:n konstruktioita lähes sellaisenaan.  
+
+\subsection{Tarpeelliset OWL- ja RDFS -konstruktiot OWL-S:n ymmärtämiseen}
+
+OWL on kehittynyt versio RDF Schemasta. 
+
+
 
 luokka
 

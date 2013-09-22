@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  21 SEP 2013 16:05
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  22 SEP 2013 14:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -891,233 +891,239 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 129.
  [3]
-Overfull \hbox (3.0173pt too wide) in paragraph at lines 150--150
-[]\T1/lmr/bx/n/12 tarpeelliset OWL-konstruktiot OWL-S:n ym-m‰r-t‰-mi-seen 
- []
 
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 182.
+LaTeX Warning: Citation `owlguide' on page 4 undefined on input line 148.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/lm/t1lmtt.fd
+
+LaTeX Warning: Citation `RDFP' on page 4 undefined on input line 157.
+
+
+LaTeX Warning: Citation `RDFP' on page 4 undefined on input line 157.
+
+[4]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 201.
+
+ (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [4]
-<karkea_taso.png, id=155, 419.5675pt x 266.9975pt>
+)
+<karkea_taso.png, id=145, 419.5675pt x 266.9975pt>
 File: karkea_taso.png Graphic file (type png)
  <use karkea_taso.png>
-Package pdftex.def Info: karkea_taso.png used on input line 192.
+Package pdftex.def Info: karkea_taso.png used on input line 211.
 (pdftex.def)             Requested size: 251.74243pt x 160.19972pt.
 
-[5 <./karkea_taso.png>]
-Overfull \hbox (144.7388pt too wide) in paragraph at lines 227--227
+[5] [6 <./karkea_taso.png>]
+Overfull \hbox (144.7388pt too wide) in paragraph at lines 246--246
 []\T1/lmtt/m/n/10.95 <owl:imports rdf:resource="http://www.daml.org/services/ow
 l-s/1.2/BravoAirService.owl"/>[] 
  []
 
 
-Overfull \hbox (340.19574pt too wide) in paragraph at lines 233--233
+Overfull \hbox (340.19574pt too wide) in paragraph at lines 252--252
 []\T1/lmtt/m/n/10.95 <service:presentedBy rdf:resource="http://www.daml.org/ser
 vices/owl-s/1.2/BravoAirService.owl#BravoAir_ReservationAgent"/>[] 
  []
 
-[6]
-Overfull \hbox (32.72145pt too wide) in paragraph at lines 252--253
+
+Overfull \hbox (32.72145pt too wide) in paragraph at lines 271--272
 []\T1/lmr/m/n/10.95 (-20) Palvelun teks-ti-ku-vaus kir-joi-te-taan \T1/lmtt/m/n
 /10.95 textDescription\T1/lmr/m/n/10.95 (-20) -t‰gin ja ni-mi \T1/lmtt/m/n/10.9
 5 serviceName\T1/lmr/m/n/10.95 (-20) -
  []
 
 
-Overfull \hbox (6.89981pt too wide) in paragraph at lines 262--263
+Overfull \hbox (6.89981pt too wide) in paragraph at lines 281--282
 []\T1/lmr/bx/n/10.95 hasOutput\T1/lmr/m/n/10.95 (-20) , jo-ka saa ar-vok-seen \
 T1/lmtt/m/n/10.95 Process\T1/lmr/m/n/10.95 (-20) -ontologiassa m‰‰-ri-tel-ty-j‰
  \T1/lmtt/m/n/10.95 Output\T1/lmr/m/n/10.95 (-20) -
  []
 
-
-Overfull \hbox (271.21094pt too wide) in paragraph at lines 277--277
+[7]
+Overfull \hbox (271.21094pt too wide) in paragraph at lines 296--296
 [] \T1/lmtt/m/n/10.95 <profile:hasInput rdf:resource="http://www.daml.org/servi
 ces/owl-s/1.2/BravoAirProcess.owl#DepartureAirport"/[] 
  []
 
 
-Overfull \hbox (259.71347pt too wide) in paragraph at lines 277--277
+Overfull \hbox (259.71347pt too wide) in paragraph at lines 296--296
 [] \T1/lmtt/m/n/10.95 <profile:hasOutput rdf:resource="http://www.daml.org/serv
 ices/owl-s/1.2/BravoAirProcess.owl#FlightsFound"/>[] 
  []
 
 
-Overfull \hbox (265.4622pt too wide) in paragraph at lines 277--277
+Overfull \hbox (265.4622pt too wide) in paragraph at lines 296--296
 [] \T1/lmtt/m/n/10.95 <profile:hasResult rdf:resource="http://www.daml.org/serv
 ices/owl-s/1.2/BravoAirProcess.owl#HaveSeatResult"/[] 
  []
 
-[7] [8]
-Overfull \hbox (26.42299pt too wide) in paragraph at lines 320--321
+[8]
+Overfull \hbox (26.42299pt too wide) in paragraph at lines 339--340
 []\T1/lmr/m/n/10.95 (-20) BravoAirin pro-ses-si-ku-vauk-ses-sa on ato-mi-nen pr
 o-ses-si \T1/lmtt/m/n/10.95 SelectAvailableFlight\T1/lmr/m/n/10.95 (-20) ,
  []
 
 
-Overfull \hbox (48.16008pt too wide) in paragraph at lines 344--344
+Overfull \hbox (48.16008pt too wide) in paragraph at lines 363--363
 []            \T1/lmtt/m/n/10.95 Get users prefered flight choice from availabl
 e itineraries[] 
  []
 
 
-Overfull \hbox (70.00526pt too wide) in paragraph at lines 344--344
+Overfull \hbox (70.00526pt too wide) in paragraph at lines 363--363
 []            \T1/lmtt/m/n/10.95 <process:Input rdf:ID="SelectAvailableFlight_F
 lightsAvailable">[] 
  []
 
 
-Overfull \hbox (179.2312pt too wide) in paragraph at lines 344--344
+Overfull \hbox (179.2312pt too wide) in paragraph at lines 363--363
 []                \T1/lmtt/m/n/10.95 <process:parameterType rdf:datatype="http:
 //www.w3.org/2001/XMLSchema#anyURI">[] 
  []
 
 
-Overfull \hbox (111.39615pt too wide) in paragraph at lines 344--344
+Overfull \hbox (111.39615pt too wide) in paragraph at lines 363--363
 []                    \T1/lmtt/m/n/10.95 http://www.daml.org/services/owl-s/1.2
 /Concepts.owl#FlightList[] 
  []
 
-
-Overfull \hbox (64.25653pt too wide) in paragraph at lines 344--344
+[9]
+Overfull \hbox (64.25653pt too wide) in paragraph at lines 363--363
 []            \T1/lmtt/m/n/10.95 <process:Output rdf:ID="SelectAvailableFlight_
 SelectedFlight">[] 
  []
 
 
-Overfull \hbox (179.2312pt too wide) in paragraph at lines 344--344
+Overfull \hbox (179.2312pt too wide) in paragraph at lines 363--363
 []                \T1/lmtt/m/n/10.95 <process:parameterType rdf:datatype="http:
 //www.w3.org/2001/XMLSchema#anyURI">[] 
  []
 
 
-Overfull \hbox (163.13475pt too wide) in paragraph at lines 344--344
+Overfull \hbox (163.13475pt too wide) in paragraph at lines 363--363
 []                    \T1/lmtt/m/n/10.95 http://www.daml.org/services/owl-s/1.2
 /Concepts.owl#FlightItineraryList[] 
  []
 
 
-Overfull \hbox (37.43239pt too wide) in paragraph at lines 347--348
+Overfull \hbox (37.43239pt too wide) in paragraph at lines 366--367
 []\T1/lmr/m/n/10.95 (-20) Esimerkiss‰ m‰‰-ri-tel-l‰‰n ato-mi-nen pro-ses-si tun
 -nuk-sel-la \T1/lmtt/m/n/10.95 SelectAvailableFlight\T1/lmr/m/n/10.95 (-20) .
  []
 
 
-Overfull \hbox (32.68234pt too wide) in paragraph at lines 347--348
+Overfull \hbox (32.68234pt too wide) in paragraph at lines 366--367
 \T1/lmr/m/n/10.95 (-20) on sa-maa tyyp-pi‰ ja ar-vol-taan va-lit-tu len-to (\T1
 /lmtt/m/n/10.95 Concepts.owl#FlightItineraryList\T1/lmr/m/n/10.95 (-20) ). 
  []
 
-[9]
-Overfull \hbox (4.86447pt too wide) in paragraph at lines 360--361
+
+Overfull \hbox (4.86447pt too wide) in paragraph at lines 379--380
 \T1/lmr/m/n/10.95 (-20) ominaisuudella[[]]: \T1/lmtt/m/n/10.95 inCondition\T1/l
 mr/m/n/10.95 (-20) , \T1/lmtt/m/n/10.95 hasResultVar\T1/lmr/m/n/10.95 (-20) , \
 T1/lmtt/m/n/10.95 withOutput \T1/lmr/m/n/10.95 (-20) ja \T1/lmtt/m/n/10.95 hasE
 ffect\T1/lmr/m/n/10.95 (-20) [[]]. 
  []
 
-
-Overfull \hbox (121.74387pt too wide) in paragraph at lines 402--402
+[10]
+Overfull \hbox (121.74387pt too wide) in paragraph at lines 421--421
 []        \T1/lmtt/m/n/10.95 "http://www.daml.org/services/owl-s/1.2/generic/Ex
 pression.owl#AlwaysTrue"/>[] 
  []
 
 
-Overfull \hbox (6.7692pt too wide) in paragraph at lines 402--402
+Overfull \hbox (6.7692pt too wide) in paragraph at lines 421--421
 []                        \T1/lmtt/m/n/10.95 "#BookFlight_PreferredFlightItiner
 ary"/>[] 
  []
 
 
-Overfull \hbox (115.99513pt too wide) in paragraph at lines 402--402
+Overfull \hbox (115.99513pt too wide) in paragraph at lines 421--421
 []                                  \T1/lmtt/m/n/10.95 "#CompleteReservation_Pr
 eferredFlightItinerary"/>[] 
  []
 
 
-Overfull \hbox (7.91895pt too wide) in paragraph at lines 402--402
+Overfull \hbox (7.91895pt too wide) in paragraph at lines 421--421
 []                              \T1/lmtt/m/n/10.95 <process:fromProcess rdf:res
 ource=[] 
  []
 
 
-Overfull \hbox (12.51793pt too wide) in paragraph at lines 402--402
+Overfull \hbox (12.51793pt too wide) in paragraph at lines 421--421
 []                                  \T1/lmtt/m/n/10.95 "#PerformCompleteReserva
 tion"/>[] 
  []
 
 
-Overfull \hbox (98.74893pt too wide) in paragraph at lines 402--402
+Overfull \hbox (98.74893pt too wide) in paragraph at lines 421--421
 []                     \T1/lmtt/m/n/10.95 <process:toParam rdf:resource="#BookF
 light_ReservationID"/>[] 
  []
 
-[10]
-Overfull \hbox (47.01033pt too wide) in paragraph at lines 402--402
+
+Overfull \hbox (47.01033pt too wide) in paragraph at lines 421--421
 []                                 \T1/lmtt/m/n/10.95 "#CompleteReservation_Res
 ervationID"/>[] 
  []
 
 
-Overfull \hbox (2.17021pt too wide) in paragraph at lines 402--402
+Overfull \hbox (2.17021pt too wide) in paragraph at lines 421--421
 []                             \T1/lmtt/m/n/10.95 <process:fromProcess rdf:reso
 urce=[] 
  []
 
 
-Overfull \hbox (6.7692pt too wide) in paragraph at lines 402--402
+Overfull \hbox (6.7692pt too wide) in paragraph at lines 421--421
 []                                 \T1/lmtt/m/n/10.95 "#PerformCompleteReservat
 ion"/>[] 
  []
 
 
-Overfull \hbox (117.25082pt too wide) in paragraph at lines 407--408
+Overfull \hbox (117.25082pt too wide) in paragraph at lines 426--427
 \T1/lmr/m/n/10.95 (-20) ker-too, et-t‰ si-dom-me pa-lau-tet-ta-van ar-von pa-lu
 u-ar-vo-muut-tu-jaan \T1/lmr/m/it/10.95 (-20) #BookFlight_PreferredFlightItiner
 ary\T1/lmr/m/n/10.95 (-20) .
  []
 
 
-Overfull \hbox (43.36559pt too wide) in paragraph at lines 407--408
+Overfull \hbox (43.36559pt too wide) in paragraph at lines 426--427
 \T1/lmr/m/n/10.95 (-20) Muut-tu-jan saa-ma ar-vo m‰‰-r‰-t‰‰n tu-le-vak-si pro-s
 es-sin \T1/lmtt/m/n/10.95 #PerformCompleteReservation
  []
 
-
-Overfull \hbox (56.57838pt too wide) in paragraph at lines 417--418
+[11]
+Overfull \hbox (56.57838pt too wide) in paragraph at lines 436--437
 \T1/lmr/m/n/10.95 (-20) Komposiittiprosessi voi-daan ha-joit-taa ato-mi-sik-si 
 pro-ses-seik-si tai komposiittiprosesseiksi[[]].
  []
 
 
-Overfull \hbox (23.04051pt too wide) in paragraph at lines 419--420
+Overfull \hbox (23.04051pt too wide) in paragraph at lines 438--439
 []\T1/lmr/m/n/10.95 (-20) OWL-S m‰‰-rit-te-lee luo-kan \T1/lmtt/m/n/10.95 compo
 siteProcess\T1/lmr/m/n/10.95 (-20) , jol-la on ta-san yk-si \T1/lmtt/m/n/10.95 
 composedOf
  []
 
-[11] [12]
-Overfull \hbox (264.0936pt too wide) in paragraph at lines 461--461
+[12] [13]
+Overfull \hbox (264.0936pt too wide) in paragraph at lines 480--480
  []\T1/lmtt/m/n/10.95 <grounding:owlsProcess rdf:resource="http://www.daml.org/
 services/owl-s/1.2/BravoAirProcess.owl#LogIn"/>[] 
  []
 
 
-Overfull \hbox (379.06827pt too wide) in paragraph at lines 478--478
+Overfull \hbox (379.06827pt too wide) in paragraph at lines 497--497
  []        \T1/lmtt/m/n/10.95 <grounding:owlsParameter rdf:resource="http://www
 .daml.org/services/owl-s/1.2/BravoAirProcess.owl#LogIn\_AcctName"/>[] 
  []
 
-[13]
-Overfull \hbox (183.61133pt too wide) in paragraph at lines 478--478
+
+Overfull \hbox (183.61133pt too wide) in paragraph at lines 497--497
  []        \T1/lmtt/m/n/10.95 <grounding:wsdlMessagePart rdf:datatype="http://w
 ww.w3.org/2001/XMLSchema#anyURI">[] 
  []
 
 
-Overfull \hbox (138.77121pt too wide) in paragraph at lines 478--478
+Overfull \hbox (138.77121pt too wide) in paragraph at lines 497--497
  []            \T1/lmtt/m/n/10.95 http://www.daml.org/services/owl-s/1.2/BravoA
 irGrounding.wsdl#acctName[] 
  []
@@ -1134,13 +1140,13 @@ babelbib: Using the BibTeX style's default font for `ISBN'.
 babelbib: Using the BibTeX style's default font for `ISSN'.
 babelbib: Using the BibTeX style's default font for `url'.
 babelbib: Using the BibTeX style's default font for `numeral'.
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 499.
- [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 499.
+[14])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 518.
+ [15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 518.
  (./template-fi.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 499.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 499.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 518.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 518.
 
 
 Package rerunfilecheck Warning: File `template-fi.out' has changed.
@@ -1148,40 +1154,34 @@ Package rerunfilecheck Warning: File `template-fi.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `template-fi.out':
-(rerunfilecheck)             Before: E73AEE480504794A5824BA2EC2C4E684;1612
-(rerunfilecheck)             After:  31EA9DBF6BB5B485BB67F55D5BEB7B90;1392.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 499.
+(rerunfilecheck)             Before: 8F8D3CAF2B00F087931C7FB5CCCAD948;1457
+(rerunfilecheck)             After:  6B774A4071827AC7BDFD5DAC41BC12C1;1467.
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 518.
  ) 
 Here is how much of TeX's memory you used:
- 9679 strings out of 493488
- 143945 string characters out of 3141326
- 272388 words of memory out of 3000000
+ 9678 strings out of 493488
+ 143888 string characters out of 3141326
+ 275385 words of memory out of 3000000
  12636 multiletter control sequences out of 15000+200000
  51382 words of font info for 103 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 32i,8n,35p,839b,578s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{subsection.2.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.2.1.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.2.1.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/te
-xlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2012
-/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2012/texmf-dis
-t/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/ty
-pe1/public/lm/lmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/
-lm/lmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmr6.pfb
-></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/loc
-al/texlive/2012/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive
-/2012/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on template-fi.pdf (15 pages, 274961 bytes).
+ 32i,8n,35p,839b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
+texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/20
+12/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2012/texmf-d
+ist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/
+type1/public/lm/lmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/publi
+c/lm/lmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmr6.p
+fb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/l
+ocal/texlive/2012/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texli
+ve/2012/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on template-fi.pdf (16 pages, 278086 bytes).
 PDF statistics:
- 303 PDF objects out of 1000 (max. 8388607)
- 273 compressed objects within 3 object streams
- 49 named destinations out of 1000 (max. 500000)
- 14510 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 297 PDF objects out of 1000 (max. 8388607)
+ 266 compressed objects within 3 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 14494 words of extra memory for PDF output out of 17280 (max. 10000000)
 

@@ -2,22 +2,22 @@
 \contentsline {section}{\numberline {1}Johdanto}{3}{section.1}
 \contentsline {section}{\numberline {2}Web-ontologiakieli OWL}{4}{section.2}
 \contentsline {subsection}{\numberline {2.1}URI, XML ja RDF}{4}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}tarpeelliset OWL- ja RDFS -konstruktiot OWL-S:n ymm\IeC {\"a}rt\IeC {\"a}miseen}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.2}OWL- ja RDFS -ontologiat}{5}{subsection.2.2}
 \contentsline {section}{\numberline {3}Webpalveluiden kuvauskieli OWL-S}{5}{section.3}
-\contentsline {subsection}{\numberline {3.1}Korkean abstraktiotason rakenne}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.1}Korkean abstraktiotason rakenne}{6}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Profiili}{6}{subsection.3.2}
 \contentsline {subsubsection}{\numberline {3.2.1}Ontologioiden tuonti ja viitteet prosessimalliin sek\IeC {\"a} palveluun}{7}{subsubsection.3.2.1}
 \contentsline {subsubsection}{\numberline {3.2.2}Tuottajainformaatio}{7}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Toiminnallinen kuvaus}{7}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.3}Toiminnallinen kuvaus}{8}{subsubsection.3.2.3}
 \contentsline {subsubsection}{\numberline {3.2.4}Toimintaa kuvaavat ominaisuudet}{8}{subsubsection.3.2.4}
-\contentsline {subsection}{\numberline {3.3}Prosessi}{8}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.3}Prosessi}{9}{subsection.3.3}
 \contentsline {subsubsection}{\numberline {3.3.1}Osapuolet}{9}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Sy\IeC {\"o}tteet ja tulosteet}{9}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Esiehdot ja tulokset}{10}{subsubsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.4}Ehdollisten palautusarvojen ja vaikutusten kuvaus}{10}{subsubsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.2}Sy\IeC {\"o}tteet ja tulosteet}{10}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Esiehdot ja tulokset}{11}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Ehdollisten palautusarvojen ja vaikutusten kuvaus}{11}{subsubsection.3.3.4}
 \contentsline {subsubsection}{\numberline {3.3.5}Komposiittiprosessit ja kontrollirakenteet}{12}{subsubsection.3.3.5}
 \contentsline {subsection}{\numberline {3.4}Maadoitus}{13}{subsection.3.4}
-\contentsline {section}{L\IeC {\"a}hteet}{14}{section*.2}
+\contentsline {section}{L\IeC {\"a}hteet}{15}{section*.2}
 \select@language {finnish}
 \select@language {finnish}
 \select@language {finnish}

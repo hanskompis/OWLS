@@ -160,15 +160,29 @@ RDF (Resource Description Framework) on yksinkertainen tapa kuvailla webissä ol
 ESIMERKKI
 
 
-Esimerkistä voimme havaita, että kuvailtava asia on subjekti nimeltään \textit{matti}, jota kuvataan suhteella \textit{veli} joka saa arvokseen \textit{teppo}. Tämänkaltainen XML-kielinen notaatio on OWL:n (ja OWL-S:n) ontologioiden kuvaamisen syntaktinen ydin. Pelkkä RDF -syntaksi ei kuitenkaan riitä, koska ontologioiden (semantiikoiden) kuvaamiseen tarvitaan myös monimutkaisempia abstraktioita, kuten \textit{luokka}, \textit{aliluokka}, \textit{ilmentymä}, \textit{suhde} ja \textit{alisuhde}. Nämä konstruktiot tarjoaa RDF:n semanttinen laajennos RDF Schema (RDFS) sekä OWL, joka käyttää suurta osaa RDFS:n konstruktioita lähes sellaisenaan.  
+Esimerkistä voimme havaita, että kuvailtava asia on subjekti nimeltään \textit{matti}, jota kuvataan suhteella \textit{veli} joka saa arvokseen \textit{teppo}. Tämänkaltainen XML-kielinen notaatio on OWL:n (ja OWL-S:n) ontologioiden kuvaamisen syntaktinen ydin. Pelkkä RDF -syntaksi ei kuitenkaan riitä, koska ontologioiden (semantiikoiden) kuvaamiseen tarvitaan myös monimutkaisempia abstraktioita, kuten \textit{luokka}, \textit{aliluokka}, \textit{ilmentymä}, \textit{suhde} ja \textit{alisuhde}. Nämä konstruktiot tarjoaa RDF:n semanttinen laajennos RDF Schema (RDFS) sekä OWL, joka käyttää suurta osaa RDFS:n konstruktioita lähes sellaisenaan.  Seuraavassa kappaleessa käyn läpi pintapuolisesti RDFS:n ja OWL:n konstruktiot, jotka auttavat ymmärtämään OWL-S -ontologian rakenteen.
 
-\subsection{Tarpeelliset OWL- ja RDFS -konstruktiot OWL-S:n ymmärtämiseen}
+\subsection{OWL- ja RDFS -ontologiat}
 
-OWL on kehittynyt versio RDF Schemasta. 
+RDF Schema mahdollistaa yksinkertaisten ontologioiden muodostamisen \cite{RDFS}. RDFS:llä on mahdollista määrittää resurssien joukkoja luokiksi (\textit{class}). Luokalla voi olla aliluokkia(\textit{subclass}) ja luokkien jäsenet ovat ilmentymiä (\textit{instance}). Ilmentymien välisiä suhteita kutsutaan \textit{suhteiksi} ja suhteilla on myös \textit{alisuhteita}. Seuraavassa esimerkissä kuvataan ontologia, joka käsittelee polkupyörien valmistajia. Resurssi \textit{Surly} kuuluu luokkaan (\texttt{rdfs:Class})\textit{Polkupyöräpaja}. Luokkaan kuuluminen ilmaistaan \texttt{rdf:type} -konstruktiolla:
+
+\begin{verbatim}
+    <rdfs:Class rdf:ID="Surly" />
+        <rdf:type rdf:resource="Polkupyorapaja"/>
+    </rdfs:Class>
+\end{verbatim}
+
+\textit{Polkupyorapaja} on luokan \textit{Liikeyritys} aliluokka ja ilmaistaan konstruktiolla \texttt{subClassOf}: 
+
+\begin{verbatim}
+    <rdfs:Class rdf:ID="Polkupyorapaja" />
+        <rdf:subClassOf rdf:resource="Liikeyritys"/>
+    </rdfs:Class>
+\end{verbatim}
 
 
 
-luokka
+
 
 instanssi
 

@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Johdanto}{}% 1
 \BOOKMARK [1][-]{section.2}{Web-ontologiakieli OWL}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{URI, XML ja RDF}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{tarpeelliset OWL- ja RDFS -konstruktiot OWL-S:n ymm\344rt\344miseen}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{OWL- ja RDFS -ontologiat}{section.2}% 4
 \BOOKMARK [1][-]{section.3}{Webpalveluiden kuvauskieli OWL-S}{}% 5
 \BOOKMARK [2][-]{subsection.3.1}{Korkean abstraktiotason rakenne}{section.3}% 6
 \BOOKMARK [2][-]{subsection.3.2}{Profiili}{section.3}% 7

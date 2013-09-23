@@ -23,7 +23,7 @@
 %
 % rubber: module pdftex
 
-% --- General packages ---1
+% --- General packages ---
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -116,31 +116,115 @@
 % --- Main matter ---
 
 \section{Johdanto}
+
+World Wide Web (WWW) tarjoaa staattisen informaation lisäksi palveluita. Web-palvelu voi yksinkertaisimmillaan palauttaa informaatiota pyynnön saatuaan tai monimutkaisemmassa tapauksessa voidaan tehdä  esimerkiksi ostos, jossa veloitetaan luottokorttia ja muodostetaan toimitettava tilaus\cite{with_owls}. 
+
+Ohjelmoijan on varsin helppo tuottaa ohjelma, joka käyttää web-palvelua. Tekniikoita palveluiden käyttämiseen on monia, mutta yleinen tapa on lähettää palvelulle viesti, joka on koodattu sovitulla tavalla, esimerkiksi XML:llä tai Jsonilla. Erilaiset datatyypit ja viestien (ja niiden osien) muodot voidaan  selostaa esimerkikisi WSDL-dokumentissa \cite{WSDL}. Edellä mainittujen tekniikoiden toteuttaminen ei nykyaikaisilla ohjelmistokirjastiolle ja IDE:illä ole edes monimutkaista. Mutta olipa tekniikka mikä tahansa, tässä muodossa palvelun käyttö vaatii aina \textit{ihmisen} puuttumisen asiaan. \textit{ihminen} on se, joka hakee palvelun. \textit{ihminen} on se, joka tutkii palvelun kuvauksen ja muokkaa oman ohjelmansa (tai palvelun) käyttämään sitä. 
+
+Mutta mitä \textit{emme} voi löytää WSDL-kuvauksesta, on se, mitä palvelussa tapahtuu, kun sitä käytetään\cite{with_owls}. Jotta voidaan välttää ihmisen osallistumien web-palvelujen orkestrointiin, tulee olla \textit{automaattisia ohjelmistoagentteja}, jotka etsivät oikeat palvelut ja käyttävät niitä automaattisesti, ilman ihmisen puuttumista asiaan\cite{with_owls}.
+
+Automaattinen ohjelmistoagentti mahdollistaisi esimerkiksi:
+
+\begin{itemize}
+\item \textit{Presentaation pitäjä haluaa lähettää esitysmateriaalinsa kaikkien osanottajien käyttöön. Hän voisi tehdä sen yhdellä lähetysnapin painalluksella riippumatta siitä, mitä teknologioita ja protokollia vastaanottajat käyttävät}\cite{with_owls}.
+
+\item \textit{Kuluttaja haluaa löytää haluamansa tuotteen mahdollisimman halvalla jostain verkkokauasta. Ohjelmistoagenttia hyödyntävä ohjelma hakee tuotteen hintaa ja saatavuutta useista verkkokaupoista, jotka ovat koodanneet kataloginsa jotain standardoitua sanastoa käyttäen. Sanastojen ei edes tarvitse olla samat eri verkkokaupoilla}\cite{with_owls}. 
+\end{itemize}
+
+Ohjelmistoagenteille tulisi siis pystyä antamaan tarvittava informaatio muodossa, jota se ymmärtää. \textit{Semanttinen web} voi tarjota ratkaisun tähän. Vuonna 2001 Tim Berners-Lee, James Hendler ja Ora Lassila julkaisivat artikkelin "the Semantic Web", jossa he
+luonnehtivat semanttista webiä seuraavasti:
+\begin{quote}
+"Semanttinen web ei ole erillinen web vaan
+laajennos tämänhetkiseen webiin, jossa informaatiolle on annettu hyvin muotoiltu
+merkitys mahdollistaen koneiden ja ihmisten paremman yhteistyön.[suomennos kirjoittajan]\cite{semweb}
+\end{quote}
+
+Ohjelmistoagenttien tulee pystyä \textit{ymmärtämään} \textit{mitä} palveluntarjoaja tarjoaa ja \textit{miten} palvelu tuotetaan. Tunnetusti kone ei ymmärrä ihmisen ymmärtämää teksti-informaatiota. Koneelle pitää siis tarjota mahdollisuus ymmärtää käsitteitä, antaa mahdollisuus luoda uutta ymmärrystä käsitteiden ja käsitteiden välisten suhteiden pohjalta. Koneen tulee pystyä ymmärtämään \textit{semantiikoita}. 
+
+Webissä semantiikoita ilmaistaa ontologioilla, jotka tietojenkäsittelytieteessä ymmärretään dokumentteina, joissa kerrotaan asioiden välisistä yhteyksistä\cite{semweb}. Kun web-palveluita kuvataan ontologioiden avulla, tulee käytössä olla kuvaamiseen soveltuva \textit{sanasto}, ontologia. Yksi mahdollinen tällainen sanasto on OWL-S, joka tulee sanoista Web Ontology Language for Services. OWL-S tarjoaa luokat ja ominaisuudet, joiden avulla web-palvelu voidaan kuvata koneen ymmärtämässä muodossa. Jotta voimme ymmärtää OWL-S:llä tuotettuja ontologioita, pitää ensin tutustua soveltuvin osin OWL (Web Ontology Language) :ään ja sen kostruktioihin, joiden avulla web-palveluontologioita voidaan muodostaa. 
+
 \section{Web-ontologiakieli OWL}
 
-pieni alustus, että miksi käsitellään owl ja mitä konstruktioita tarvitsemme owl-s:n ymmärtämiseen
+World Wide Web Consortium on antanut OWL:lle suosituksen standardiksi vuonna 2004\cite{owlguide}. Uudempi suositus on OWL 2:lle vuodelta 2012. OWL kielenä perustuu muutamiin jo aiemmin määriteltyihin merkintätapoihin ja konsepteihin, kuten XML:ään ja RDF:ään ja URI:in .
 
-\subsection{Teknologiat, jotka mahdollistavat OWL:n}
-\subsubsection{XML}
+\subsection{URI, XML ja RDF}
 
-onko tarpeen?
+Semanttisessa webissä määritettyjä luokkia, ilmentymiä ja niiden välisiä suhetita identifioidaan URI:en avulla\cite{semweb}.
+URI (Uniform Resource Identifier) on standardi resurssien identifioimiseen. Useimmiten URI:na käytetään tavallista URL:ia (Uniform Resource Locator). Identifiointi on tärkeää, koska näin pystytään erottelemaan jo luodut resurssit itse luoduista resursseista. 
 
-\subsubsection{RDF/RDFS}
+XML-kieli on notaatio rakenteisen kielen esittämiseen. Useimmiten semanttisessa webissä tietoa kuvataan nimenomaan XML-tiedostoina, koska ne ovat helposti koneen tulkittavissa. XML:n nimiavaruudet helpottavat resurssien identifioimista URI:en avulla. 
 
-\subsection{tarpeelliset OWL-konstruktiot OWL-S:n ymmärtämiseen}
+RDF (Resource Description Framework) on yksinkertainen tapa kuvailla webissä olevaa tietoa kolmikoiden avulla\cite{RDFP}. RDF-kolmikon muodostavat subjekti, objekti ja predikaatti\cite{RDFP}. Subjekti on asia, jota kuvataan, predikaatti on ominaisuus, jolla asiaa kuvataan ja objekti on ominaisuuden arvo. Esimerkiksi tieto ''Matin veli on Teppo'' voidaan kuvata kolmikolla 
 
-luokka
 
-instanssi
+ESIMERKKI
 
-suhde
 
-import
+Esimerkistä voimme havaita, että kuvailtava asia on subjekti nimeltään \textit{matti}, jota kuvataan suhteella \textit{veli} joka saa arvokseen \textit{teppo}. Tämänkaltainen XML-kielinen notaatio on OWL:n (ja OWL-S:n) ontologioiden kuvaamisen syntaktinen ydin. Pelkkä RDF -syntaksi ei kuitenkaan riitä, koska ontologioiden (semantiikoiden) kuvaamiseen tarvitaan myös monimutkaisempia abstraktioita, kuten \textit{luokka}, \textit{aliluokka}, \textit{ilmentymä}, \textit{suhde} ja \textit{alisuhde}. Nämä konstruktiot tarjoaa RDF:n semanttinen laajennos RDF Schema (RDFS) sekä OWL, joka käyttää suurta osaa RDFS:n konstruktioita lähes sellaisenaan.  Seuraavassa kappaleessa käyn läpi pintapuolisesti RDFS:n ja OWL:n konstruktiot, jotka auttavat ymmärtämään OWL-S -ontologian rakenteen.
 
+\subsection{OWL -ontologiat}
+
+OWL(ja RDFS) mahdollistaa ontologioiden muodostamisen. Tässä kappaleessa käsitellään OWL:n peruskonstruktiot, joiden avulla OWL-S:n ontologiat ovat ymmärrettävissä. OWL käyttää useita RDFS:n konstruktioita, jotka tunnistaa etuliitteestä \texttt{rdfs:}.
+
+OWL:lla on mahdollista määrittää resurssien joukkoja luokiksi (\textit{class}). Luokalla voi olla aliluokkia(\textit{subclass}) ja luokkien jäsenet ovat ilmentymiä (\textit{instance}). Ilmentymiä voidaan kuvata \textit{suhteilla}, joilla voi olla myös \textit{alisuhteita}\cite{owlguide}. Seuraavassa polkupyörän valmistajaa kuvaavassa esimerkissä käydään läpi ontologian peruskonstruktioita. 
+
+Resurssi \textit{Surly} kuuluu luokkaan \textit{Polkupyöräpaja}. Luokkaan kuuluminen ilmaistaan \texttt{rdf:type} -konstruktiolla:
+
+\begin{verbatim}
+<owl:Thing rdf:ID="Surly"/>
+
+<owl:Thing rdf:about="Surly">
+    <rdf:type= rdf:resource="Polkupyorapaja"/>
+</owl:Thing>
+\end{verbatim} 
+
+\textit{Polkupyorapaja} on luokan \textit{Liikeyritys} aliluokka ja ilmaistaan konstruktiolla \texttt{subClassOf}: 
+
+\begin{verbatim}
+<owl:Class rdf:ID="Polkupyöräpaja">
+    <rdfs:subClassOf rdf:resource="Liikeyritys"/>
+</owl:Class>
+\end{verbatim}
+
+Resursseja kuvataan \textit{ominaisuuksilla}. Ominaisuuksilla voi olla \textit{aliominaisuuksia}. Ominaisuus voi viitata joko olioon (luokkaominaisuus) tai arvoliteraalin (datatyyppiominaisuus). Ominaisuuden sovellusalue ilmaistaan \texttt{rdfs:domain} -konstruktiolla ja arvojoukko \texttt{rdfs:range} -konstruktiolla. Seuraavassa esimerkissä 
+määritellään luokan \textit{Polkupyorapaja} luokkaominaisuus \textit{Sijaitsee}, joka voi saada arvoksi luokan \textit{Kaupunki} ilmentymiä.
+
+\begin{verbatim}
+    <owl:ObjectProperty rdf:about="Sijaitsee">
+        <rdfs:domain rdf:resource="Polkupyorapaja" />
+        <rdfs:range rdf:resource="Kaupunki" />
+    </owl:ObjectProperty>
+\end{verbatim}
+
+\textit{Polkupyöräpaja}lle voidaan määritellä myös datatyyppiominaisuus \textit{postinumero}, joka voi saada arvokseen XMLSchemassa määritetyn arvon \textit{integer}:
+
+\begin{verbatim}
+<owl:DataTypeProperty rdf:ID="Postinumero">
+    <rdfs:domain rdf:resource="Polkupyorapaja"/>
+    <rdfs:range  rdf:resource="&xsd;integer"/>   
+<owl:dataTypeProperty>
+\end{verbatim}
+
+Samoin kuin luokalla voi olla aliluokka, ominaisuudella voi olla aliominaisuus. Esimerkiksi ominaisuus \texttt{Sijaitsee} voi olla ominaisuuden \texttt{Yritystieto} aliominaisuus. Aliominaisuus
+määritellään \texttt{subPropertyOf}-konstruktiolla:
+
+\begin{verbatim}
+<owl:ObjectProperty rdf:ID="Sijaitsee">
+    <rdfs:subPropertyOf rdf:resource="yritystieto">
+    . . .
+<owl:ObjectTypeProperty>
+\end{verbatim}
+
+Edellä on lyhyin esimerkein käyty läpi OWL:n peruskonstruktioita. OWL tarjoaa myös lukuisan joukon muita konstruktioita, jotka mahdollistavat monipuolisten ontologioiden muodostamisen. Seuraavassa listassa muutamia OWL-S -määrittelyissä vastaan tulevia:
+
+\begin{itemize}
+ \item \textbf{kardinaalisuusrajoitteet}. Ominaisuudelle voidaan määrätä kardinaalisuusrajoitteita tietyissä sovelluskonteksteissa. Voidaan esimerkiki määritellä, että luokka \textit{Polkupyörä} on joukko asioita, jolla on tasan kaksi \textit{Renkaat} ominaisuutta.
+  \item \textbf{kompleksiset luokat}. OWL mahdollistaa joukko-opilliset operaatiot luokkia muosostettaessa. Voidaan esimerkiksi määritellä, että luokka \textit{Polkupyörä} on luokkien \textit{maastopyörä} ja \textit{maantiepyörä} edustajien yhdiste, unioni. Owl mahdollistaa myös ilmentymäjoukkojen leikkaukset ja komplementit. 
+\end{itemize}
 
 \section{Webpalveluiden kuvauskieli OWL-S}
 
-UDDI
+UDDI löytäminen, käyttö, monitorointi
 
 \subsection{Korkean abstraktiotason rakenne}
 
@@ -248,13 +332,208 @@ tilamuutos ''istumapaikka löytynyt'' (\textit{HaveSeatResult})\cite{daml}:
 
 Edellisessä esimerkissä on poimittu ainoastaan muutamia toiminnallisia määrityksiä, todelliset määritykset voi katsoa liitteestä nnn. 
 
+\subsubsection{Toimintaa kuvaavat ominaisuudet}
+
+Edellisessä aliluvussa luettelimme palvelun toiminnallisia ominaisuuksia.
+
+Ontologiassa on myös mahdollista ilmoittaa palvelun luokitus jossain ontologiassa määriteltyä, mahdollisesti ulkopuolista luokitusta tai taksonomiaa käyttäen. Luokitus ilmaistaan \texttt{serviceCategory}-tagien sisällä ja arvo on \texttt{ServiceCategory}-luokan ilmentymän.  \texttt{ServiceCategory} luokalla on ominaisuuksia kategorian nimen, koodin jne ilmaisuun\cite{OWLS}. ESIMERKKI?
+
+Profiilissa voidaan myös ilmaista palvelun tarjoajan tärkeäksi kokemia vapaavalintaisia attribuutteja \texttt{serviceParameter}-ominaisuudella. Parametrille annetaan aina nimi, joka on datatyyppiominaisuus sekä arvo, joka on jonkin olion instanssi\cite{OWLS}. Esimerkiksi palvelulle voidaan määritellä ominaisuus ''BravoAir Geographic Radius'' ja se saa arvoksen ontologiassa määritetyn alueen \texttt{jenkkilä}.
+
+SERVICE CLASsIFICATION JA SERVICE PRODUCT?
 
 \subsection{Prosessi}
 
-\subsection{Maadoitus}
-% Write some science here.
+Jotta voidaan tarjota yksityiskohtaista tietoa siitä, miten olla vuorovaikutuksessa palvelun kanssa, esitetään se OWL-S:ssä myös \textit{prosessina}. On tärkeää tietää, että prosessimalli ei ole suortettava ojelma, vaan ainoastaan kuvaus siitä\cite{OWLS}. Se kertoo, kuinka asiakasohjelmisto voi kommunikoida palvelun kanssa. 
 
-Esimerkkilause ja lähdeviite~\cite{pitfalls}.
+Prosessikuvaukset jaetaan kolmeen kategoriaan\cite{OWLS}:
+\begin{enumerate}
+\item \textit{atominen prosessi} on sellaisen prosessin kuvaus, joka ottaa vastaan yhden viestin ja palautta yhden viestin. 
+\item \textit{komposiittiprosessi} kuvaa prosessia, joka koostuu useasta eri atomisesta prosessista, ja joka ylläpitää tilatietoa. 
+\item \textit{yksinkertainen prosessi} ei ole suoritettavissa eikä se kytkeydy maadoitukseen. Sen rooli on on toimia abstraktiona atomisille prosesseille tai komposiittiprosessien yksinkertaistuksena. 
+\end{enumerate}
+
+Prosesseilla voi olla määräämätön määrä syötteitä ja tulosteita. Samoin prosesseilla voi olla määräämätön määrä esiehtoja, joiden täytyy toteutua, jotta prosessi voidaan suorittaa. Vastaavasti voi olla määräämätön määrä vaikutuksia, joita prosessi aiheuttaa\cite{OWLS}.
+
+ESIMERKKI ATMICEISTA JA KOMPOSIITEISTÄ
+
+Seuraavassa käydään läpi prosessin kuvausta jälleen BravoAir-esimerkin\cite{daml} avulla.
+
+\subsubsection{Osapuolet}
+
+Prosessilla on ainakin kaksi osapuolta (participant): asiakas (client) tai tai palvelin (server). Asiakas käyttää palvelimen tarjoamia palveluja\cite{OWLS}.
+Jos prosessilla on myös muita osapuolia, ne ilmaistaan \texttt{hasParticipant} suhteen avulla:
+ESIMERKKI? prosessi - hasParticipant - osapuoli
+
+\subsubsection{Syötteet ja tulosteet}
+
+Syötteet kuvaavat prosessin sisään tuleva tietoa\cite{OWLS}. Atomisilla prosesseilla syöte on asiakkaan antama kun taas komposiittiprosesseilla osa syötteistä on asiakkaalta ja osa proessin edeltävän vaiheen tuottamaa. 
+
+Vaikka atomisille prosesseille sallitaan ainoastaan yksi syöte, se voi todellisuudessa koostua useasta syötteestä, koska syötteitä voi BUNDLATA yhdeksi \cite{OWLS}. Tällöin pitää ymmärtää käsite \textit{viesti}, joka on usean syötteen BUNDLATTU kokonaisuus. BUNDLAUS määritellään palvelun maadoituksessa luvussa nnn. 
+
+BravoAirin prosessikuvauksessa on atominen prosessi \texttt{SelectAvailableFlight}, joka kuvaa prosessin, jossa asiakas valitsee haluamansa lennon saatavilla olevista vaihtoehdoista \cite{daml}. Sillä on on yksi syöte, lista tarjolla olevista lennoista (\textit{SelectAvailableFlight\_FlightsAvailable}), sekä yksi paluuarvo, valittu lento (\textit{SelectAvailableFlight\_SelectedFlight}). Syöte määritellään \textit{hasInput}-tägien sisällä ja vastaavasti paluuarvo \textit{hasOutput} -tägien sisässä\cite{daml}:
+
+\
+\begin{verbatim}
+<process:AtomicProcess rdf:ID="SelectAvailableFlight">
+    <rdfs:label>SelectAvailableFlight (ATOMIC)</rdfs:label>
+        <rdfs:comment>
+            Get users prefered flight choice from available itineraries
+        </rdfs:comment>
+        <process:hasInput>
+            <process:Input rdf:ID="SelectAvailableFlight_FlightsAvailable">
+                <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+                    http://www.daml.org/services/owl-s/1.2/Concepts.owl#FlightList
+                </process:parameterType>
+            </process:Input>
+        </process:hasInput>
+        <process:hasOutput>
+            <process:Output rdf:ID="SelectAvailableFlight_SelectedFlight">
+                <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+                    http://www.daml.org/services/owl-s/1.2/Concepts.owl#FlightItineraryList
+                </process:parameterType>
+            </process:Output>
+        </process:hasOutput>
+</process:AtomicProcess>
+\end{verbatim}
+
+
+Esimerkissä määritellään atominen prosessi tunnuksella \texttt{SelectAvailableFlight}. Sillä on yksi syöte, joka on tyypiltään XMLSchemassa määritelty  URI ja arvoltaan lista lennoista (\texttt{Concepts.owl\#FlightList}) sekä yksi paluuarvo, joka on samaa tyyppiä ja arvoltaan valittu lento (\texttt{Concepts.owl\#FlightItineraryList}). 
+
+
+\subsubsection{Esiehdot ja tulokset}
+
+Prosessia ei voi suorittaa, jos sille määrätty esiehto ei täyty\cite{OWLS}. Esiehto on prosessin ominaisuus ja se saa arvokseen lausekkeen (\textit{expression}). ESIMERKKI?
+
+Prosessin onnistuminen voi aiheuttaa muutoksen mailman tilassa tai sen, että palvelun kutsuja saa jotain informaatiota palvelulta. Tulos ilmaistaan termillä \textit{Result} ja se liittyy prosessiin ominaisuudella \textit{hasResult}. OWL-S:ssä ei sidota tulosta erikseen paluuarvoon tai muutokseen tilassa, vaan se määritellään \textit{Result}in sisällä\cite{OWLS}. 
+
+Seuraavassa aliluvussa käydään läpi koko tuloksen muodostus.
+
+\subsubsection{Ehdollisten palautusarvojen ja vaikutusten kuvaus}
+
+Kun tulos (\texttt{Result}) on määritelty, prosessimalli voi kuvailla sitä neljällä eri ominaisuudella\cite{OWLS}: \texttt{inCondition}, \texttt{hasResultVar}, \texttt{withOutput} ja \texttt{hasEffect}\cite{OWLS}.  
+
+\texttt{inCondition} kertoo ehdon jonka vallitessa joku tulos on mahdollinen (eikä joku toinen tulos). 
+
+\texttt{withOutput} ja \texttt{hasEffect} puolestaan määrittelevät mitä seuraa siitä, että ehto on tosi. \texttt{hasResultVar} esittelee muuttujat, jotka sidotaan \texttt{inCondition}in määrittelemään ehtoon.  Näitä muuttujia käytetään myös tulosten muodostamiseen\cite{OWLS}. 
+
+Seuraavassa esimerkissä esitetään tuloksen muodostuminen \cite{daml}. Esimerkki liitty prosessiin, jossa varataan lento. \texttt{hasResult} kuvaa tuloksen muodostuksen, jossa onnistuneen ostotapahtuman jälkeen palautetaan paluuarvona lentosuunnitelma (\texttt{\#BookFlight\_PreferredFlightItinerary"}) sekä varaustunnus (\texttt{\#BookFlight\_ReservationID}). 
+
+\begin{verbatim}
+<process:hasResult>
+    <process:Result>
+        <process:inCondition rdf:resource=
+        "http://www.daml.org/services/owl-s/1.2/generic/Expression.owl#AlwaysTrue"/>
+            <process:withOutput>
+                <process:OutputBinding>
+                    <process:toParam rdf:resource=
+                        "#BookFlight_PreferredFlightItinerary"/>
+                     <process:valueSource>
+                          <process:ValueOf>
+                              <process:theVar rdf:resource=
+                                  "#CompleteReservation_PreferredFlightItinerary"/>
+                              <process:fromProcess rdf:resource=
+                                  "#PerformCompleteReservation"/>
+                          </process:ValueOf>
+                     </process:valueSource>
+                 </process:OutputBinding>
+             </process:withOutput>
+             <process:withOutput>
+                 <process:OutputBinding>
+                     <process:toParam rdf:resource="#BookFlight_ReservationID"/>
+                     <process:valueSource>
+                         <process:ValueOf>
+                             <process:theVar rdf:resource=
+                                 "#CompleteReservation_ReservationID"/>
+                             <process:fromProcess rdf:resource=
+                                 "#PerformCompleteReservation"/>
+                         </process:ValueOf>
+                     </process:valueSource>
+                 </process:OutputBinding>
+             </process:withOutput>
+    </process:Result>
+</process:hasResult>
+\end{verbatim}
+
+
+Esimerkissä ilmaistaan ominaisuudella \texttt{inCondition} ehto, jolla kyseinen tulos muodostetaan. Tässä tapauksessa ehto on aina tosi, mikä tarkoittaa, että kyseisen prosessin suorituksessa tämä tulos muodostetaan aina. \texttt{withOutput}-ominaisuuksilla kuvataan kuinka paluuarvot sidotaan muuttujiin. Tämä tuo mukaan OWL-S:n datavuoaspektin. 
+
+OWL-S:ssä datavuo toimii periaatteella ''kuluttaja pyytää'', eli mikään prosessi (tuottaja) ei työnnä dataa toiselle prosessille (kuluttaja) vaan kuluttajaprosessi pyytää sitä kuten esimerkkitapauksessamme \texttt{OutputBinding} -oliossa. Esimerkissä ylemmän \texttt{OutputBinding}in \texttt{toParam} -ominaisuuden arvo kertoo, että sidomme palautettavan arvon paluuarvomuuttujaan \textit{\#BookFlight\_PreferredFlightItinerary}. Muuttujan saama arvo määrätään tulevaksi prosessin  \texttt{\#PerformCompleteReservation} muuttujasta \texttt{\#CompleteReservation\_PreferredFlightItinerary}. 
+
+Yksinkertaistettuna datavuo prosessilta prosessille kulkee seuraavalla tavalla: 
+
+Prosessilla \textit{p2} on paluuarvomuuttujan määritys (\texttt{toParam}) nimeltään ''o2''. Määritellään, että kyseisen paluuarvomuuttujan arvo saadaan prosessin (\texttt{fromProcess} ) \textit{p1} muuttujasta (\texttt{theVar}) ''\textit{o1}''.  
+
+KUVA!!!
+
+\subsubsection{Komposiittiprosessit ja kontrollirakenteet}
+
+Komposiittiprosessi voidaan hajoittaa atomisiksi prosesseiksi tai komposiittiprosesseiksi\cite{OWLS}. Tämä hajoittaminen voidaan ilmaista kontrollirakenteilla kuten \texttt{Sequence} tai \texttt{If-Then-Else}. Vaikka kontrollirakenteen nimet muistuttavat ohjelmointikielistä tuttuja nimityksiä, on syytä muistaa, että ne \textit{eivät kerro} kuinka niiden kuvaam palvelu toimii vaan miten se \textit{mahdollisesti} toimii\cite{OWLS}. 
+
+OWL-S määrittelee luokan \texttt{compositeProcess}, jolla on tasan yksi \texttt{composedOf} -ominaisuus, joka saa arvokseen \texttt{ControlConstruct} - luokan ilmentymän. Jokaisella \texttt{ControlConstruct}:lla on ominaisuus \texttt{components}, joka saa arvokseen toisia kontrollirakenteita\cite{OWLS}. Kontrollirakenteet muodostavat siis puumaisen rakenteen, jonka solmut, jotka eivät ole lehtiä, ovat kontrollirakenteita. Puun lehdet ovat prosessien suoritusta kuvaavia luokkia nimeltään \texttt{Perform}. Jokaisella \texttt{Perform} -luokalla on ominaisuus \texttt{process}, joka viittaa suoritettavaan prosessiin\cite{OWLS}.  Prosessin saamat syötteet määräävät, koska se suoritetaan osana suurempaa kontrollirakennetta. Datavuohon palataan tarkemmin seuraavassa kappaleessa.
+
+Komposiittirakennetta voidaan voidaan ajatella ''black boxina'', jolloin se voidaan nähdä abstraktina yksinkertaisena prosessina (\textit{simple process}). Vastaavasti yksinkertainen prosessi voidaan nähdä komposiittirakenteena, ''white boxina'' \cite{OWLS}. 
+
+Seuraavassa luetellaan OWL-S:n kontrollirakenteita lyhyiden selostusten kera:      
+ 
+ \begin{itemize}
+\item \textbf{Sequence} on lista kontrollirakenteita, jotka suoritetaan sarjana. 
+\item \textbf{Split} mahdollistaa prosessien suorituksen rinnakkaisesti. Rakenteet poimitaan kontrollirakennesäiliöstä, \texttt{ControlConstructBag}istä.
+\item \textbf{Split+Join} toimii samoin kuin Sequence, mutta prosessien suorituksen jälkeen suoritetaan puomisynkronointi. Myös tässä prosessit poimitaan säiliöstä. 
+\item \textbf{Any-Order} -rakenne mahdollistaa prosessien suorituksen määräämättömässä järjestyksessä mutta ei samanaikaiseti. 
+\item \textbf{Choice} toimii siten, että poimitaan joku yksi säiliön prosessi suoritettavaksi.
+\item \textbf{If-ThenElse} -luokassa on ominaisuus \texttt{ifCondition}, jolle annetaan ehto \texttt{Condition}. Jos ehto on tosi, suoritetaan \texttt{Else} -ominaisuuden arvona oleva kontrollirakenne tai prosessi, jos epätosi, suoritetaan \texttt{Else} -ominaisuuden arvona oleva rakenne tai prosessi. 
+\item \textbf{Repeat-While ja Repeat-Until} luokat ovate luokan \texttt{Iterate} aliluokkia. Ne toimivat samaan tapaan kuin perinteisten proseduraalisten kielten while- ja do-while -rakenteet.   
+\end{itemize}
+
+\subsection{Maadoitus}
+
+Palvelun maadoitus kertoo (grounding) kuinka palvelu on saavutettavissa käytännön tasolla. Tärkeimmät maadoitusdokumentin ilmaisemat asiat ovat viestien muoto, viestiprotokollat, sarjallistaminen, osoitteet jne\cite{OWLS}. Voidaan ajatella, että palvelun käytön abstrakti kuvaus MÄPÄTÄÄN  konkreettiselle, käytännön tasolle\cite{OWLS}. 
+
+OWL-S:n maadoituksen tärkein tehtävä on kertoa kuinka atomisten prosessien syötteet ja paluuarvot muutetaan viesteiksi, jotka voidaan kuljettaa jollain menetelmällä, esim. html-protokollan avulla \cite{OWLS}. 
+
+%:
+OWL-S nojaa viestien määrittelyssä vahvasti jo olemassa olevaan WSDL -kieleen, jonka puitteissa on tehty paljon kehitystyötä konkreettisen viestinmäärittelyn aikaansaamiseksi. WSDL tulee sanoista Web Services Description Language ja on XML-formaatti web-palveluiden kuvaamiseksi ENDPOINTEINA, jotka käsittelevät viestejä. WSDL:ssä ENDPOINTIT ja viestit määritellään abstraktilla tasolla, mutta MÄPÄTÄÄN konkreettisiksi viestiprotokolliksi ja viestiformaateiksi \cite{WSDL}    
+
+WSDL:n sopivuus perustuu siihen, että OWL-S:n maadoitus on melko yhdenmukainen WSDL:n \textit{sitomisen} kanssa\cite{OWLS}. Kuitenkin molempia kieliä pitää käyttää toisiaan täydentävästi, koska kumpikaan ei yksinään tarjoa kaikkia ominaisuuksia. 
+
+%\subsubsection{Grounding }
+
+Koska maadoituksen tarkoituksena on MÄPÄTÄ abstrakti kuvaus konkreettisiksi viestinkuljetusoperatioiksi, tulee muodostaa ikään kuin silta OWLS-n ja WSDL:n välille. Siltana toimii OWL-S:n maadoitusdokumentti. \texttt{Grounding} -luokan aliluokan \texttt{WSDLGrounding} ilmentymässä kuvataan \texttt{WSDLAtomicProcessGrounding} -ilmentymiä. Näissä em. ilmentymissä märitellään viitteet OWL-S:n  prosesseista, syötteistä ja paluuarvoista WSDL:n vastaaviin, konkreettisiin määrityksin. 
+
+Seuraavat \texttt{WSDLAtomicProcessGrounding}in ominaisuudet MÄPPÄÄVÄT OWL-S:n konstruktioita WSDL:n vastaaviin (kaikkia ei esitelty):
+
+\begin{itemize}
+\item \texttt{wsdlDocument} kertoo käytössä olevan WSDL-dokumentin URIn. Kaikki seuraavat viittaukset wsdl-määrityksiin viittaavat tähän dokumenttiin. 
+
+\item \texttt{wsdlOperation} viittaa wsdl-dokumentissa määriteltyyn operaatioon, joka vastaa OWL-S:n  atomista prosessia. BravoAir-esimerkissä MÄPÄTÄÄN 
+prosessikuvauksessa oleva \textit{BravoAirProcess.owl\#LogIn} -prosessi WSDL-määrityksen vastaavaan operaatioon \texttt{\#LogIn\_operation}. 
+
+\begin{verbatim}
+<grounding:owlsProcess rdf:resource="http://www.daml.org/services/owl-s/1.2/BravoAirProcess.owl#LogIn"/>
+<grounding:wsdlOperation rdf:resource="#LogIn_operation"/>
+\end{verbatim}
+
+WSDL:n operaatiomäärityksiä ei voi sisällyttää tähän raporttiin joten niiden rakennetta voi tutkia lähteistä \cite{daml} ja \cite{WSDL}. 
+
+\item \texttt{wsdlInputMessage} on olio, johon on talletettu sen  WSDL-määrityksen URI, joka ilmaisee syötteitä kuljettavien viestien muodon.  
+
+\item \texttt{wsdlInput} -oliossa MÄPÄTÄÄN jokainen mäpättävän prosessin syöte WSDL:ssä  määritetyn viestin osaksi. Ideaalitapauksessa jokaista syötettä vastaa yksi WSDL:n viestin osa. Alla olevassa esimerkissä. MÄPÄTÄÄN BravoAirin prosessikuvauksen syöte \texttt{\#LogIn\_AcctName} WSDL-määritykseen  \texttt{\#acctName}. Viittaus jälleen URI:n avulla. 
+%\small
+\begin{verbatim}
+<grounding:wsdlInput>
+    <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="http://www.daml.org/services/owl-s/1.2/BravoAirProcess.owl#LogIn\_AcctName"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+            http://www.daml.org/services/owl-s/1.2/BravoAirGrounding.wsdl#acctName
+        </grounding:wsdlMessagePart>
+    </grounding:WsdlInputMessageMap>
+</grounding:wsdlInput>
+\end{verbatim}
+%\normalsize
+
+\item \texttt{wsdlOutput} ja \texttt{wsdlOutputMessage} toimivat vastaavasti kuin edelliset, mutta MÄPPÄÄVÄT prosessin paluuarvoja.
+\end{itemize}
 
 
 % --- Back matter ---

@@ -31,6 +31,13 @@
   Definition Language (WSDL)}}, 2001.
 \newblock {\latintext \btxurlfont{http://www.w3.org/TR/wsdl}}.
 
+\bibitem {RDFP}
+\btxnamefont {\btxlastnamefont {Manola}, Frank} \btxandlong {}\ \btxnamefont
+  {\btxlastnamefont {Miller}, Eric}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {Rdf primer}{RDF Primer}}.
+\newblock \btxjournalfont {W3C Recommendation}, 10(February):1--107, 2004.
+\newblock {\latintext \btxurlfont{http://www.w3.org/TR/rdf-primer/}}.
+
 \bibitem {OWLS}
 \btxnamefont {\btxlastnamefont {Martin}, David}, \btxnamefont {\btxlastnamefont
   {Burstein}, Mark}, \btxnamefont {\btxlastnamefont {Hobbs}, Jerry},
@@ -69,5 +76,14 @@
   Examples}}, 2012.
 \newblock {\latintext
   \btxurlfont{http://www.ai.sri.com/daml/services/owl-s/1.2/examples.html}}.
+
+\bibitem {owlguide}
+\btxnamefont {\btxlastnamefont {Smith}, Michael\btxfnamespacelong K},
+  \btxnamefont {\btxlastnamefont {Welty}, Chris}\btxandcomma {} \btxandlong {}\
+  \btxnamefont {\btxlastnamefont {McGuinness}, Deborah\btxfnamespacelong
+  L}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase {Owl web ontology
+  language guide}{OWL Web Ontology Language Guide}}.
+\newblock \btxjournalfont {W3C Recommendation}, 10(February):1--46, 2004.
+\newblock {\latintext \btxurlfont{http://www.w3.org/TR/owl-guide/}}.
 
 \end{thebibliography}

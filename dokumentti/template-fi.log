@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.1.22)  23 SEP 2013 17:28
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.1.22)  24 SEP 2013 11:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -895,10 +895,10 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 167.
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [5] [6]
-<karkea_taso.png, id=163, 419.5675pt x 266.9975pt>
+<karkea_taso.png, id=170, 419.5675pt x 266.9975pt>
 File: karkea_taso.png Graphic file (type png)
  <use karkea_taso.png>
-Package pdftex.def Info: karkea_taso.png used on input line 246.
+Package pdftex.def Info: karkea_taso.png used on input line 248.
 (pdftex.def)             Requested size: 251.74243pt x 160.19972pt.
 
 [7 <./karkea_taso.png>]
@@ -913,14 +913,14 @@ Overfull \hbox (340.19574pt too wide) in paragraph at lines 287--287
 vices/owl-s/1.2/BravoAirService.owl#BravoAir_ReservationAgent"/>[] 
  []
 
-
+[8]
 Overfull \hbox (32.72145pt too wide) in paragraph at lines 306--307
 []\T1/lmr/m/n/10.95 (-20) Palvelun teks-ti-ku-vaus kir-joi-te-taan \T1/lmtt/m/n
 /10.95 textDescription\T1/lmr/m/n/10.95 (-20) -tägin ja ni-mi \T1/lmtt/m/n/10.9
 5 serviceName\T1/lmr/m/n/10.95 (-20) -
  []
 
-[8]
+
 Overfull \hbox (6.89981pt too wide) in paragraph at lines 316--317
 []\T1/lmr/bx/n/10.95 hasOutput\T1/lmr/m/n/10.95 (-20) , jo-ka saa ar-vok-seen \
 T1/lmtt/m/n/10.95 Process\T1/lmr/m/n/10.95 (-20) -ontologiassa mää-ri-tel-ty-jä
@@ -1043,7 +1043,7 @@ Overfull \hbox (12.51793pt too wide) in paragraph at lines 456--456
 tion"/>[] 
  []
 
-
+[12]
 Overfull \hbox (98.74893pt too wide) in paragraph at lines 456--456
 []                     \T1/lmtt/m/n/10.95 <process:toParam rdf:resource="#BookF
 light_ReservationID"/>[] 
@@ -1055,7 +1055,7 @@ Overfull \hbox (47.01033pt too wide) in paragraph at lines 456--456
 ervationID"/>[] 
  []
 
-[12]
+
 Overfull \hbox (2.17021pt too wide) in paragraph at lines 456--456
 []                             \T1/lmtt/m/n/10.95 <process:fromProcess rdf:reso
 urce=[] 
@@ -1086,20 +1086,20 @@ Overfull \hbox (56.57838pt too wide) in paragraph at lines 471--472
 pro-ses-seik-si tai komposiittiprosesseiksi[[]].
  []
 
-
+[13]
 Overfull \hbox (23.04051pt too wide) in paragraph at lines 473--474
 []\T1/lmr/m/n/10.95 (-20) OWL-S mää-rit-te-lee luo-kan \T1/lmtt/m/n/10.95 compo
 siteProcess\T1/lmr/m/n/10.95 (-20) , jol-la on ta-san yk-si \T1/lmtt/m/n/10.95 
 composedOf
  []
 
-[13] [14]
+[14]
 Overfull \hbox (264.0936pt too wide) in paragraph at lines 515--515
  []\T1/lmtt/m/n/10.95 <grounding:owlsProcess rdf:resource="http://www.daml.org/
 services/owl-s/1.2/BravoAirProcess.owl#LogIn"/>[] 
  []
 
-
+[15]
 Overfull \hbox (379.06827pt too wide) in paragraph at lines 532--532
  []        \T1/lmtt/m/n/10.95 <grounding:owlsParameter rdf:resource="http://www
 .daml.org/services/owl-s/1.2/BravoAirProcess.owl#LogIn\_AcctName"/>[] 
@@ -1117,7 +1117,7 @@ Overfull \hbox (138.77121pt too wide) in paragraph at lines 532--532
 irGrounding.wsdl#acctName[] 
  []
 
-[15] (./template-fi.bbl
+(./template-fi.bbl
 babelbib: Using the BibTeX style's default font for `name'.
 babelbib: Using the BibTeX style's default font for `lastname'.
 babelbib: Using the BibTeX style's default font for `title'.
@@ -1129,25 +1129,25 @@ babelbib: Using the BibTeX style's default font for `ISBN'.
 babelbib: Using the BibTeX style's default font for `ISSN'.
 babelbib: Using the BibTeX style's default font for `url'.
 babelbib: Using the BibTeX style's default font for `numeral'.
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 553.
- [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 553.
+[16])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 557.
+ [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 557.
  (./template-fi.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 553.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 553.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 557.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 557.
 Package rerunfilecheck Info: File `template-fi.out' has not changed.
-(rerunfilecheck)             Checksum: A6FDB28C3D8B8C6F4A951F341F843DDB;1415.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 553.
+(rerunfilecheck)             Checksum: FFAFC7EEABE0D822F9B2EF88D1DBEB19;1469.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 557.
  ) 
 Here is how much of TeX's memory you used:
- 9695 strings out of 493481
- 143048 string characters out of 3143393
- 273456 words of memory out of 3000000
- 12636 multiletter control sequences out of 15000+200000
+ 9698 strings out of 493481
+ 143075 string characters out of 3143393
+ 271457 words of memory out of 3000000
+ 12637 multiletter control sequences out of 15000+200000
  52068 words of font info for 109 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
- 32i,8n,35p,853b,578s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,8n,35p,853b,588s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/publi
@@ -1155,10 +1155,10 @@ c/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmri
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmtt10.pfb>
-Output written on template-fi.pdf (17 pages, 283142 bytes).
+Output written on template-fi.pdf (18 pages, 284428 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 278 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 14494 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 321 PDF objects out of 1000 (max. 8388607)
+ 288 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 14502 words of extra memory for PDF output out of 17280 (max. 10000000)
 

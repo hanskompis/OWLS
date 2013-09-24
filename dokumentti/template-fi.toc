@@ -4,19 +4,20 @@
 \contentsline {subsection}{\numberline {2.1}URI, XML ja RDF}{4}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}OWL -ontologiat}{5}{subsection.2.2}
 \contentsline {section}{\numberline {3}Webpalveluiden kuvauskieli OWL-S}{6}{section.3}
-\contentsline {subsection}{\numberline {3.1}Korkean abstraktiotason rakenne}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.1}Korkean abstraktiotason rakenne}{7}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Profiili}{7}{subsection.3.2}
 \contentsline {subsubsection}{\numberline {3.2.1}Ontologioiden tuonti ja viitteet prosessimalliin sek\IeC {\"a} palveluun}{8}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Tuottajainformaatio}{8}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2}Tuottajainformaatio}{9}{subsubsection.3.2.2}
 \contentsline {subsubsection}{\numberline {3.2.3}Toiminnallinen kuvaus}{9}{subsubsection.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.4}Toimintaa kuvaavat ominaisuudet}{9}{subsubsection.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.4}Toimintaa kuvaavat ominaisuudet}{10}{subsubsection.3.2.4}
 \contentsline {subsection}{\numberline {3.3}Prosessi}{10}{subsection.3.3}
 \contentsline {subsubsection}{\numberline {3.3.1}Osapuolet}{10}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Sy\IeC {\"o}tteet ja tulosteet}{10}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Esiehdot ja tulokset}{11}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.2}Sy\IeC {\"o}tteet ja tulosteet}{11}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Esiehdot ja tulokset}{12}{subsubsection.3.3.3}
 \contentsline {subsubsection}{\numberline {3.3.4}Ehdollisten palautusarvojen ja vaikutusten kuvaus}{12}{subsubsection.3.3.4}
 \contentsline {subsubsection}{\numberline {3.3.5}Komposiittiprosessit ja kontrollirakenteet}{13}{subsubsection.3.3.5}
 \contentsline {subsection}{\numberline {3.4}Maadoitus}{14}{subsection.3.4}
+\contentsline {section}{\numberline {4}P\IeC {\"a}\IeC {\"a}telmi\IeC {\"a}}{16}{section.4}
 \contentsline {section}{L\IeC {\"a}hteet}{16}{section*.2}
 \select@language {finnish}
 \select@language {finnish}

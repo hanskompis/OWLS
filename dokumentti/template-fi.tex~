@@ -224,7 +224,7 @@ Edellä on lyhyin esimerkein käyty läpi OWL:n peruskonstruktioita. OWL tarjoaa
 
 \section{Webpalveluiden kuvauskieli OWL-S}
 
-UDDI löytäminen, käyttö, monitorointi
+OWL-S on yksi tapa kuvata web-palveluita siten, että myös kone ymmärtää kuvauksen\cite{OWLS}. OWL-S:llä kuvattu palvelu mahdollistaa mm. automaattisen palveluiden löytämisen, automaattisen palveluiden käytön, sekä useiden palveluiden automaattisen yhdistämisen ja yhteiskäytön\cite{OWLS}. OWL-S tarjoaa luokka- ja ominaisuusrakenteen, jonka avulla palvelukuvaus voidaan muodostaa. Seuraavissa kappaleissä kaydään läpi ontologian karkean tason rakenne sekä sekä eri osa-alueet. Kun dokumentissa tästä eteenpäin käytetään käsitteitä \textit{luokka}, \textit{aliluokka}, \textit{ominaisuus} jne., tarkoitetaan aina OWL:n vastaavia konstruktioita.
 
 \subsection{Korkean abstraktiotason rakenne}
 
@@ -233,14 +233,16 @@ Palveluontologian korkean abstraktiotason rakenne muodostuu kolmen tyyppisestä 
 \begin{itemize}
 
   \item \textit{Mitä palvelu tarjoaa mahdolliselle asiakkaalle?} Tähän antaa vastauksen ontologian \textit{profiili}, joka kertoo karkealla tasolla mitä palvelu tarjoaa. Profiilin 
- avulla palveluntarjoaja voi mainostaa palveluaan potentiaalisille asiakkaille. Profiilissa kerrotan myös, \textit{kuka} palvelun tarjoaa. Jokainen \texttt{Service}-luokka edustaa yhtä \texttt{ServiceProfilea} \cite{OWLS}.
+ avulla palveluntarjoaja voi mainostaa palveluaan potentiaalisille asiakkaille. Profiilissa kerrotaan myös, \textit{kuka} palvelun tarjoaa. Jokainen \texttt{Service}-luokka edustaa yhtä \texttt{ServiceProfilea} \cite{OWLS}.
  
  \item \textit{Kuinka palvelua käytetään?} Ontologian \textit{prosessimalli} antaa vastauksen tähän ja se esitetään luokassa \texttt{ServiceModel}. Palvelun ja sen prosessimallin 
  välillä on \texttt{describedBy} -suhde\cite{OWLS}. 
  
  \item \textit{Miten palvelun kanssa kommunikoidaan?} Tähän antaa vastauksen ontologian \textit{maadoitus}, jossa määritellään esimerkiksi tuki erilaisille viestiprotokollille. 
  \texttt{Service} -luokalla on ominaisuus \texttt{supports}, joka viittaa \texttt{ServiceGrounding} -luokkaan\cite{OWLS}.  
- 
+  
+\end{itemize}
+
  \begin{figure}[ht]
  \centering
  \includegraphics[scale=0.60]{karkea_taso.png}
@@ -248,9 +250,7 @@ Palveluontologian korkean abstraktiotason rakenne muodostuu kolmen tyyppisestä 
  \label{karkea_taso}
 \end{figure}
  
- Kuten kuvasta \ref{karkea_taso}  voidaan nähdä, jokaista julkistettua palvelua kohden on yksi \texttt{Service}-luokan instanssi, joka edustaa \texttt{ServiceProfilea} suhteella \texttt{presents}, on \texttt{ServiceModel}in kuvailema suhteella \texttt{describedBy} ja \texttt{serviceGrounding}in tukema suhteella \texttt{supports}.
- 
-\end{itemize}
+ Kuten kuvasta \ref{karkea_taso}  voidaan nähdä, jokaista julkistettua palvelua kohden on yksi \texttt{Service}-luokan ilmentymä, joka edustaa \texttt{ServiceProfile}-luokkaa ominaisuudella \texttt{presents}, on \texttt{ServiceModel}-luokan kuvailema ominaisuudella \texttt{describedBy} ja \texttt{serviceGrounding}-luokan tukema ominaisuudella \texttt{supports}.
 
 
 \subsection{Profiili}
@@ -534,6 +534,10 @@ WSDL:n operaatiomäärityksiä ei voi sisällyttää tähän raporttiin joten ni
 
 \item \texttt{wsdlOutput} ja \texttt{wsdlOutputMessage} toimivat vastaavasti kuin edelliset, mutta MÄPPÄÄVÄT prosessin paluuarvoja.
 \end{itemize}
+
+\section{Päätelmiä}
+
+
 
 
 % --- Back matter ---

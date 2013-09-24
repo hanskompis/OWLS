@@ -166,7 +166,9 @@ Esimerkistä voimme havaita, että kuvailtava asia on subjekti nimeltään \text
 
 OWL(ja RDFS) mahdollistaa ontologioiden muodostamisen. Tässä kappaleessa käsitellään OWL:n peruskonstruktiot, joiden avulla OWL-S:n ontologiat ovat ymmärrettävissä. OWL käyttää useita RDFS:n konstruktioita, jotka tunnistaa etuliitteestä \texttt{rdfs:}.
 
-OWL:lla on mahdollista määrittää resurssien joukkoja luokiksi (\textit{class}). Luokalla voi olla aliluokkia(\textit{subclass}) ja luokkien jäsenet ovat ilmentymiä (\textit{instance}). Ilmentymiä voidaan kuvata \textit{suhteilla}, joilla voi olla myös \textit{alisuhteita}\cite{owlguide}. Seuraavassa esimerkissä kuvataan ontologia, joka käsittelee polkupyörien valmistajia. Resurssi \textit{Surly} kuuluu luokkaan \textit{Polkupyöräpaja}. Luokkaan kuuluminen ilmaistaan \texttt{rdf:type} -konstruktiolla:
+OWL:lla on mahdollista määrittää resurssien joukkoja luokiksi (\textit{class}). Luokalla voi olla aliluokkia(\textit{subclass}) ja luokkien jäsenet ovat ilmentymiä (\textit{instance}). Ilmentymiä voidaan kuvata \textit{suhteilla}, joilla voi olla myös \textit{alisuhteita}\cite{owlguide}. Seuraavassa polkupyörän valmistajaa kuvaavassa esimerkissä käydään läpi ontologian peruskonstruktioita. 
+
+Resurssi \textit{Surly} kuuluu luokkaan \textit{Polkupyöräpaja}. Luokkaan kuuluminen ilmaistaan \texttt{rdf:type} -konstruktiolla:
 
 \begin{verbatim}
 <owl:Thing rdf:ID="Surly"/>
@@ -213,30 +215,16 @@ määritellään \texttt{subPropertyOf}-konstruktiolla:
 <owl:ObjectTypeProperty>
 \end{verbatim}
 
-Edellä on lyhyin esimerkein käyty läpi OWL:n peruskonstruktioita. OWL tarjoaa myös lukuisan joukon muita konstruktioita, jotka mahdollistavat monipuolisten ontologioiden muodostamisen. 
+Edellä on lyhyin esimerkein käyty läpi OWL:n peruskonstruktioita. OWL tarjoaa myös lukuisan joukon muita konstruktioita, jotka mahdollistavat monipuolisten ontologioiden muodostamisen. Seuraavassa listassa muutamia OWL-S -määrittelyissä vastaan tulevia:
 
-
-
-instanssi
-
-suhde
-
-aliluokka
-
-alisuhde
-
-import
-
-union
-
-disjointWith
-
-risuaitaviittaukset
-
+\begin{itemize}
+ \item \textbf{kardinaalisuusrajoitteet}. Ominaisuudelle voidaan määrätä kardinaalisuusrajoitteita tietyissä sovelluskonteksteissa. Voidaan esimerkiki määritellä, että luokka \textit{Polkupyörä} on joukko asioita, jolla on tasan kaksi \textit{Renkaat} ominaisuutta.
+  \item \textbf{kompleksiset luokat}. OWL mahdollistaa joukko-opilliset operaatiot luokkia muosostettaessa. Voidaan esimerkiksi määritellä, että luokka \textit{Polkupyörä} on luokkien \textit{maastopyörä} ja \textit{maantiepyörä} edustajien yhdiste, unioni. Owl mahdollistaa myös ilmentymäjoukkojen leikkaukset ja komplementit. 
+\end{itemize}
 
 \section{Webpalveluiden kuvauskieli OWL-S}
 
-UDDI löytäminen, käyttö, monitorointi
+OWL-S on yksi tapa kuvata web-palveluita siten, että myös kone ymmärtää kuvauksen\cite{OWLS}. 
 
 \subsection{Korkean abstraktiotason rakenne}
 
@@ -546,6 +534,10 @@ WSDL:n operaatiomäärityksiä ei voi sisällyttää tähän raporttiin joten ni
 
 \item \texttt{wsdlOutput} ja \texttt{wsdlOutputMessage} toimivat vastaavasti kuin edelliset, mutta MÄPPÄÄVÄT prosessin paluuarvoja.
 \end{itemize}
+
+\section{Päätelmiä}
+
+
 
 
 % --- Back matter ---

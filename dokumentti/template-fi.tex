@@ -354,7 +354,7 @@ SERVICE CLASsIFICATION JA SERVICE PRODUCT?
 
 \subsection{Prosessi}
 
-Jotta voidaan tarjota yksityiskohtaista tietoa siitä, miten olla vuorovaikutuksessa palvelun kanssa, esitetään se OWL-S:ssä myös \textit{prosessina}. On tärkeää tietää, että prosessimalli ei ole suortettava ojelma, vaan ainoastaan kuvaus siitä\cite{OWLS}. Se kertoo, kuinka asiakasohjelmisto voi kommunikoida palvelun kanssa. 
+OWL-S:n prosessimalli kertoo kuinka palvelu toimii ja kuinka sen informaatiovirrat kulkevat.  On tärkeää kuitenkin muistaa, että prosessimalli ei ole suoritettava ojelma, vaan ainoastaan kuvaus sen tiominnasta\cite{OWLS}. Se kertoo, kuinka asiakasohjelmisto voi kommunikoida palvelun kanssa. 
 
 Prosessikuvaukset jaetaan kolmeen kategoriaan\cite{OWLS}:
 \begin{enumerate}
@@ -375,11 +375,13 @@ Prosessilla on ainakin kaksi osapuolta (participant): asiakas (client) tai tai p
 Jos prosessilla on myös muita osapuolia, ne ilmaistaan \texttt{hasParticipant} suhteen avulla:
 ESIMERKKI? prosessi - hasParticipant - osapuoli
 
-\subsubsection{Syötteet ja tulosteet}
+\subsubsection{Syötteet ja paluuarvot}
 
 Syötteet kuvaavat prosessin sisään tuleva tietoa\cite{OWLS}. Atomisilla prosesseilla syöte on asiakkaan antama kun taas komposiittiprosesseilla osa syötteistä on asiakkaalta ja osa proessin edeltävän vaiheen tuottamaa. 
 
 Vaikka atomisille prosesseille sallitaan ainoastaan yksi syöte, se voi todellisuudessa koostua useasta syötteestä, koska syötteitä voi BUNDLATA yhdeksi \cite{OWLS}. Tällöin pitää ymmärtää käsite \textit{viesti}, joka on usean syötteen BUNDLATTU kokonaisuus. BUNDLAUS määritellään palvelun maadoituksessa luvussa nnn. 
+
+Syötteet ja paluuarvot ilmaistaan \texttt{hasInput}- ja \texttt{hasOutput} - ominaisuuksilla (jotka siis kuvaavat \textit{prosessia}). Ne voivat saada arvokseen \texttt{input}- ja \texttt{output} -luokan ilmentymiä. Edellämainituilla on kummallakin datatyyppiominaisuus parametrin tyypille ja arvolle\cite{OWLS}. 
 
 BravoAirin prosessikuvauksessa on atominen prosessi \texttt{SelectAvailableFlight}, joka kuvaa prosessin, jossa asiakas valitsee haluamansa lennon saatavilla olevista vaihtoehdoista \cite{daml}. Sillä on on yksi syöte, lista tarjolla olevista lennoista (\textit{SelectAvailableFlight\_FlightsAvailable}), sekä yksi paluuarvo, valittu lento (\textit{SelectAvailableFlight\_SelectedFlight}). Syöte määritellään \textit{hasInput}-tägien sisällä ja vastaavasti paluuarvo \textit{hasOutput} -tägien sisässä\cite{daml}:
 
@@ -413,15 +415,15 @@ Esimerkissä määritellään atominen prosessi tunnuksella \texttt{SelectAvaila
 
 \subsubsection{Esiehdot ja tulokset}
 
-Prosessia ei voi suorittaa, jos sille määrätty esiehto ei täyty\cite{OWLS}. Esiehto on prosessin ominaisuus ja se saa arvokseen lausekkeen (\textit{expression}). ESIMERKKI?
+Prosessia ei voi suorittaa, jos sille määrätty esiehto ei täyty\cite{OWLS}. Esiehto on prosessin ominaisuus ja se saa arvokseen ehtolausekkeen (\textit{Condition}). ESIMERKKI?
 
-Prosessin onnistuminen voi aiheuttaa muutoksen mailman tilassa tai sen, että palvelun kutsuja saa jotain informaatiota palvelulta. Tulos ilmaistaan termillä \textit{Result} ja se liittyy prosessiin ominaisuudella \textit{hasResult}. OWL-S:ssä ei sidota tulosta erikseen paluuarvoon tai muutokseen tilassa, vaan se määritellään \textit{Result}in sisällä\cite{OWLS}. 
+Prosessin onnistuminen voi aiheuttaa muutoksen mailman tilassa tai sen, että palvelun kutsuja saa jotain informaatiota palvelulta. Tuloksen olemassaolo ilmaistaan ominaisuudella \texttt{hasResult}, joka saa arvokseen \textit{Result} -olion.  OWL-S:ssä ei sidota tulosta erikseen paluuarvoon tai muutokseen tilassa, vaan se määritellään \textit{Result} -olion sisällä\cite{OWLS}. 
 
 Seuraavassa aliluvussa käydään läpi koko tuloksen muodostus.
 
 \subsubsection{Ehdollisten palautusarvojen ja vaikutusten kuvaus}
 
-Kun tulos (\texttt{Result}) on määritelty, prosessimalli voi kuvailla sitä neljällä eri ominaisuudella\cite{OWLS}: \texttt{inCondition}, \texttt{hasResultVar}, \texttt{withOutput} ja \texttt{hasEffect}\cite{OWLS}.  
+Kun tulos (\texttt{Result}) on esitelty, prosessimalli voi kuvailla sitä neljällä eri ominaisuudella\cite{OWLS}: \texttt{inCondition}, \texttt{hasResultVar}, \texttt{withOutput} ja \texttt{hasEffect}\cite{OWLS}.  Jokainen edellinen on siis \texttt{result} -oliota kuvaava ominaisuus.  
 
 \texttt{inCondition} kertoo ehdon jonka vallitessa joku tulos on mahdollinen (eikä joku toinen tulos). 
 

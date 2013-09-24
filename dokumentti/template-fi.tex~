@@ -226,6 +226,15 @@ Edellä on lyhyin esimerkein käyty läpi OWL:n peruskonstruktioita. OWL tarjoaa
 
 OWL-S on yksi tapa kuvata web-palveluita siten, että myös kone ymmärtää kuvauksen\cite{OWLS}. OWL-S:llä kuvattu palvelu mahdollistaa mm. automaattisen palveluiden löytämisen, automaattisen palveluiden käytön, sekä useiden palveluiden automaattisen yhdistämisen ja yhteiskäytön\cite{OWLS}. OWL-S tarjoaa luokka- ja ominaisuusrakenteen, jonka avulla palvelukuvaus voidaan muodostaa. Seuraavissa kappaleissä kaydään läpi ontologian karkean tason rakenne sekä sekä eri osa-alueet. Kun dokumentissa tästä eteenpäin käytetään käsitteitä \textit{luokka}, \textit{aliluokka}, \textit{ominaisuus} jne., tarkoitetaan aina OWL:n vastaavia konstruktioita.
 
+\subsection{Ontologioiden muodostamisesta}
+
+Jotta ontologioita voidaan muodostaa, pitää käytössä olla sanastoja, jotka ovat itsekin ontologioita. Sanasto tarjoaa käsitteet, joiden avulla voidaan luoda omia ontologoita. OWL-S:ssä sanaston muodostaa karkeasti ottaen neljä OWL-ontologiaa: \textit{Service.owl}, \textit{Profile.owl}, \textit{Process.owl} ja \textit{Grounding.owl}. 
+
+Näissä ontologioissa on määriteltynä suuri osa luokista ja ominaisuuksista, joita OWL-S -ontologian määrittelemiseen tarvitaan. Nämä käsitteistöt sitten tuodaan oman määrityksen käyttöön OWL:n \texttt{import} -lauseilla. 
+Em. ontologioiden seikkaperäinen läpikäynti ei ole tässä kohtaa järkevää, mutta suositeltavaa on tutustua niihin esimerkiksi \textit{daml.org}:in esimerkkien avulla\cite{daml}. 
+
+Tässä raportissa olevat esimerkit ovat \textit{daml.org}:ista poimittuja ja käsittelevät kuvitteellista lentoyhtiötä ja sen lennonvarauspalvelua \cite{daml}. Lainatut esimerkit eivät muodosta yhtenäistä ja toimivaa ontologiaa, vaan ne on lainattu selkiyttämään raportin joitain kohtia.  
+
 \subsection{Korkean abstraktiotason rakenne}
 
 Palveluontologian korkean abstraktiotason rakenne muodostuu kolmen tyyppisestä tiedosta ja ne vastaavat kolmeen eri kysymykseen \cite{OWLS}:
@@ -236,7 +245,7 @@ Palveluontologian korkean abstraktiotason rakenne muodostuu kolmen tyyppisestä 
  avulla palveluntarjoaja voi mainostaa palveluaan potentiaalisille asiakkaille. Profiilissa kerrotaan myös, \textit{kuka} palvelun tarjoaa. Jokainen \texttt{Service}-luokka edustaa yhtä \texttt{ServiceProfilea} \cite{OWLS}.
  
  \item \textit{Kuinka palvelua käytetään?} Ontologian \textit{prosessimalli} antaa vastauksen tähän ja se esitetään luokassa \texttt{ServiceModel}. Palvelun ja sen prosessimallin 
- välillä on \texttt{describedBy} -suhde\cite{OWLS}. 
+ välillä on \texttt{describedBy} -ominaisuus\cite{OWLS}. 
  
  \item \textit{Miten palvelun kanssa kommunikoidaan?} Tähän antaa vastauksen ontologian \textit{maadoitus}, jossa määritellään esimerkiksi tuki erilaisille viestiprotokollille. 
  \texttt{Service} -luokalla on ominaisuus \texttt{supports}, joka viittaa \texttt{ServiceGrounding} -luokkaan\cite{OWLS}.  
@@ -261,34 +270,37 @@ Profiili tarjoaa kolmenlaista informaatiota \cite{OWLS}:
 \begin{enumerate}
  \item \textit{Tuottajainformaatio} kertoo tietoja palvelun tuottajasta, esimerkiksi ylläpitäjän tai asiakasyhteyshenkilön yhteystiedot. Myös lyhyt tekstikuvaus palvelusta sekä yksikäsitteinen nimi palvelulle määritellään profiilissa\cite{OWLS} .
  
- \item \textit{Toiminnallinen kuvaus} kuvaa (tautologia) palvelun käyttämät \textit{syötteet}, sen tuottamat \textit{tulosteet}, \textit{esiehdot}, jotka tulee olla voimassa ennen määrättyjä
- prosesseja sekä \textit{tilamuutoksia}, joita prosessien suorittaminen aiheuttaa \cite{OWLS}. ESIMERKKEJÄ?? Nämä samat käsitellään myös prosessimallissa, mutta tarkemmalla tasolla. OWL-S ei aseta
+ \item \textit{Toiminnallin kuvauksessa} esitellään palvelun käyttämät \textit{syötteet}, sen tuottamat \textit{paluuarvot}, \textit{esiehdot}, jotka tulee olla voimassa ennen määrättyjä
+ prosesseja sekä \textit{tilamuutokset}, joita prosessien suorittaminen aiheuttaa \cite{OWLS}. Nämä samat käsitellään myös prosessimallissa, mutta tarkemmalla tasolla. OWL-S ei aseta
  rajoitteita sen suhteen, onko profiili ja prosessimalli konsistentit toisiinsa nähden, mutta ollakseen totuudenmukainen palvelun tarjoamien todellisten palvelujen suhteen, tulee profiilin ilmaista
  palvelut yhtenevästi prosessimallin suhteen. 
  
- \item \textit{Toimintaa kuvaavat ominaisuudet} ?? Ensinnäkin palvelu voidaan luokitella jonkun tunnetun luokittelun, esimerkiksi UNSPSC:n [footnote] mukaan. Toiseksi, palvelun laatuluokitus voidaan 
+ \item \textit{Toimintaa kuvaavat ominaisuudet} Ensinnäkin palvelu voidaan luokitella jonkun tunnetun luokittelun, esimerkiksi UNSPSC:n [footnote] mukaan. Toiseksi, palvelun laatuluokitus voidaan 
  ilmaista profiilissa. Profiilin lopussa on määrittelemätön määrä parametreja, joilla voidaan kertoa esimerkiksi palvelun maantieteellisestä saatavuudesta, arvioidusta vasteajasta jne. \cite{OWLS}.
 \end{enumerate}
 
-Seuraavassa käsitellään em. kolmea osa-aluetta sekä profiilitiedoston rakenne tarkemmin. 
+Seuraavissa kappaleissa käsitellään em. kolmea osa-aluetta tarkemmin. 
 
-\subsubsection{Ontologioiden tuonti ja viitteet prosessimalliin sekä palveluun}
 
-Profiilin(-tiedoston) alussa voidaan tuoda ontologian käyttöön muita jo määriteltyjä ontologioita tavallisilla owl:n \texttt{imports}-lauseilla. Esimerkissä tuodaan palvelun pääasiallinen määritelmä \texttt{BravoAirService} ontologian käyttöön\cite{daml}:  
+% \subsubsection{Ontologioiden tuonti ja viitteet prosessimalliin sekä palveluun}
+% 
+% Profiilin(-tiedoston) alussa voidaan tuoda ontologian käyttöön muita jo määriteltyjä ontologioita tavallisilla owl:n \texttt{imports}-lauseilla. Esimerkissä tuodaan palvelun pääasiallinen määritelmä \texttt{BravoAirService} ontologian käyttöön\cite{daml}:  
+% 
+% \begin{verbatim}
+% <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.2/BravoAirService.owl"/>
+% \end{verbatim} 
+% 
+% Jokaista profiilia edustaa palvelu. Viittaus palvelun määritelmään ilmaistaan \texttt{presentedBy}-suhteella\cite{daml}: 
+% 
+% \begin{verbatim}
+% <service:presentedBy rdf:resource="http://www.daml.org/services/owl-s/1.2/BravoAirService.owl#BravoAir_ReservationAgent"/> 
+% \end{verbatim} 
 
-\begin{verbatim}
-<owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.2/BravoAirService.owl"/>
-\end{verbatim} 
 
-Jokaista profiilia edustaa palvelu. Viittaus palvelun määritelmään ilmaistaan \texttt{presentedBy}-suhteella\cite{daml}: 
-
-\begin{verbatim}
-<service:presentedBy rdf:resource="http://www.daml.org/services/owl-s/1.2/BravoAirService.owl#BravoAir_ReservationAgent"/> 
-\end{verbatim} 
 
 \subsubsection{Tuottajainformaatio}
 
-Palveluntarjoajan yhteystiedot on tarkoitettu pääasiassa ihmisten luettavaksi. Yhteyshenkilöitä voidaan luonnollisestikin määritellä useita, esimerkissä ainoastaan yksi\cite{daml}:  
+Palveluntarjoajan yhteystiedot on tarkoitettu pääasiassa ihmisten luettavaksi. Ne ilmaistaan \textit{Profile.owl}:ssä määritetyn \texttt{contactInformation} -ominaisuuden avulla. Yhteyshenkilöitä voidaan luonnollisestikin määritellä useita, esimerkissä ainoastaan yksi\cite{daml}:  
 
 \begin{verbatim}
 <profile:contactInformation>
@@ -303,12 +315,12 @@ Palveluntarjoajan yhteystiedot on tarkoitettu pääasiassa ihmisten luettavaksi.
 
 Yteystietoihin kirjataan usein ylläpitäjän ja/tai kaupallisen edustajan tietoja. 
 
-Palvelun tekstikuvaus kirjoitetaan \texttt{textDescription}-tägin ja nimi \texttt{serviceName}-tägin sisään.  
+Palvelun tekstikuvaus kirjoitetaan \texttt{textDescription}-ominaisuuden ja nimi \texttt{serviceName}-ominaisuuden avulla.  
 
 
 \subsubsection{Toiminnallinen kuvaus}
 
-Toiminnallinen kuvaus ilmaisee mitä toimintoja palvelu tarjoaa ja minkä ehtojen puitteissa. OWL-S \texttt{Profile} ilmaisee kahdenlaista funktionaalisuutta: syötteet ja tulosteet, jotka voidaan ajatella informaatiovirtoina sekä esiehdot ja vaikutukset, jotka voidaan ajatella tilamuutoksina. Edellisiä vastaavat owl-ominaisuudet ovat\cite{OWLS}:
+Toiminnallinen kuvaus ilmaisee mitä toimintoja palvelu tarjoaa ja minkä ehtojen puitteissa. OWL-S:n profiilissa ilmaistaan kahdenlaista funktionaalisuutta: syötteet ja tulosteet, jotka voidaan ajatella informaatiovirtoina sekä esiehdot ja vaikutukset, jotka voidaan ajatella tilamuutoksina. Edellisiä vastaavat owl-ominaisuudet ovat\cite{OWLS}:
 
 \textbf{hasInput}, joka saa arvokseen \texttt{Process}-ontologiassa määriteltyjä \texttt{Input}-luokan ilmentymiä. 
 
@@ -330,15 +342,13 @@ tilamuutos ''istumapaikka löytynyt'' (\textit{HaveSeatResult})\cite{daml}:
  <profile:hasResult rdf:resource="http://www.daml.org/services/owl-s/1.2/BravoAirProcess.owl#HaveSeatResult"/
 \end{verbatim}
 
-Edellisessä esimerkissä on poimittu ainoastaan muutamia toiminnallisia määrityksiä, todelliset määritykset voi katsoa liitteestä nnn. 
+Edellisessä esimerkissä on poimittu ainoastaan muutamia toiminnallisia määrityksiä, todelliset määritykset voi katsoa alkuperäisestä lähteestä\cite{daml}. 
 
 \subsubsection{Toimintaa kuvaavat ominaisuudet}
 
-Edellisessä aliluvussa luettelimme palvelun toiminnallisia ominaisuuksia.
+Ontologiassa on myös mahdollista ilmoittaa palvelun luokitus jossain ontologiassa määriteltyä, mahdollisesti ulkopuolista luokitusta tai taksonomiaa käyttäen. Luokitus ilmaistaan \texttt{serviceCategory}-ominaisuuden avulla ja arvo on \texttt{ServiceCategory}-luokan ilmentymän.  \texttt{ServiceCategory} luokalla on ominaisuuksia kategorian nimen, koodin jne ilmaisuun\cite{OWLS}.
 
-Ontologiassa on myös mahdollista ilmoittaa palvelun luokitus jossain ontologiassa määriteltyä, mahdollisesti ulkopuolista luokitusta tai taksonomiaa käyttäen. Luokitus ilmaistaan \texttt{serviceCategory}-tagien sisällä ja arvo on \texttt{ServiceCategory}-luokan ilmentymän.  \texttt{ServiceCategory} luokalla on ominaisuuksia kategorian nimen, koodin jne ilmaisuun\cite{OWLS}. ESIMERKKI?
-
-Profiilissa voidaan myös ilmaista palvelun tarjoajan tärkeäksi kokemia vapaavalintaisia attribuutteja \texttt{serviceParameter}-ominaisuudella. Parametrille annetaan aina nimi, joka on datatyyppiominaisuus sekä arvo, joka on jonkin olion instanssi\cite{OWLS}. Esimerkiksi palvelulle voidaan määritellä ominaisuus ''BravoAir Geographic Radius'' ja se saa arvoksen ontologiassa määritetyn alueen \texttt{jenkkilä}.
+Profiilissa voidaan myös ilmaista palvelun tarjoajan tärkeäksi kokemia vapaavalintaisia attribuutteja \texttt{serviceParameter} -ominaisuudella. Parametrille annetaan aina nimi, joka on datatyyppiominaisuus sekä arvo, joka on jonkin olion instanssi\cite{OWLS}. Esimerkiksi palvelulle voidaan määritellä ominaisuus ''BravoAir Geographic Radius'' ja se saa arvoksen ontologiassa määritetyn alueen \texttt{jenkkilä}.
 
 SERVICE CLASsIFICATION JA SERVICE PRODUCT?
 

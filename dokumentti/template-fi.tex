@@ -264,7 +264,8 @@ Palveluontologian korkean abstraktiotason rakenne muodostuu kolmen tyyppisestä 
 
 \subsection{Profiili}
 
-Profiili siis kertoo mitä palvelu tekee ja kuka palvelun tarjoaa. Se mahdollistaa asiakkaita (agentteja) löytämään palvelun esimerkikisi keskitetyistä palvelurekistereistä kuten UDDI tai puhtaan P2P:n puitteissa. 
+Profiili siis kertoo mitä palvelu tekee ja kuka palvelun tarjoaa. Se mahdollistaa asiakkaita (agentteja) löytämään palvelun parinlöytöalgoritmien (matchmaking-algorithm) avulla. Tämänhetkinen teollinen standardi palvelujen etsimiseen on ollut UDDI (Universal Description Discovery and Integration), mutta sen ongelmana on ollut palvelujen monipuoliseen kuvaamiseen kykenevän kielen puute. On kuitenkin mahdollista yhdistää UDDI:n rekisterit ja OWL-S -kuvaukset erityisillä integroiduilla parinlöytöalgoritmeilla\cite{owls_approach}. 
+
 Profiili tarjoaa kolmenlaista informaatiota \cite{OWLS}:
 
 \begin{enumerate}
@@ -480,9 +481,9 @@ KUVA!!!
 
 \subsubsection{Komposiittiprosessit ja kontrollirakenteet}
 
-Komposiittiprosessi voidaan hajoittaa atomisiksi prosesseiksi tai komposiittiprosesseiksi\cite{OWLS}. Tämä hajoittaminen voidaan ilmaista kontrollirakenteilla kuten \texttt{Sequence} tai \texttt{If-Then-Else}. Vaikka kontrollirakenteen nimet muistuttavat ohjelmointikielistä tuttuja nimityksiä, on syytä muistaa, että ne \textit{eivät kerro} kuinka niiden kuvaam palvelu toimii vaan miten se \textit{mahdollisesti} toimii\cite{OWLS}. 
+Komposiittiprosessi voidaan hajottaa atomisiksi prosesseiksi tai komposiittiprosesseiksi\cite{OWLS}. Tämä hajoittaminen voidaan ilmaista kontrollirakenteilla kuten \texttt{Sequence} tai \texttt{If-Then-Else}. Vaikka kontrollirakenteen nimet muistuttavat ohjelmointikielistä tuttuja nimityksiä, on syytä muistaa, että ne \textit{eivät kerro} kuinka niiden kuvaama palvelu toimii vaan miten se \textit{mahdollisesti} toimii\cite{OWLS}. 
 
-OWL-S määrittelee luokan \texttt{compositeProcess}, jolla on tasan yksi \texttt{composedOf} -ominaisuus, joka saa arvokseen \texttt{ControlConstruct} - luokan ilmentymän. Jokaisella \texttt{ControlConstruct}:lla on ominaisuus \texttt{components}, joka saa arvokseen toisia kontrollirakenteita\cite{OWLS}. Kontrollirakenteet muodostavat siis puumaisen rakenteen, jonka solmut, jotka eivät ole lehtiä, ovat kontrollirakenteita. Puun lehdet ovat prosessien suoritusta kuvaavia luokkia nimeltään \texttt{Perform}. Jokaisella \texttt{Perform} -luokalla on ominaisuus \texttt{process}, joka viittaa suoritettavaan prosessiin\cite{OWLS}.  Prosessin saamat syötteet määräävät, koska se suoritetaan osana suurempaa kontrollirakennetta. Datavuohon palataan tarkemmin seuraavassa kappaleessa.
+OWL-S määrittelee luokan \texttt{compositeProcess}, jolla on tasan yksi \texttt{composedOf} -ominaisuus, joka saa arvokseen \texttt{ControlConstruct} - luokan ilmentymän. Jokaisella \texttt{ControlConstruct}:lla on ominaisuus \texttt{components}, joka saa arvokseen toisia kontrollirakenteita\cite{OWLS}. Kontrollirakenteet muodostavat siis puumaisen rakenteen, jonka solmut, jotka eivät ole lehtiä, ovat kontrollirakenteita. Puun lehdet ovat prosessien suoritusta kuvaavia luokkia nimeltään \texttt{Perform}. Jokaisella \texttt{Perform} -luokalla on ominaisuus \texttt{process}, joka viittaa suoritettavaan prosessiin\cite{OWLS}.  Prosessin saamat syötteet määräävät, koska se suoritetaan osana suurempaa kontrollirakennetta. Datavuohon palataan tarkemmin seuraavassa kappaleessa. PALATAANKO?
 
 Komposiittirakennetta voidaan voidaan ajatella ''black boxina'', jolloin se voidaan nähdä abstraktina yksinkertaisena prosessina (\textit{simple process}). Vastaavasti yksinkertainen prosessi voidaan nähdä komposiittirakenteena, ''white boxina'' \cite{OWLS}. 
 
@@ -500,7 +501,7 @@ Seuraavassa luetellaan OWL-S:n kontrollirakenteita lyhyiden selostusten kera:
 
 \subsection{Maadoitus}
 
-Palvelun maadoitus kertoo (grounding) kuinka palvelu on saavutettavissa käytännön tasolla. Tärkeimmät maadoitusdokumentin ilmaisemat asiat ovat viestien muoto, viestiprotokollat, sarjallistaminen, osoitteet jne\cite{OWLS}. Voidaan ajatella, että palvelun käytön abstrakti kuvaus MÄPÄTÄÄN  konkreettiselle, käytännön tasolle\cite{OWLS}. 
+Palvelun maadoitus (grounding) kertoo kuinka palvelu on saavutettavissa käytännön tasolla. Tärkeimmät maadoitusdokumentin ilmaisemat asiat ovat viestien muoto, viestiprotokollat, sarjallistaminen, osoitteet jne\cite{OWLS}. Voidaan ajatella, että palvelun käytön abstrakti kuvaus MÄPÄTÄÄN  konkreettiselle, käytännön tasolle\cite{OWLS}. 
 
 OWL-S:n maadoituksen tärkein tehtävä on kertoa kuinka atomisten prosessien syötteet ja paluuarvot muutetaan viesteiksi, jotka voidaan kuljettaa jollain menetelmällä, esim. html-protokollan avulla \cite{OWLS}. 
 
@@ -511,15 +512,15 @@ WSDL:n sopivuus perustuu siihen, että OWL-S:n maadoitus on melko yhdenmukainen 
 
 %\subsubsection{Grounding }
 
-Koska maadoituksen tarkoituksena on MÄPÄTÄ abstrakti kuvaus konkreettisiksi viestinkuljetusoperatioiksi, tulee muodostaa ikään kuin silta OWLS-n ja WSDL:n välille. Siltana toimii OWL-S:n maadoitusdokumentti. \texttt{Grounding} -luokan aliluokan \texttt{WSDLGrounding} ilmentymässä kuvataan \texttt{WSDLAtomicProcessGrounding} -ilmentymiä. Näissä em. ilmentymissä märitellään viitteet OWL-S:n  prosesseista, syötteistä ja paluuarvoista WSDL:n vastaaviin, konkreettisiin määrityksin. 
+Koska maadoituksen tarkoituksena on MÄPÄTÄ abstrakti kuvaus konkreettisiksi viestinkuljetusoperatioiksi, tulee muodostaa ikään kuin silta OWLS-n ja WSDL:n välille. Siltana toimii OWL-S:n maadoitusdokumentti. Siinä kuvataan pääasiassa \texttt{WSDLAtomicProcessGrounding} -ilmentymiä, koska WSDL on useimmiten viestinvaihdon konkreettinen toteutus. Niissä märitellään viitteet OWL-S:n  prosesseista, syötteistä ja paluuarvoista WSDL:n vastaaviin, konkreettisiin määrityksin. 
 
-Seuraavat \texttt{WSDLAtomicProcessGrounding}in ominaisuudet MÄPPÄÄVÄT OWL-S:n konstruktioita WSDL:n vastaaviin (kaikkia ei esitelty):
+Seuraavat \texttt{WSDLAtomicProcessGrounding}in ominaisuudet mahdollistavat OWL-S:n konstruktioiden mäppäyksen WSDL:n vastaaviin (vain tärkeimät esitelty):
 
 \begin{itemize}
-\item \texttt{wsdlDocument} kertoo käytössä olevan WSDL-dokumentin URIn. Kaikki seuraavat viittaukset wsdl-määrityksiin viittaavat tähän dokumenttiin. 
+\item \texttt{wsdlDocument} kertoo käytössä olevan WSDL-dokumentin URIn. Kaikki viittaukset wsdl-määrityksiin viittaavat tähän dokumenttiin. 
 
 \item \texttt{wsdlOperation} viittaa wsdl-dokumentissa määriteltyyn operaatioon, joka vastaa OWL-S:n  atomista prosessia. BravoAir-esimerkissä MÄPÄTÄÄN 
-prosessikuvauksessa oleva \textit{BravoAirProcess.owl\#LogIn} -prosessi WSDL-määrityksen vastaavaan operaatioon \texttt{\#LogIn\_operation}. 
+prosessikuvauksessa oleva \textit{BravoAirProcess.owl\#LogIn} -prosessi WSDL-määrityksen vastaavaan operaatioon \texttt{\#LogIn\_operation}: 
 
 \begin{verbatim}
 <grounding:owlsProcess rdf:resource="http://www.daml.org/services/owl-s/1.2/BravoAirProcess.owl#LogIn"/>
@@ -547,7 +548,13 @@ WSDL:n operaatiomäärityksiä ei voi sisällyttää tähän raporttiin joten ni
 \item \texttt{wsdlOutput} ja \texttt{wsdlOutputMessage} toimivat vastaavasti kuin edelliset, mutta MÄPPÄÄVÄT prosessin paluuarvoja.
 \end{itemize}
 
-\section{Päätelmiä}
+\section{Pohdintaa}
+
+versioasiat
+
+menestynyt tutkimusmaailmassa. \cite{with_owls}
+
+\cite{with_owls}OWL-S could still be improved in a number of ways. First, there is currently no way of describing desirable security and QoS properties for Web Services; there is a dire need for both in the community, and promising work is underway. Second, the process model lacks exception handling, which would allow for a closer alignment with WSDL faults. Third, we plan to update the grounding subontology so that it works with WSDL 2.0. Fourth, further work is needed on algorithms that effectively support discovery, selection, and composition of services in large-scale, complex settings. Fifth, to encourage the community to develop OWL-S extensions, we are contemplating the prospect of adopting an open-source style of code evolution. Finally, as in other areas of the Semantic Web, we need more domain-level ontologies; there is a need to develop specializations of OWL-S profiles for a variety of domains, and for broad categories of services; in addition, for services that sell goods, ontology modules are needed for specifying cost models, negotiations, contracts, and guarantees.
 
 
 

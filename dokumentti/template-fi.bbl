@@ -70,6 +70,22 @@
 \newblock {\latintext
   \btxurlfont{http://www.springerlink.com/index/10.1007/s11280-007-0033-x}}.
 
+\bibitem {owls_approach}
+\btxnamefont {\btxlastnamefont {Martin}, David}, \btxnamefont {\btxlastnamefont
+  {Paolucci}, Massimo}, \btxnamefont {\btxlastnamefont {McIlraith}, Sheila},
+  \btxnamefont {\btxlastnamefont {Burnstein}, Mark}, \btxnamefont
+  {\btxlastnamefont {McDermott}, Drew}, \btxnamefont {\btxlastnamefont
+  {McGuinness}, Deborah}, \btxnamefont {\btxlastnamefont {Parsia}, Bijan},
+  \btxnamefont {\btxlastnamefont {Payne}, Terry\btxfnamespacelong R},
+  \btxnamefont {\btxlastnamefont {Sabou}, Marta}, \btxnamefont
+  {\btxlastnamefont {Solanki}, Monika}\btxandcomma {} \btxandlong {}\
+  \btxnamefont {\btxlastnamefont {al.}~et}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {Bringing semantics to web services: The owl-s
+  approach}{Bringing Semantics to Web Services: The OWL-S Approach}}.
+\newblock \btxjournalfont {Lecture Notes in Computer Science}, 3387(Swswpc
+  2004):26 -- 42, 2004.
+\newblock {\latintext \btxurlfont{http://eprints.soton.ac.uk/263000/}}.
+
 \bibitem {daml}
 \btxnamefont {\btxlastnamefont {OWL-S-Coalition}}\btxauthorcolon\ \btxtitlefont
   {\btxifchangecase {Owl-s 1.2 release: Examples}{OWL-S 1.2 Release:

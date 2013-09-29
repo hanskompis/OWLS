@@ -117,11 +117,11 @@
 
 \section{Johdanto}
 
-World Wide Web (WWW) tarjoaa staattisen informaation lisäksi palveluita. Web-palvelu voi yksinkertaisimmillaan palauttaa informaatiota pyynnön saatuaan tai monimutkaisemmassa tapauksessa voidaan tehdä  esimerkiksi ostos, jossa veloitetaan luottokorttia ja muodostetaan toimitettava tilaus\cite{with_owls}. 
+World Wide Web (WWW) tarjoaa staattisen informaation lisäksi palveluita. Web-palvelu voi yksinkertaisimmillaan pyynnön saatuaan palauttaa informaatiota tai monimutkaisemmassa tapauksessa voidaan tehdä  esimerkiksi ostos, jossa veloitetaan luottokorttia ja muodostetaan toimitettava tilaus\cite{with_owls}. 
 
-Ohjelmoijan on varsin helppo tuottaa ohjelma, joka käyttää web-palvelua. Tekniikoita palveluiden käyttämiseen on monia, mutta yleinen tapa on lähettää palvelulle viesti, joka on koodattu sovitulla tavalla, esimerkiksi XML:llä tai Jsonilla. Erilaiset datatyypit ja viestien (ja niiden osien) muodot voidaan  selostaa esimerkikisi WSDL-dokumentissa \cite{WSDL}. Edellä mainittujen tekniikoiden toteuttaminen ei nykyaikaisilla ohjelmistokirjastiolle ja IDE:illä ole edes monimutkaista. Mutta olipa tekniikka mikä tahansa, tässä muodossa palvelun käyttö vaatii aina \textit{ihmisen} puuttumisen asiaan. \textit{ihminen} on se, joka hakee palvelun. \textit{ihminen} on se, joka tutkii palvelun kuvauksen ja muokkaa oman ohjelmansa (tai palvelun) käyttämään sitä. 
+Ohjelmoijan on varsin helppo tuottaa ohjelma, joka käyttää web-palvelua. Tekniikoita palveluiden käyttämiseen on monia, mutta yleinen tapa on lähettää palvelulle viesti, joka on koodattu sovitulla tavalla, esimerkiksi XML:llä tai Jsonilla. Viestien vaihto toteutetaan jotain protokollaa käyttäen. Viestien rakenne sekä viestiprotokollat voidaan  selostaa esimerkiksi WSDL-dokumentissa \cite{WSDL}. Web-palvelua käyttävän asiakasohjelmiston toteuttaminen ei nykyaikaisilla ohjelmistokirjastiolle ja IDE\footnote{Integroitu kehitysympäristö, Integrated Development Environment} :illä ole edes monimutkaista. Mutta olipa tekniikka mikä tahansa, tässä muodossa palvelun käyttö vaatii aina ihmisen panosta. \textit{Ihminen} on se, joka hakee palvelun. \textit{Ihminen} on se, joka tutkii palvelun kuvauksen ja muokkaa oman ohjelmansa (tai palvelun) käyttämään sitä. 
 
-Mutta mitä \textit{emme} voi löytää WSDL-kuvauksesta, on se, mitä palvelussa tapahtuu, kun sitä käytetään\cite{with_owls}. Jotta voidaan välttää ihmisen osallistumien web-palvelujen orkestrointiin, tulee olla \textit{automaattisia ohjelmistoagentteja}, jotka etsivät oikeat palvelut ja käyttävät niitä automaattisesti, ilman ihmisen puuttumista asiaan\cite{with_owls}.
+Mutta WSDL-kuvauksesta emme voi löytää kuvausta siitä, mitä palvelussa tapahtuu, kun sitä käytetään\cite{with_owls}. Jotta voidaan välttää ihmisen osallistumien web-palvelujen koostamiseen, tulee olla käytössä \textit{automaattisia ohjelmistoagentteja}, jotka etsivät oikeat palvelut ja käyttävät niitä automaattisesti, ilman ihmisen puuttumista asiaan\cite{with_owls}.
 
 Automaattinen ohjelmistoagentti mahdollistaisi esimerkiksi:
 
@@ -131,7 +131,7 @@ Automaattinen ohjelmistoagentti mahdollistaisi esimerkiksi:
 \item \textit{Kuluttaja haluaa löytää haluamansa tuotteen mahdollisimman halvalla jostain verkkokauasta. Ohjelmistoagenttia hyödyntävä ohjelma hakee tuotteen hintaa ja saatavuutta useista verkkokaupoista, jotka ovat koodanneet kataloginsa jotain standardoitua sanastoa käyttäen. Sanastojen ei edes tarvitse olla samat eri verkkokaupoilla}\cite{with_owls}. 
 \end{itemize}
 
-Ohjelmistoagenteille tulisi siis pystyä antamaan tarvittava informaatio muodossa, jota se ymmärtää. \textit{Semanttinen web} voi tarjota ratkaisun tähän. Vuonna 2001 Tim Berners-Lee, James Hendler ja Ora Lassila julkaisivat artikkelin "the Semantic Web", jossa he
+Ohjelmistoagenteille tulisi siis pystyä tarjoamaan tarvittava informaatio muodossa, jota se ymmärtää. \textit{Semanttinen web} voi tarjota ratkaisun tähän. Vuonna 2001 Tim Berners-Lee, James Hendler ja Ora Lassila julkaisivat artikkelin "the Semantic Web", jossa he
 luonnehtivat semanttista webiä seuraavasti:
 \begin{quote}
 "Semanttinen web ei ole erillinen web vaan
@@ -139,18 +139,18 @@ laajennos tämänhetkiseen webiin, jossa informaatiolle on annettu hyvin muotoil
 merkitys mahdollistaen koneiden ja ihmisten paremman yhteistyön.[suomennos kirjoittajan]\cite{semweb}
 \end{quote}
 
-Ohjelmistoagenttien tulee pystyä \textit{ymmärtämään} \textit{mitä} palveluntarjoaja tarjoaa ja \textit{miten} palvelu tuotetaan. Tunnetusti kone ei ymmärrä ihmisen ymmärtämää teksti-informaatiota. Koneelle pitää siis tarjota mahdollisuus ymmärtää käsitteitä, antaa mahdollisuus luoda uutta ymmärrystä käsitteiden ja käsitteiden välisten suhteiden pohjalta. Koneen tulee pystyä ymmärtämään \textit{semantiikoita}. 
+Ohjelmistoagenttien tulee pystyä ymmärtämään \textit{mitä} palveluntarjoaja tarjoaa ja \textit{miten} palvelu tuotetaan. Tunnetusti kone ei ymmärrä ihmisen ymmärtämää teksti-informaatiota. Koneelle pitää siis tarjota mahdollisuus ymmärtää käsitteitä, antaa mahdollisuus luoda uutta tietoa käsitteiden ja käsitteiden välisten suhteiden pohjalta. Koneen tulee ymmärtää \textit{semantiikoita}. 
 
-Webissä semantiikoita ilmaistaa ontologioilla, jotka tietojenkäsittelytieteessä ymmärretään dokumentteina, joissa kerrotaan asioiden välisistä yhteyksistä\cite{semweb}. Kun web-palveluita kuvataan ontologioiden avulla, tulee käytössä olla kuvaamiseen soveltuva \textit{sanasto}, ontologia. Yksi mahdollinen tällainen sanasto on OWL-S, joka tulee sanoista Web Ontology Language for Services. OWL-S tarjoaa luokat ja ominaisuudet, joiden avulla web-palvelu voidaan kuvata koneen ymmärtämässä muodossa. Jotta voimme ymmärtää OWL-S:llä tuotettuja ontologioita, pitää ensin tutustua soveltuvin osin OWL (Web Ontology Language) :ään ja sen kostruktioihin, joiden avulla web-palveluontologioita voidaan muodostaa. 
+Internetissä semantiikoita ilmaistaa ontologioilla, jotka tietojenkäsittelytieteessä ymmärretään dokumentteina, joissa kerrotaan asioiden välisistä yhteyksistä\cite{semweb}. Kun web-palveluita kuvataan ontologioiden avulla, tulee käytössä olla nimenomaan palveluiden kuvaamiseen soveltuva \textit{sanasto}, ontologia. Yksi mahdollinen tällainen sanasto on OWL-S, joka tulee sanoista Web Ontology Language for Services. OWL-S tarjoaa luokat ja ominaisuudet, joiden avulla web-palvelu voidaan kuvata koneen ymmärtämässä muodossa\cite{OWL}. Jotta voimme ymmärtää OWL-S:llä tuotettuja ontologioita, pitää ensin tutustua soveltuvin osin OWL (Web Ontology Language) :ään ja sen kostruktioihin, joiden avulla web-palveluontologioita voidaan muodostaa. 
 
 \section{Web-ontologiakieli OWL}
 
-World Wide Web Consortium on antanut OWL:lle suosituksen standardiksi vuonna 2004\cite{owlguide}. Uudempi suositus on OWL 2:lle vuodelta 2012. OWL kielenä perustuu muutamiin jo aiemmin määriteltyihin merkintätapoihin ja konsepteihin, kuten XML:ään ja RDF:ään ja URI:in .
+World Wide Web Consortium on antanut OWL:lle suosituksen standardiksi vuonna 2004\cite{owlguide}. Uudempi suositus on OWL 2:lle vuodelta 2012. OWL kielenä perustuu muutamiin jo aiemmin määriteltyihin merkintätapoihin ja konsepteihin, kuten URI:in, XML:ään ja RDF:ään .
 
 \subsection{URI, XML ja RDF}
 
 Semanttisessa webissä määritettyjä luokkia, ilmentymiä ja niiden välisiä suhetita identifioidaan URI:en avulla\cite{semweb}.
-URI (Uniform Resource Identifier) on standardi resurssien identifioimiseen. Useimmiten URI:na käytetään tavallista URL:ia (Uniform Resource Locator). Identifiointi on tärkeää, koska näin pystytään erottelemaan jo luodut resurssit itse luoduista resursseista. 
+URI (Uniform Resource Identifier) on standardi resurssien identifioimiseen. Useimmiten URI:na käytetään tavallista URL:ia (Uniform Resource Locator). Identifiointi on tärkeää, koska näin pystytään erottelemaan jo luodut resurssit itse luoduista resursseista\cite{semweb}. 
 
 XML-kieli on notaatio rakenteisen kielen esittämiseen. Useimmiten semanttisessa webissä tietoa kuvataan nimenomaan XML-tiedostoina, koska ne ovat helposti koneen tulkittavissa. XML:n nimiavaruudet helpottavat resurssien identifioimista URI:en avulla. 
 
@@ -160,25 +160,27 @@ RDF (Resource Description Framework) on yksinkertainen tapa kuvailla webissä ol
 ESIMERKKI
 
 
-Esimerkistä voimme havaita, että kuvailtava asia on subjekti nimeltään \textit{matti}, jota kuvataan suhteella \textit{veli} joka saa arvokseen \textit{teppo}. Tämänkaltainen XML-kielinen notaatio on OWL:n (ja OWL-S:n) ontologioiden kuvaamisen syntaktinen ydin. Pelkkä RDF -syntaksi ei kuitenkaan riitä, koska ontologioiden (semantiikoiden) kuvaamiseen tarvitaan myös monimutkaisempia abstraktioita, kuten \textit{luokka}, \textit{aliluokka}, \textit{ilmentymä}, \textit{suhde} ja \textit{alisuhde}. Nämä konstruktiot tarjoaa RDF:n semanttinen laajennos RDF Schema (RDFS) sekä OWL, joka käyttää suurta osaa RDFS:n konstruktioita lähes sellaisenaan.  Seuraavassa kappaleessa käyn läpi pintapuolisesti RDFS:n ja OWL:n konstruktiot, jotka auttavat ymmärtämään OWL-S -ontologian rakenteen.
+Esimerkistä voimme havaita, että kuvailtava asia on subjekti nimeltään \textit{matti}, jota kuvataan suhteella \textit{veli} joka saa arvokseen \textit{teppo}. Tämänkaltainen XML-kielinen notaatio on OWL:n (ja OWL-S:n) ontologioiden kuvaamisen syntaktinen ydin. Pelkkä RDF -syntaksi ei kuitenkaan riitä, koska ontologioiden (semantiikoiden) kuvaamiseen tarvitaan myös monimutkaisempia abstraktioita, kuten \textit{luokka}, \textit{aliluokka}, \textit{ilmentymä}, \textit{suhde} ja \textit{alisuhde}. Nämä konstruktiot tarjoaa RDF:n semanttinen laajennos RDF Schema (RDFS) sekä OWL, joka käyttää suurta osaa RDFS:n konstruktioita lähes sellaisenaan.  Seuraavassa kappaleessa käydään läpi keskeiset RDFS:n ja OWL:n konstruktiot, jotka auttavat ymmärtämään OWL-S -ontologian rakenteen.
 
 \subsection{OWL -ontologiat}
 
-OWL(ja RDFS) mahdollistaa ontologioiden muodostamisen. Tässä kappaleessa käsitellään OWL:n peruskonstruktiot, joiden avulla OWL-S:n ontologiat ovat ymmärrettävissä. OWL käyttää useita RDFS:n konstruktioita, jotka tunnistaa etuliitteestä \texttt{rdfs:}.
+OWL (ja RDFS) mahdollistaa ontologioiden muodostamisen.
+%Tässä kappaleessa käsitellään OWL:n peruskonstruktiot, joiden avulla OWL-S:n ontologiat ovat ymmärrettävissä. 
+OWL käyttää useita RDFS:n konstruktioita ja ne tunnistaa etuliitteestä \texttt{rdfs:}.
 
-OWL:lla on mahdollista määrittää resurssien joukkoja luokiksi (\textit{class}). Luokalla voi olla aliluokkia(\textit{subclass}) ja luokkien jäsenet ovat ilmentymiä (\textit{instance}). Ilmentymiä voidaan kuvata \textit{suhteilla}, joilla voi olla myös \textit{alisuhteita}\cite{owlguide}. Seuraavassa polkupyörän valmistajaa kuvaavassa esimerkissä käydään läpi ontologian peruskonstruktioita. 
+OWL:lla on mahdollista määrittää resurssien joukkoja luokiksi (\textit{class}). Luokalla voi olla aliluokkia(\textit{subclass}) ja luokkien jäsenet ovat ilmentymiä (\textit{instance}). Ilmentymiä voidaan kuvata suhteilla (\textit{property}), joilla voi olla myös alisuhteita (\textit{subproperty})\cite{owlguide}. OWL-ontologioiden pohjalta voidaan päätellä asioita, joita ei ole eksplisiittisesti ontologiaan määritelty sekä yhdistellä jo olemassa olevia ontologioita \cite{owlguide}. Seuraavassa polkupyörän valmistajaa kuvaavassa esimerkissä käydään läpi ontologian peruskonstruktioita. 
 
-Resurssi \textit{Surly} kuuluu luokkaan \textit{Polkupyöräpaja}. Luokkaan kuuluminen ilmaistaan \texttt{rdf:type} -konstruktiolla:
+Resurssi \textit{Nopsa} kuuluu luokkaan \textit{Polkupyöräpaja}. Luokkaan kuuluminen ilmaistaan \texttt{rdf:type} -konstruktiolla:
 
 \begin{verbatim}
-<owl:Thing rdf:ID="Surly"/>
+<owl:Thing rdf:ID="Nopsa"/>
 
-<owl:Thing rdf:about="Surly">
+<owl:Thing rdf:about="Nopsa">
     <rdf:type= rdf:resource="Polkupyorapaja"/>
 </owl:Thing>
 \end{verbatim} 
 
-\textit{Polkupyorapaja} on luokan \textit{Liikeyritys} aliluokka ja ilmaistaan konstruktiolla \texttt{subClassOf}: 
+\textit{Polkupyorapaja} on luokan \textit{Liikeyritys} aliluokka ja ilmaistaan konstruktiolla \texttt{rdfs:subClassOf}: 
 
 \begin{verbatim}
 <owl:Class rdf:ID="Polkupyöräpaja">
@@ -186,7 +188,9 @@ Resurssi \textit{Surly} kuuluu luokkaan \textit{Polkupyöräpaja}. Luokkaan kuul
 </owl:Class>
 \end{verbatim}
 
-Resursseja kuvataan \textit{ominaisuuksilla}. Ominaisuuksilla voi olla \textit{aliominaisuuksia}. Ominaisuus voi viitata joko olioon (luokkaominaisuus) tai arvoliteraalin (datatyyppiominaisuus). Ominaisuuden sovellusalue ilmaistaan \texttt{rdfs:domain} -konstruktiolla ja arvojoukko \texttt{rdfs:range} -konstruktiolla. Seuraavassa esimerkissä 
+Tästä syystä resurssi Nopsa on myös liikeyritys kuten kaikki luokkaan \textit{Polkupyöräpaja} kuuluvat yritykset. 
+
+Resursseja kuvataan \textit{ominaisuuksilla}. Ominaisuuksilla voi olla \textit{aliominaisuuksia}. Ominaisuus voi viitata joko olioon (luokkaominaisuus) tai arvoliteraalin (datatyyppiominaisuus)\cite{owlguide}. Ominaisuuden sovellusalue ilmaistaan \texttt{rdfs:domain} -konstruktiolla ja arvojoukko \texttt{rdfs:range} -konstruktiolla. Seuraavassa esimerkissä 
 määritellään luokan \textit{Polkupyorapaja} luokkaominaisuus \textit{Sijaitsee}, joka voi saada arvoksi luokan \textit{Kaupunki} ilmentymiä.
 
 \begin{verbatim}
@@ -195,6 +199,8 @@ määritellään luokan \textit{Polkupyorapaja} luokkaominaisuus \textit{Sijaits
         <rdfs:range rdf:resource="Kaupunki" />
     </owl:ObjectProperty>
 \end{verbatim}
+
+Polkupyöräpaja ei voi siis saada sijainikseen esimerkiksi \textit{eläin} -luokan ilmentymiä.
 
 \textit{Polkupyöräpaja}lle voidaan määritellä myös datatyyppiominaisuus \textit{postinumero}, joka voi saada arvokseen XMLSchemassa määritetyn arvon \textit{integer}:
 
@@ -205,35 +211,35 @@ määritellään luokan \textit{Polkupyorapaja} luokkaominaisuus \textit{Sijaits
 <owl:dataTypeProperty>
 \end{verbatim}
 
-Samoin kuin luokalla voi olla aliluokka, ominaisuudella voi olla aliominaisuus. Esimerkiksi ominaisuus \texttt{Sijaitsee} voi olla ominaisuuden \texttt{Yritystieto} aliominaisuus. Aliominaisuus
-määritellään \texttt{subPropertyOf}-konstruktiolla:
+Samoin kuin luokalla voi olla aliluokka, ominaisuudella voi olla aliominaisuus\cite{owlguide}. Esimerkiksi ominaisuus \texttt{Sijaitsee} voi olla ominaisuuden \texttt{Yritystieto} aliominaisuus. Aliominaisuus määritellään \texttt{rdfs:subPropertyOf}-konstruktiolla:
 
 \begin{verbatim}
 <owl:ObjectProperty rdf:ID="Sijaitsee">
-    <rdfs:subPropertyOf rdf:resource="yritystieto">
-    . . .
+    <rdfs:subPropertyOf rdf:resource="Yritystieto">
+    ...
 <owl:ObjectTypeProperty>
 \end{verbatim}
 
-Edellä on lyhyin esimerkein käyty läpi OWL:n peruskonstruktioita. OWL tarjoaa myös lukuisan joukon muita konstruktioita, jotka mahdollistavat monipuolisten ontologioiden muodostamisen. Seuraavassa listassa muutamia OWL-S -määrittelyissä vastaan tulevia:
+Edellä on lyhyin esimerkein käyty läpi OWL:n tärkeimät konstruktiot. OWL tarjoaa myös lukuisan joukon muita konstruktioita, jotka mahdollistavat monipuolisten ontologioiden muodostamisen. Seuraavassa listassa muutamia OWL-S -määrittelyissä vastaan tulevia:
 
 \begin{itemize}
- \item \textbf{kardinaalisuusrajoitteet}. Ominaisuudelle voidaan määrätä kardinaalisuusrajoitteita tietyissä sovelluskonteksteissa. Voidaan esimerkiki määritellä, että luokka \textit{Polkupyörä} on joukko asioita, jolla on tasan kaksi \textit{Renkaat} ominaisuutta.
-  \item \textbf{kompleksiset luokat}. OWL mahdollistaa joukko-opilliset operaatiot luokkia muosostettaessa. Voidaan esimerkiksi määritellä, että luokka \textit{Polkupyörä} on luokkien \textit{maastopyörä} ja \textit{maantiepyörä} edustajien yhdiste, unioni. Owl mahdollistaa myös ilmentymäjoukkojen leikkaukset ja komplementit. 
+ \item \textbf{kardinaalisuusrajoitteet}. Ominaisuudelle voidaan määrätä kardinaalisuusrajoitteita tietyissä sovelluskonteksteissa (esim. palveluontologioissa)\cite{owlguide}. Voidaan esimerkiki määritellä, että luokka \textit{Polkupyörä} on joukko asioita, jolla on tasan kaksi \textit{Renkaat} ominaisuutta.
+  \item \textbf{kompleksiset luokat}. OWL mahdollistaa joukko-opilliset operaatiot luokkia muodostettaessa\cite{owlguide}. Voidaan esimerkiksi määritellä, että luokka \textit{Polkupyörä} on luokkien \textit{maastopyörä} ja \textit{maantiepyörä} edustajien yhdiste, unioni. Owl mahdollistaa myös ilmentymäjoukkojen leikkaukset ja komplementit. 
+\item \textit{ontologioiden tuonti}. OWL- ontologioiden muodostus on tehokasta, koska kaikkea ei tarvitse määrittää itse. Ontologiaan on mahdollista tuoda muita ontologioita \texttt{import} -lauseilla\cite{owlguide}. 
 \end{itemize}
 
 \section{Webpalveluiden kuvauskieli OWL-S}
 
-OWL-S on yksi tapa kuvata web-palveluita siten, että myös kone ymmärtää kuvauksen\cite{OWLS}. OWL-S:llä kuvattu palvelu mahdollistaa mm. automaattisen palveluiden löytämisen, automaattisen palveluiden käytön, sekä useiden palveluiden automaattisen yhdistämisen ja yhteiskäytön\cite{OWLS}. OWL-S tarjoaa luokka- ja ominaisuusrakenteen, jonka avulla palvelukuvaus voidaan muodostaa. Seuraavissa kappaleissä kaydään läpi ontologian karkean tason rakenne sekä sekä eri osa-alueet. Kun dokumentissa tästä eteenpäin käytetään käsitteitä \textit{luokka}, \textit{aliluokka}, \textit{ominaisuus} jne., tarkoitetaan aina OWL:n vastaavia konstruktioita.
+OWL-S on eräs, mutta ei ainoa, tapa kuvata web-palveluita siten, että myös kone ymmärtää kuvauksen\cite{OWLS}. OWL-S:llä kuvattu palvelu mahdollistaa  automaattisen palveluiden löytämisen, automaattisen palveluiden käytön, sekä useiden palveluiden automaattisen yhdistämisen ja yhteiskäytön\cite{OWLS}. OWL-S tarjoaa luokka- ja ominaisuusmääritelmät ja -rakenteen, jonka avulla palvelukuvaus voidaan muodostaa. Seuraavissa kappaleissä kaydään läpi ontologian karkean tason rakenne sekä sekä eri osa-alueet. Kun dokumentissa tästä eteenpäin käytetään käsitteitä \textit{luokka}, \textit{aliluokka}, \textit{ominaisuus} jne., tarkoitetaan aina OWL:n vastaavia konstruktioita.
 
 \subsection{Ontologioiden muodostamisesta}
 
-Jotta ontologioita voidaan muodostaa, pitää käytössä olla sanastoja, jotka ovat itsekin ontologioita. Sanasto tarjoaa käsitteet, joiden avulla voidaan luoda omia ontologoita. OWL-S:ssä sanaston muodostaa karkeasti ottaen neljä OWL-ontologiaa: \textit{Service.owl}, \textit{Profile.owl}, \textit{Process.owl} ja \textit{Grounding.owl}. 
+Jotta ontologioita voidaan muodostaa, pitää käytössä olla sanastoja, jotka ovat itsekin ontologioita. Sanasto tarjoaa käsitteet, joiden avulla voidaan luoda omia ontologoita. OWL-S:ssä sanaston muodostaa karkeasti ottaen neljä OWL-ontologiaa: \textit{Service.owl}, \textit{Profile.owl}, \textit{Process.owl} ja \textit{Grounding.owl}\cite{OWLS}. 
 
-Näissä ontologioissa on määriteltynä suuri osa luokista ja ominaisuuksista, joita OWL-S -ontologian määrittelemiseen tarvitaan. Nämä käsitteistöt sitten tuodaan oman määrityksen käyttöön OWL:n \texttt{import} -lauseilla. 
-Em. ontologioiden seikkaperäinen läpikäynti ei ole tässä kohtaa järkevää, mutta suositeltavaa on tutustua niihin esimerkiksi \textit{daml.org}:in esimerkkien avulla\cite{daml}. 
+Näissä ontologioissa on määriteltynä suuri osa luokista ja ominaisuuksista, joita OWL-S -ontologian määrittelemiseen tarvitaan. Nämä käsitteistöt sitten tuodaan oman määrityksen käyttöön \texttt{import} -lauseilla. 
+Em. ontologioiden seikkaperäinen läpikäynti ei ole tässä kohtaa järkevää, mutta suositeltavaa on tutustua niihin esimerkiksi \textit{daml.org}:sta löytyvien esimerkkien avulla\cite{daml}. 
 
-Tässä raportissa olevat esimerkit ovat \textit{daml.org}:ista poimittuja ja käsittelevät kuvitteellista lentoyhtiötä ja sen lennonvarauspalvelua \cite{daml}. Lainatut esimerkit eivät muodosta yhtenäistä ja toimivaa ontologiaa, vaan ne on lainattu selkiyttämään raportin joitain kohtia.  
+Kannattaa huomioida, että tässä raportissa olevat esimerkit ovat \textit{daml.org}:ista poimittuja ja käsittelevät kuvitteellista lentoyhtiötä ja sen lennonvarauspalvelua \cite{daml}. Lainatut esimerkit eivät muodosta yhtenäistä ja toimivaa ontologiaa, vaan ne on lainattu selkiyttämään OWL-S:n abstrakteja käsiterakenteita.
 
 \subsection{Korkean abstraktiotason rakenne}
 
@@ -242,31 +248,29 @@ Palveluontologian korkean abstraktiotason rakenne muodostuu kolmen tyyppisestä 
 \begin{itemize}
 
   \item \textit{Mitä palvelu tarjoaa mahdolliselle asiakkaalle?} Tähän antaa vastauksen ontologian \textit{profiili}, joka kertoo karkealla tasolla mitä palvelu tarjoaa. Profiilin 
- avulla palveluntarjoaja voi mainostaa palveluaan potentiaalisille asiakkaille. Profiilissa kerrotaan myös, \textit{kuka} palvelun tarjoaa. Jokainen \texttt{Service}-luokka edustaa yhtä \texttt{ServiceProfilea} \cite{OWLS}.
+ avulla palveluntarjoaja voi mainostaa palveluaan potentiaalisille asiakkaille. Profiilissa kerrotaan myös, \textit{kuka} palvelun tarjoaa. Jokaista \texttt{Service}-luokka edustaa yksi \texttt{ServiceProfile} \cite{OWLS} oninaisuudella \texttt{presents}. 
  
- \item \textit{Kuinka palvelua käytetään?} Ontologian \textit{prosessimalli} antaa vastauksen tähän ja se esitetään luokassa \texttt{ServiceModel}. Palvelun ja sen prosessimallin 
- välillä on \texttt{describedBy} -ominaisuus\cite{OWLS}. 
+ \item \textit{Kuinka palvelua käytetään?} Ontologian \textit{prosessimalli} antaa vastauksen tähän ja se esitetään luokassa \texttt{ServiceModel}. Palvelun ja sen prosessimallin välillä on \texttt{describedBy} -ominaisuus\cite{OWLS}. 
  
- \item \textit{Miten palvelun kanssa kommunikoidaan?} Tähän antaa vastauksen ontologian \textit{maadoitus}, jossa määritellään esimerkiksi tuki erilaisille viestiprotokollille. 
- \texttt{Service} -luokalla on ominaisuus \texttt{supports}, joka viittaa \texttt{ServiceGrounding} -luokkaan\cite{OWLS}.  
+ \item \textit{Miten palvelun kanssa kommunikoidaan?} Tähän antaa vastauksen ontologian \textit{maadoitus}, jossa määritellään esimerkiksi tuki erilaisille viesteille ja  viestiprotokollille. \texttt{Service} -luokalla on ominaisuus \texttt{supports}, joka viittaa \texttt{ServiceGrounding} -luokkaan\cite{OWLS}.  
   
 \end{itemize}
 
  \begin{figure}[ht]
  \centering
  \includegraphics[scale=0.60]{karkea_taso.png}
- \caption{OWL-S:llä kuvatun palveluontologian korkean taon rakenne \cite{OWLS}}
+ \caption{OWL-S:llä kuvatun palveluontologian korkean taon rakenne \cite{OWLS}. Jokaista julkistettua palvelua kohden on yksi \texttt{Service}-luokan ilmentymä, jota edustaa \texttt{ServiceProfile}-luokka ominaisuudella \texttt{presents}, on \texttt{ServiceModel}-luokan kuvailema ominaisuudella \texttt{describedBy} ja \texttt{serviceGrounding}-luokan tukema ominaisuudella \texttt{supports}}
  \label{karkea_taso}
 \end{figure}
  
- Kuten kuvasta \ref{karkea_taso}  voidaan nähdä, jokaista julkistettua palvelua kohden on yksi \texttt{Service}-luokan ilmentymä, joka edustaa \texttt{ServiceProfile}-luokkaa ominaisuudella \texttt{presents}, on \texttt{ServiceModel}-luokan kuvailema ominaisuudella \texttt{describedBy} ja \texttt{serviceGrounding}-luokan tukema ominaisuudella \texttt{supports}.
+ %Kuten kuvasta \ref{karkea_taso}  voidaan nähdä, jokaista julkistettua palvelua kohden on yksi \texttt{Service}-luokan ilmentymä, joka edustaa \texttt{ServiceProfile}-luokkaa ominaisuudella \texttt{presents}, on \texttt{ServiceModel}-luokan kuvailema ominaisuudella \texttt{describedBy} ja \texttt{serviceGrounding}-luokan tukema ominaisuudella \texttt{supports}.
 
 
 \subsection{Profiili}
 
-Profiili siis kertoo mitä palvelu tekee ja kuka palvelun tarjoaa. Se mahdollistaa asiakkaita (agentteja) löytämään palvelun parinlöytöalgoritmien (matchmaking-algorithm) avulla. Tämänhetkinen teollinen standardi palvelujen etsimiseen on ollut UDDI (Universal Description Discovery and Integration), mutta sen ongelmana on ollut palvelujen monipuoliseen kuvaamiseen kykenevän kielen puute. On kuitenkin mahdollista yhdistää UDDI:n rekisterit ja OWL-S -kuvaukset erityisillä integroiduilla parinlöytöalgoritmeilla\cite{owls_approach}. 
+Profiili kertoo mitä palvelu tekee ja kuka palvelun tarjoaa. Se mahdollistaa asiakkaita (agentteja) löytämään palvelun parinlöytöalgoritmien (matchmaking-algorithm) avulla. Tämänhetkinen teollinen standardi palvelujen etsimiseen on ollut UDDI (Universal Description Discovery and Integration), mutta sen ongelmana on ollut palvelujen monipuoliseen kuvaamiseen kykenevän kielen puute. On kuitenkin mahdollista yhdistää UDDI:n rekisterit ja OWL-S -kuvaukset erityisillä integroiduilla parinlöytöalgoritmeilla\cite{owls_approach}. 
 
-Profiili tarjoaa kolmenlaista informaatiota \cite{OWLS}:
+Profiiliontologiassa on luonnollisestikin viite palveluun johon se liittyy ja se tarjoaa kolmenlaista informaatiota \cite{OWLS}:
 
 \begin{enumerate}
  \item \textit{Tuottajainformaatio} kertoo tietoja palvelun tuottajasta, esimerkiksi ylläpitäjän tai asiakasyhteyshenkilön yhteystiedot. Myös lyhyt tekstikuvaus palvelusta sekä yksikäsitteinen nimi palvelulle määritellään profiilissa\cite{OWLS} .
@@ -274,7 +278,7 @@ Profiili tarjoaa kolmenlaista informaatiota \cite{OWLS}:
  \item \textit{Toiminnallin kuvauksessa} esitellään palvelun käyttämät \textit{syötteet}, sen tuottamat \textit{paluuarvot}, \textit{esiehdot}, jotka tulee olla voimassa ennen määrättyjä
  prosesseja sekä \textit{tilamuutokset}, joita prosessien suorittaminen aiheuttaa \cite{OWLS}. Nämä samat käsitellään myös prosessimallissa, mutta tarkemmalla tasolla. OWL-S ei aseta
  rajoitteita sen suhteen, onko profiili ja prosessimalli konsistentit toisiinsa nähden, mutta ollakseen totuudenmukainen palvelun tarjoamien todellisten palvelujen suhteen, tulee profiilin ilmaista
- palvelut yhtenevästi prosessimallin suhteen. 
+ palvelut yhtenevästi prosessimallin suhteen\cite{OWLS}. 
  
  \item \textit{Toimintaa kuvaavat ominaisuudet} Ensinnäkin palvelu voidaan luokitella jonkun tunnetun luokittelun, esimerkiksi UNSPSC:n [footnote] mukaan. Toiseksi, palvelun laatuluokitus voidaan 
  ilmaista profiilissa. Profiilin lopussa on määrittelemätön määrä parametreja, joilla voidaan kertoa esimerkiksi palvelun maantieteellisestä saatavuudesta, arvioidusta vasteajasta jne. \cite{OWLS}.
@@ -301,7 +305,7 @@ Seuraavissa kappaleissa käsitellään em. kolmea osa-aluetta tarkemmin.
 
 \subsubsection{Tuottajainformaatio}
 
-Palveluntarjoajan yhteystiedot on tarkoitettu pääasiassa ihmisten luettavaksi. Ne ilmaistaan \textit{Profile.owl}:ssä määritetyn \texttt{contactInformation} -ominaisuuden avulla. Yhteyshenkilöitä voidaan luonnollisestikin määritellä useita, esimerkissä ainoastaan yksi\cite{daml}:  
+Palveluntarjoajan yhteystiedot on tarkoitettu pääasiassa ihmisten luettavaksi. Ne ilmaistaan \textit{Profile.owl}:ssä määritetyn \texttt{contactInformation} -ominaisuuden avulla \cite{OWLS}. Yhteyshenkilöitä voidaan luonnollisestikin määritellä useita, esimerkissä ainoastaan yksi\cite{daml}:  
 
 \begin{verbatim}
 <profile:contactInformation>
@@ -316,12 +320,12 @@ Palveluntarjoajan yhteystiedot on tarkoitettu pääasiassa ihmisten luettavaksi.
 
 Yteystietoihin kirjataan usein ylläpitäjän ja/tai kaupallisen edustajan tietoja. 
 
-Palvelun tekstikuvaus kirjoitetaan \texttt{textDescription}-ominaisuuden ja nimi \texttt{serviceName}-ominaisuuden avulla.  
+Tuottajainformaatioon voidaan sisällyttää myös palvelun tekstikuvaus ja yksikäsitteinen nimi\cite{OWLS}. Ne ilmaistaan \texttt{textDescription}-ominaisuuden ja nimi \texttt{serviceName}-ominaisuuden avulla.  
 
 
 \subsubsection{Toiminnallinen kuvaus}
 
-Toiminnallinen kuvaus ilmaisee mitä toimintoja palvelu tarjoaa ja minkä ehtojen puitteissa. OWL-S:n profiilissa ilmaistaan kahdenlaista funktionaalisuutta: syötteet ja tulosteet, jotka voidaan ajatella informaatiovirtoina sekä esiehdot ja vaikutukset, jotka voidaan ajatella tilamuutoksina. Edellisiä vastaavat owl-ominaisuudet ovat\cite{OWLS}:
+Toiminnallinen kuvaus ilmaisee mitä toimintoja palvelu tarjoaa ja minkä ehtojen puitteissa. OWL-S:n profiilissa ilmaistaan kahdenlaista toiminnallisuutta: syötteet ja paluuarvot, jotka voidaan ajatella informaatiovirtoina sekä esiehdot ja vaikutukset, jotka voidaan ajatella ehtoina ja tilamuutoksina. Edellisiä vastaavat \textit{Profile} -luokan luokkaominaisuudet ovat\cite{OWLS}:
 
 \textbf{hasInput}, joka saa arvokseen \texttt{Process}-ontologiassa määriteltyjä \texttt{Input}-luokan ilmentymiä. 
 
@@ -334,8 +338,8 @@ Toiminnallinen kuvaus ilmaisee mitä toimintoja palvelu tarjoaa ja minkä ehtoje
 
 \textbf{hasresult}, joka ilmaisee minkä ehtojen puitteissa tuloksia generoidaan sekä ja mitä tilamuutoksia prosessien suoritus saa aikaan. Saa arvokseen \texttt{Result}-luokan ilmentymiä.  
 
-Alla olevassa esimerkissä on määritetty, että prosessilla on syöte ''lähtökenttä'' (\textit{departureAirport}), tuloste ''lentoja löytynyt'' (\textit{FlightsFound}) ja 
-tilamuutos ''istumapaikka löytynyt'' (\textit{HaveSeatResult})\cite{daml}:
+Alla olevassa esimerkissä on määritetty, että prosessilla on syöte \texttt{departureAirport} (\textit{lähtökenttä}), paluuarvo \texttt{flightsFound} (\textit{lentoja löytynyt}) ja 
+tilamuutos \texttt{HaveSeatResult} (\textit{Istumaikkoja löytynyt})\cite{daml}:
 
 \footnotesize
 \begin{verbatim}
@@ -346,16 +350,26 @@ tilamuutos ''istumapaikka löytynyt'' (\textit{HaveSeatResult})\cite{daml}:
  <profile:hasResult rdf:resource=
      "http://www.daml.org/services/owl-s/1.2/BravoAirProcess.owl#HaveSeatResult"/>
 \end{verbatim}
+\normalsize
 
-Edellisessä esimerkissä on poimittu ainoastaan muutamia toiminnallisia määrityksiä, todelliset määritykset voi katsoa alkuperäisestä lähteestä\cite{daml}. 
+Esimerkin määritykset ovat siis viitteitä prosessimallin vastaaviin määrityksiin ja ne eivät ole täydelliset, kts lähde \cite{daml}.
 
 \subsubsection{Toimintaa kuvaavat ominaisuudet}
 
-Ontologiassa on myös mahdollista ilmoittaa palvelun luokitus jossain ontologiassa määriteltyä, mahdollisesti ulkopuolista luokitusta tai taksonomiaa käyttäen. Luokitus ilmaistaan \texttt{serviceCategory}-ominaisuuden avulla ja arvo on \texttt{ServiceCategory}-luokan ilmentymän.  \texttt{ServiceCategory} luokalla on ominaisuuksia kategorian nimen, koodin jne ilmaisuun\cite{OWLS}.
+Ontologiassa on myös mahdollista ilmoittaa palvelun luokitus valmista luokitusta tai taksonomiaa käyttäen. Luokitus ilmaistaan \texttt{serviceCategory}-ominaisuuden avulla ja arvo on \texttt{ServiceCategory}-luokan ilmentymän.  \texttt{ServiceCategory} -luokalla on ominaisuuksia kategorian nimen, koodin jne. ilmaisuun\cite{OWLS}. BravoAir -lippuvarauspalvelu on esimerkiksi luokiteltu NAICS\footnote{Nort American Service Classification System}-luokkaan "Airline reservation services"\cite{daml}.
 
-Profiilissa voidaan myös ilmaista palvelun tarjoajan tärkeäksi kokemia vapaavalintaisia attribuutteja \texttt{serviceParameter} -ominaisuudella. Parametrille annetaan aina nimi, joka on datatyyppiominaisuus sekä arvo, joka on jonkin olion instanssi\cite{OWLS}. Esimerkiksi palvelulle voidaan määritellä ominaisuus ''BravoAir Geographic Radius'' ja se saa arvoksen ontologiassa määritetyn alueen \texttt{jenkkilä}.
+\footnotesize
+\begin{verbatim}
+<profile:serviceCategory>
+    <addParam:NAICS rdf:ID="NAICS-category">
+        <profile:value>Airline reservation services</profile:value>
+        <profile:code>561599</profile:code>
+    </addParam:NAICS>
+</profile:serviceCategory>
+\end{verbatim}
+\normalsize
 
-SERVICE CLASsIFICATION JA SERVICE PRODUCT?
+Profiilissa voidaan myös ilmaista palvelun tarjoajan tärkeäksi kokemia vapaavalintaisia attribuutteja \texttt{serviceParameter} -ominaisuudella. Parametrille annetaan aina nimi, joka on datatyyppiominaisuus sekä arvo, joka on jonkin olion instanssi\cite{OWLS}. Esimerkiksi palvelulle voidaan määritellä ominaisuus ''BravoAir Geographic Radius'', joka kertoo palvelun saatavuuden ja se saa arvoksen ontologiassa määritetyn valtion ilmentymän  \textit{Yhdysvallat}.
 
 \subsection{Prosessi}
 

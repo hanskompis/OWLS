@@ -373,36 +373,35 @@ Profiilissa voidaan myös ilmaista palvelun tarjoajan tärkeäksi kokemia vapaav
 
 \subsection{Prosessi}
 
-OWL-S:n prosessimalli kertoo kuinka palvelu toimii ja kuinka sen informaatiovirrat kulkevat.  On tärkeää kuitenkin muistaa, että prosessimalli ei ole suoritettava ojelma, vaan ainoastaan kuvaus sen tiominnasta\cite{OWLS}. Se kertoo, kuinka asiakasohjelmisto voi kommunikoida palvelun kanssa. 
+OWL-S:n prosessimalli kertoo kuinka palvelu toimii ja kuinka sen informaatiovirrat kulkevat.  On tärkeää kuitenkin muistaa, että prosessimalli ei ole suoritettava ojelma, vaan ainoastaan kuvaus sen tiominnasta\cite{OWLS}. Se kertoo, kuinka asiakasohjelmisto voi kommunikoida palvelun kanssa. Prosessimallin luokat ja ominaisuudet on määritelty \textit{Process.owl} -tiedostossa ja se tuodaan palvelukuvaukseen \texttt{import} -lauseella, jonka jälkeen sen konstruktiot ovat määrittelijän käytössä. 
 
 Prosessikuvaukset jaetaan kolmeen kategoriaan\cite{OWLS}:
+
 \begin{enumerate}
-\item \textit{atominen prosessi} on sellaisen prosessin kuvaus, joka ottaa vastaan yhden viestin ja palautta yhden viestin. 
-\item \textit{komposiittiprosessi} kuvaa prosessia, joka koostuu useasta eri atomisesta prosessista, ja joka ylläpitää tilatietoa. 
-\item \textit{yksinkertainen prosessi} ei ole suoritettavissa eikä se kytkeydy maadoitukseen. Sen rooli on on toimia abstraktiona atomisille prosesseille tai komposiittiprosessien yksinkertaistuksena. 
+\item \textit{atominen prosessi} kuvaa prosessia, joka ottaa vastaan yhden viestin ja palautta yhden viestin. 
+\item \textit{komposiittiprosessi} kuvaa prosessia, joka koostuu useammasta kuin yhdestä atomisesta  tai komposiittiprosessista, ja joka ylläpitää tilatietoa. 
+\item \textit{yksinkertainen prosessi} ei ole ''suoritettavissa'' eikä se kytkeydy maadoitukseen. Sen rooli on on toimia abstraktiona atomisille prosesseille tai komposiittiprosessien yksinkertaistuksena. 
 \end{enumerate}
 
-Prosesseilla voi olla määräämätön määrä syötteitä ja tulosteita. Samoin prosesseilla voi olla määräämätön määrä esiehtoja, joiden täytyy toteutua, jotta prosessi voidaan suorittaa. Vastaavasti voi olla määräämätön määrä vaikutuksia, joita prosessi aiheuttaa\cite{OWLS}.
+Prosesseilla voi olla määräämätön määrä tai ei yhtään syötettä ja paluuarvoa. Samoin prosesseilla voi olla määräämätön määrä tai ei yhtään  esiehtoa, joiden täytyy toteutua, jotta prosessi voidaan suorittaa. Vastaavasti voi olla määräämätön määrä tai ei yhtään vaikutusta maailmaan, joita prosessi aiheuttaa\cite{OWLS}.
 
-ESIMERKKI ATMICEISTA JA KOMPOSIITEISTÄ
+Atominen prosessi voi olla esimerkiksi jokin yksinkertainen informaatiopyyntö. Annetaan atomiselle prosessille joku hakuavain syötteenä ja paluuarvo on jokin (prosessoimaton) tieto.  Komposiittiprosessi voisi olla esimerkiksi tapaus, jossa jonkin syötteen saatuaan prosessi suorittaa jotain kontrollirakenteita ja toimii vasta sitten. 
 
-Seuraavassa käydään läpi prosessin kuvausta jälleen BravoAir-esimerkin\cite{daml} avulla.
 
 \subsubsection{Osapuolet}
 
-Prosessilla on ainakin kaksi osapuolta (participant): asiakas (client) tai tai palvelin (server). Asiakas käyttää palvelimen tarjoamia palveluja\cite{OWLS}.
-Jos prosessilla on myös muita osapuolia, ne ilmaistaan \texttt{hasParticipant} suhteen avulla:
-ESIMERKKI? prosessi - hasParticipant - osapuoli
+Prosessilla on ainakin kaksi osapuolta (participant): asiakas (client) tai palvelin (server). Asiakas käyttää palvelimen tarjoamia palveluja\cite{OWLS}.
+Jos prosessilla on myös muita osapuolia, ne ilmaistaan \texttt{hasParticipant} -ominaisuuden avulla:
 
 \subsubsection{Syötteet ja paluuarvot}
 
-Syötteet kuvaavat prosessin sisään tuleva tietoa\cite{OWLS}. Atomisilla prosesseilla syöte on asiakkaan antama kun taas komposiittiprosesseilla osa syötteistä on asiakkaalta ja osa proessin edeltävän vaiheen tuottamaa. 
+Syötteet kuvaavat prosessin sisään tuleva tietoa ja paluuarvot prosessien tuottamaa tietoa\cite{OWLS}. Atomisilla prosesseilla syöte on asiakkaan antama kun taas komposiittiprosesseilla osa syötteistä on asiakkaalta ja osa proessin edeltävän vaiheen tuottamaa. Paluaarvoja voi olla useita tai ei yhtään\cite{OWLS}. 
 
-Vaikka atomisille prosesseille sallitaan ainoastaan yksi syöte, se voi todellisuudessa koostua useasta syötteestä, koska syötteitä voi BUNDLATA yhdeksi \cite{OWLS}. Tällöin pitää ymmärtää käsite \textit{viesti}, joka on usean syötteen BUNDLATTU kokonaisuus. BUNDLAUS määritellään palvelun maadoituksessa luvussa nnn. 
+Vaikka atomisille prosesseille sallitaan korkeintaan yksi syöte, se voi todellisuudessa koostua useasta syötteestä, koska syötteitä voi niputtaa yhdeksi \cite{OWLS}. Tällöin pitää ymmärtää käsite \textit{viesti}, joka on usean syötteen niputettu kokonaisuus. Niputtamista käsitellään maadoituksen yhteydessä. 
 
-Syötteet ja paluuarvot ilmaistaan \texttt{hasInput}- ja \texttt{hasOutput} - ominaisuuksilla (jotka siis kuvaavat \textit{prosessia}). Ne voivat saada arvokseen \texttt{input}- ja \texttt{output} -luokan ilmentymiä. Edellämainituilla on kummallakin datatyyppiominaisuus parametrin tyypille ja arvolle\cite{OWLS}. 
+Syötteet ja paluuarvot ilmaistaan \texttt{hasInput}- ja \texttt{hasOutput} - ominaisuuksilla. Ne voivat saada arvokseen \texttt{input}- ja \texttt{output} -luokan ilmentymiä. Edellämainituilla on kummallakin datatyyppiominaisuus parametrin tyypille, joka on ilmaistu URI:lla sekä arvolle, joka on jokin XML-literaali\cite{OWLS}. 
 
-BravoAirin prosessikuvauksessa on atominen prosessi \texttt{SelectAvailableFlight}, joka kuvaa prosessin, jossa asiakas valitsee haluamansa lennon saatavilla olevista vaihtoehdoista \cite{daml}. Sillä on on yksi syöte, lista tarjolla olevista lennoista (\textit{SelectAvailableFlight\_FlightsAvailable}), sekä yksi paluuarvo, valittu lento (\textit{SelectAvailableFlight\_SelectedFlight}). Syöte määritellään \textit{hasInput}-tägien sisällä ja vastaavasti paluuarvo \textit{hasOutput} -tägien sisässä\cite{daml}:
+BravoAirin prosessikuvauksesta voimme löytää atomisen prosessin \texttt{SelectAvailableFlight}, joka kuvaa toimenpiteen, jossa asiakas valitsee haluamansa lennon saatavilla olevista vaihtoehdoista \cite{daml}. Sillä on on yksi syöte, lista tarjolla olevista lennoista (\textit{SelectAvailableFlight\_FlightsAvailable}), sekä yksi paluuarvo, valittu lento (\textit{SelectAvailableFlight\_SelectedFlight}). Syöte määritellään \textit{hasInput} -ominaisuuden avulla ja vastaavasti paluuarvo \textit{hasOutput} -ominaisuuden avulla\cite{daml}:
 
 \footnotesize
 \begin{verbatim}
@@ -427,14 +426,14 @@ BravoAirin prosessikuvauksessa on atominen prosessi \texttt{SelectAvailableFligh
         </process:hasOutput>
 </process:AtomicProcess>
 \end{verbatim}
+\normalsize
 
-
-Esimerkissä määritellään atominen prosessi tunnuksella \texttt{SelectAvailableFlight}. Sillä on yksi syöte, joka on tyypiltään XMLSchemassa määritelty  URI ja arvoltaan lista lennoista (\texttt{Concepts.owl\#FlightList}) sekä yksi paluuarvo, joka on samaa tyyppiä ja arvoltaan valittu lento (\texttt{Concepts.owl\#FlightItineraryList}). 
+Esimerkkimäärityksessä on yksi syöte, joka on tyypiltään (XMLSchemassa määritelty)  URI ja arvoltaan lista lennoista (\texttt{Concepts.owl\#FlightList}) sekä yksi paluuarvo, joka on samaa tyyppiä ja arvoltaan valittu lentosuunnitelma (\texttt{Concepts.owl\#FlightItineraryList}). 
 
 
 \subsubsection{Esiehdot ja tulokset}
 
-Prosessia ei voi suorittaa, jos sille määrätty esiehto ei täyty\cite{OWLS}. Esiehto on prosessin ominaisuus ja se saa arvokseen ehtolausekkeen (\textit{Condition}). ESIMERKKI?
+Prosessia ei voi suorittaa, jos sille määrätty esiehto ei toteudu\cite{OWLS}. Esiehto on prosessin ominaisuus ja se saa arvokseen ehtolausekkeen (\textit{Condition}). Ehtolauseke voidaan määritellä useilla eri lausekekielillä, kuten SPARQL, KIF\footnote{Knowledge Interchange Format} ja SWRL\footnote{Semantic Web Rule Language}. 
 
 Prosessin onnistuminen voi aiheuttaa muutoksen mailman tilassa tai sen, että palvelun kutsuja saa jotain informaatiota palvelulta. Tuloksen olemassaolo ilmaistaan ominaisuudella \texttt{hasResult}, joka saa arvokseen \textit{Result} -olion.  OWL-S:ssä ei sidota tulosta erikseen paluuarvoon tai muutokseen tilassa, vaan se määritellään \textit{Result} -olion sisällä\cite{OWLS}. 
 
@@ -446,9 +445,9 @@ Kun tulos (\texttt{Result}) on esitelty, prosessimalli voi kuvailla sitä neljä
 
 \texttt{inCondition} kertoo ehdon jonka vallitessa joku tulos on mahdollinen (eikä joku toinen tulos). 
 
-\texttt{withOutput} ja \texttt{hasEffect} puolestaan määrittelevät mitä seuraa siitä, että ehto on tosi. \texttt{hasResultVar} esittelee muuttujat, jotka sidotaan \texttt{inCondition}in määrittelemään ehtoon.  Näitä muuttujia käytetään myös tulosten muodostamiseen\cite{OWLS}. 
+\texttt{withOutput} ja \texttt{hasEffect} puolestaan määrittelevät mitä seuraa siitä, että ehto on tosi. Voi tapahtua muutos maailmassa tai voidaan muodostaa paluuarvo, joka voidaan sitoa palautettavaksi. \texttt{hasResultVar} esittelee muuttujat, jotka sidotaan \texttt{inCondition} -oliossa määritetyn ehdon toteutuessa.  Näitä muuttujia käytetään myös tulosten muodostamiseen\cite{OWLS}. 
 
-Seuraavassa esimerkissä esitetään tuloksen muodostuminen \cite{daml}. Esimerkki liitty prosessiin, jossa varataan lento. \texttt{hasResult} kuvaa tuloksen muodostuksen, jossa onnistuneen ostotapahtuman jälkeen palautetaan paluuarvona lentosuunnitelma (\texttt{\#BookFlight\_PreferredFlightItinerary"}) sekä varaustunnus (\texttt{\#BookFlight\_ReservationID}). 
+Seuraavassa esimerkissä esitetään tuloksen muodostuminen jälleen BravoAir -esimerkin avulla \cite{daml}. Esimerkki liitty prosessiin, jossa varataan lento. \texttt{hasResult} kuvaa tuloksen muodostuksen, jossa onnistuneen ostotapahtuman jälkeen palautetaan paluuarvona lentosuunnitelma (\texttt{\#BookFlight\_PreferredFlightItinerary"}) sekä varaustunnus (\texttt{\#BookFlight\_ReservationID}). 
 
 \footnotesize
 \begin{verbatim}
@@ -492,7 +491,7 @@ Seuraavassa esimerkissä esitetään tuloksen muodostuminen \cite{daml}. Esimerk
 
 Esimerkissä ilmaistaan ominaisuudella \texttt{inCondition} ehto, jolla kyseinen tulos muodostetaan. Tässä tapauksessa ehto on aina tosi, mikä tarkoittaa, että kyseisen prosessin suorituksessa tämä tulos muodostetaan aina. \texttt{withOutput}-ominaisuuksilla kuvataan kuinka paluuarvot sidotaan muuttujiin. Tämä tuo mukaan OWL-S:n datavuoaspektin. 
 
-OWL-S:ssä datavuo toimii periaatteella ''kuluttaja pyytää'', eli mikään prosessi (tuottaja) ei työnnä dataa toiselle prosessille (kuluttaja) vaan kuluttajaprosessi pyytää sitä kuten esimerkkitapauksessamme \texttt{OutputBinding} -oliossa. Esimerkissä ylemmän \texttt{OutputBinding}in \texttt{toParam} -ominaisuuden arvo kertoo, että sidomme palautettavan arvon paluuarvomuuttujaan \texttt{\#BookFlight\_PreferredFlightItinerary}. Muuttujan saama arvo määrätään tulevaksi prosessin  \texttt{\#PerformCompleteReservation} muuttujasta \texttt{\#CompleteReservation\_PreferredFlightItinerary}. 
+OWL-S:ssä datavuo toimii periaatteella ''kuluttaja pyytää'', eli mikään prosessi (tuottaja) ei työnnä dataa toiselle prosessille (kuluttaja) vaan kuluttajaprosessi pyytää sitä kuten esimerkkitapauksessamme \texttt{OutputBinding} -oliossa\cite{OWLS}. Esimerkissä ylemmän \texttt{OutputBinding}in \texttt{toParam} -ominaisuuden arvo kertoo, että sidomme palautettavan arvon paluuarvomuuttujaan \texttt{\#BookFlight\_PreferredFlightItinerary}. Muuttujan saama arvo määrätään tulevaksi prosessin  \texttt{\#PerformCompleteReservation} muuttujasta \texttt{\#CompleteReservation\_PreferredFlightItinerary}\cite{daml}. 
 
 Yksinkertaistettuna datavuo prosessilta prosessille kulkee seuraavalla tavalla: 
 
@@ -504,7 +503,7 @@ KUVA!!!
 
 Komposiittiprosessi voidaan hajottaa atomisiksi prosesseiksi tai komposiittiprosesseiksi\cite{OWLS}. Tämä hajoittaminen voidaan ilmaista kontrollirakenteilla kuten \texttt{Sequence} tai \texttt{If-Then-Else}. Vaikka kontrollirakenteen nimet muistuttavat ohjelmointikielistä tuttuja nimityksiä, on syytä muistaa, että ne \textit{eivät kerro} kuinka niiden kuvaama palvelu toimii vaan miten se \textit{mahdollisesti} toimii\cite{OWLS}. 
 
-OWL-S määrittelee luokan \texttt{compositeProcess}, jolla on tasan yksi \texttt{composedOf} -ominaisuus, joka saa arvokseen \texttt{ControlConstruct} - luokan ilmentymän. Jokaisella \texttt{ControlConstruct}:lla on ominaisuus \texttt{components}, joka saa arvokseen toisia kontrollirakenteita\cite{OWLS}. Kontrollirakenteet muodostavat siis puumaisen rakenteen, jonka solmut, jotka eivät ole lehtiä, ovat kontrollirakenteita. Puun lehdet ovat prosessien suoritusta kuvaavia luokkia nimeltään \texttt{Perform}. Jokaisella \texttt{Perform} -luokalla on ominaisuus \texttt{process}, joka viittaa suoritettavaan prosessiin\cite{OWLS}.  Prosessin saamat syötteet määräävät, koska se suoritetaan osana suurempaa kontrollirakennetta. Datavuohon palataan tarkemmin seuraavassa kappaleessa. PALATAANKO?
+OWL-S määrittelee luokan \texttt{compositeProcess}, jolla on tasan yksi \texttt{composedOf} -ominaisuus, joka saa arvokseen \texttt{ControlConstruct} - luokan ilmentymän. Jokaisella \texttt{ControlConstruct}:lla on ominaisuus \texttt{components}, joka saa arvokseen toisia kontrollirakenteita\cite{OWLS}. Kontrollirakenteet muodostavat siis puumaisen rakenteen, jonka solmut, jotka eivät ole lehtiä, ovat kontrollirakenteita. Puun lehdet ovat prosessien suoritusta kuvaavia luokkia nimeltään \texttt{Perform}. Jokaisella \texttt{Perform} -luokalla on ominaisuus \texttt{process}, joka viittaa suoritettavaan prosessiin\cite{OWLS}.  Prosessin saamat syötteet määräävät, koska se suoritetaan osana suurempaa kontrollirakennetta. Datavuo käsiteltiin edellisessä kappaleessa.
 
 Komposiittirakennetta voidaan voidaan ajatella ''black boxina'', jolloin se voidaan nähdä abstraktina yksinkertaisena prosessina (\textit{simple process}). Vastaavasti yksinkertainen prosessi voidaan nähdä komposiittirakenteena, ''white boxina'' \cite{OWLS}. 
 

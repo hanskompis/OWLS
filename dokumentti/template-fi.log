@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  29 SEP 2013 16:22
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  30 SEP 2013 21:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -993,121 +993,109 @@ viceCategory\T1/lmr/m/n/10.95 (-20) -luokan il-men-ty-män. \T1/lmtt/m/n/10.95 S
 erviceCategory
  []
 
-
-Overfull \hbox (24.0154pt too wide) in paragraph at lines 368--368
-[]        \T1/lmtt/m/n/10.95 <profile:value>Airline reservation services</profi
-le:value>[] 
+[10] [11]
+Overfull \hbox (86.75136pt too wide) in paragraph at lines 404--405
+[]\T1/lmr/m/n/10.95 (-20) BravoAirin pro-ses-si-ku-vauk-ses-ta voim-me löy-tää 
+ato-mi-sen pro-ses-sin \T1/lmtt/m/n/10.95 SelectAvailableFlight\T1/lmr/m/n/10.9
+5 (-20) ,
  []
 
-[10]
-Overfull \hbox (26.42299pt too wide) in paragraph at lines 403--404
-[]\T1/lmr/m/n/10.95 (-20) BravoAirin pro-ses-si-ku-vauk-ses-sa on ato-mi-nen pr
-o-ses-si \T1/lmtt/m/n/10.95 SelectAvailableFlight\T1/lmr/m/n/10.95 (-20) ,
- []
 
-[11]
-Overfull \hbox (83.20415pt too wide) in paragraph at lines 427--427
+Overfull \hbox (83.20415pt too wide) in paragraph at lines 428--428
 []                \T1/lmtt/m/n/9 <process:parameterType rdf:datatype="http://ww
 w.w3.org/2001/XMLSchema#anyURI">[] 
  []
 
 
-Overfull \hbox (27.44925pt too wide) in paragraph at lines 427--427
+Overfull \hbox (27.44925pt too wide) in paragraph at lines 428--428
 []                    \T1/lmtt/m/n/9 http://www.daml.org/services/owl-s/1.2/Con
 cepts.owl#FlightList[] 
  []
 
 
-Overfull \hbox (83.20415pt too wide) in paragraph at lines 427--427
+Overfull \hbox (83.20415pt too wide) in paragraph at lines 428--428
 []                \T1/lmtt/m/n/9 <process:parameterType rdf:datatype="http://ww
 w.w3.org/2001/XMLSchema#anyURI">[] 
  []
 
 
-Overfull \hbox (69.97417pt too wide) in paragraph at lines 427--427
+Overfull \hbox (69.97417pt too wide) in paragraph at lines 428--428
 []                    \T1/lmtt/m/n/9 http://www.daml.org/services/owl-s/1.2/Con
 cepts.owl#FlightItineraryList[] 
  []
 
-
-Overfull \hbox (1.56917pt too wide) in paragraph at lines 443--444
-\T1/lmtt/m/n/9 inCondition\T1/lmr/m/n/9 (-20) , \T1/lmtt/m/n/9 hasResultVar\T1/
-lmr/m/n/9 (-20) , \T1/lmtt/m/n/9 withOutput \T1/lmr/m/n/9 (-20) ja \T1/lmtt/m/n
-/9 hasEffect\T1/lmr/m/n/9 (-20) [[]]. Jo-kai-nen edel-li-nen on siis \T1/lmtt/m
-/n/9 result
- []
-
-
-Overfull \hbox (70.10074pt too wide) in paragraph at lines 449--450
-\T1/lmr/m/n/9 (-20) ta-pah-tu-man jäl-keen pa-lau-te-taan pa-luu-ar-vo-na len-t
-o-suun-ni-tel-ma (\T1/lmtt/m/n/9 #BookFlight_PreferredFlightItinerary"\T1/lmr/m
-/n/9 (-20) )
- []
-
 [12]
-Overfull \hbox (35.95424pt too wide) in paragraph at lines 486--486
+Overfull \hbox (4.86447pt too wide) in paragraph at lines 444--445
+\T1/lmr/m/n/10.95 (-20) ominaisuudella[[]]: \T1/lmtt/m/n/10.95 inCondition\T1/l
+mr/m/n/10.95 (-20) , \T1/lmtt/m/n/10.95 hasResultVar\T1/lmr/m/n/10.95 (-20) , \
+T1/lmtt/m/n/10.95 withOutput \T1/lmr/m/n/10.95 (-20) ja \T1/lmtt/m/n/10.95 hasE
+ffect\T1/lmr/m/n/10.95 (-20) [[]].
+ []
+
+
+Overfull \hbox (35.95424pt too wide) in paragraph at lines 487--487
 []        \T1/lmtt/m/n/9 "http://www.daml.org/services/owl-s/1.2/generic/Expres
 sion.owl#AlwaysTrue"/>[] 
  []
 
 
-Overfull \hbox (31.22925pt too wide) in paragraph at lines 486--486
+Overfull \hbox (31.22925pt too wide) in paragraph at lines 487--487
 []                                  \T1/lmtt/m/n/9 "#CompleteReservation_Prefer
 redFlightItinerary"/>[] 
  []
 
 
-Overfull \hbox (17.05428pt too wide) in paragraph at lines 486--486
+Overfull \hbox (17.05428pt too wide) in paragraph at lines 487--487
 []                     \T1/lmtt/m/n/9 <process:toParam rdf:resource="#BookFligh
 t_ReservationID"/>[] 
  []
 
-
-Overfull \hbox (146.67693pt too wide) in paragraph at lines 493--494
+[13]
+Overfull \hbox (146.67693pt too wide) in paragraph at lines 494--495
 \T1/lmr/m/n/10.95 (-20) ker-too, et-tä si-dom-me pa-lau-tet-ta-van ar-von pa-lu
 u-ar-vo-muut-tu-jaan \T1/lmtt/m/n/10.95 #BookFlight_PreferredFlightItinerary\T1
 /lmr/m/n/10.95 (-20) .
  []
 
 
-Overfull \hbox (43.36559pt too wide) in paragraph at lines 493--494
+Overfull \hbox (43.36559pt too wide) in paragraph at lines 494--495
 \T1/lmr/m/n/10.95 (-20) Muut-tu-jan saa-ma ar-vo mää-rä-tään tu-le-vak-si pro-s
 es-sin \T1/lmtt/m/n/10.95 #PerformCompleteReservation
  []
 
-[13]
-Overfull \hbox (53.59758pt too wide) in paragraph at lines 503--504
+
+Overfull \hbox (53.59758pt too wide) in paragraph at lines 504--505
 \T1/lmr/m/n/10.95 (-20) Komposiittiprosessi voi-daan ha-jot-taa ato-mi-sik-si p
 ro-ses-seik-si tai komposiittiprosesseiksi[[]].
  []
 
 
-Overfull \hbox (23.04051pt too wide) in paragraph at lines 505--506
+Overfull \hbox (23.04051pt too wide) in paragraph at lines 506--507
 []\T1/lmr/m/n/10.95 (-20) OWL-S mää-rit-te-lee luo-kan \T1/lmtt/m/n/10.95 compo
 siteProcess\T1/lmr/m/n/10.95 (-20) , jol-la on ta-san yk-si \T1/lmtt/m/n/10.95 
 composedOf
  []
 
 [14] [15]
-Overfull \hbox (44.32396pt too wide) in paragraph at lines 549--549
+Overfull \hbox (44.32396pt too wide) in paragraph at lines 550--550
  []    \T1/lmtt/m/n/10 "http://www.daml.org/services/owl-s/1.2/BravoAirProcess.
 owl#LogIn"/>[] 
  []
 
 
-Overfull \hbox (91.67924pt too wide) in paragraph at lines 568--568
+Overfull \hbox (91.67924pt too wide) in paragraph at lines 569--569
  []            \T1/lmtt/m/n/9 "http://www.daml.org/services/owl-s/1.2/BravoAirP
 rocess.owl#LogIn\_AcctName"/>[] 
  []
 
 
-Overfull \hbox (91.67924pt too wide) in paragraph at lines 568--568
+Overfull \hbox (91.67924pt too wide) in paragraph at lines 569--569
  []        \T1/lmtt/m/n/9 <grounding:wsdlMessagePart rdf:datatype="http://www.w
 3.org/2001/XMLSchema#anyURI">[] 
  []
 
 
-Overfull \hbox (54.82431pt too wide) in paragraph at lines 568--568
+Overfull \hbox (54.82431pt too wide) in paragraph at lines 569--569
  []            \T1/lmtt/m/n/9 http://www.daml.org/services/owl-s/1.2/BravoAirGr
 ounding.wsdl#acctName[] 
  []
@@ -1124,29 +1112,29 @@ babelbib: Using the BibTeX style's default font for `ISBN'.
 babelbib: Using the BibTeX style's default font for `ISSN'.
 babelbib: Using the BibTeX style's default font for `url'.
 babelbib: Using the BibTeX style's default font for `numeral'.
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 594.
- [17]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 594.
+[17])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 595.
+ [18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 595.
  (./template-fi.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 594.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 594.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 595.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 595.
 Package rerunfilecheck Info: File `template-fi.out' has not changed.
 (rerunfilecheck)             Checksum: 7F4C0661D11F72D433C8A20C1FDC5964;1414.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 594.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 595.
  ) 
 Here is how much of TeX's memory you used:
- 9753 strings out of 493488
- 144861 string characters out of 3141326
+ 9748 strings out of 493488
+ 144796 string characters out of 3141326
  276747 words of memory out of 3000000
- 12675 multiletter control sequences out of 15000+200000
- 71114 words of font info for 126 fonts, out of 3000000 for 9000
+ 12673 multiletter control sequences out of 15000+200000
+ 66632 words of font info for 123 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 35i,8n,35p,1010b,494s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,8n,35p,1010b,586s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/20
 12/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2012/texmf-d
@@ -1156,14 +1144,13 @@ c/lm/lmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmr6.p
 fb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/loc
 al/texlive/2012/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2
 012/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2012/texmf-
-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2012/texmf-dist/fonts/
-type1/public/lm/lmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/publ
-ic/lm/lmtt10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmtt
-9.pfb>
-Output written on template-fi.pdf (18 pages, 382196 bytes).
+dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts
+/type1/public/lm/lmtt10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/pub
+lic/lm/lmtt9.pfb>
+Output written on template-fi.pdf (19 pages, 368964 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 328 compressed objects within 4 object streams
- 56 named destinations out of 1000 (max. 500000)
- 22694 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 331 compressed objects within 4 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 20646 words of extra memory for PDF output out of 20736 (max. 10000000)
 

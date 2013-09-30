@@ -10,14 +10,14 @@
 \contentsline {subsubsection}{\numberline {3.3.1}Tuottajainformaatio}{9}{subsubsection.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.2}Toiminnallinen kuvaus}{9}{subsubsection.3.3.2}
 \contentsline {subsubsection}{\numberline {3.3.3}Toimintaa kuvaavat ominaisuudet}{10}{subsubsection.3.3.3}
-\contentsline {subsection}{\numberline {3.4}Prosessi}{11}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.4}Prosessi}{10}{subsection.3.4}
 \contentsline {subsubsection}{\numberline {3.4.1}Osapuolet}{11}{subsubsection.3.4.1}
 \contentsline {subsubsection}{\numberline {3.4.2}Sy\IeC {\"o}tteet ja paluuarvot}{11}{subsubsection.3.4.2}
 \contentsline {subsubsection}{\numberline {3.4.3}Esiehdot ja tulokset}{12}{subsubsection.3.4.3}
-\contentsline {subsubsection}{\numberline {3.4.4}Ehdollisten palautusarvojen ja vaikutusten kuvaus}{12}{subsubsection.3.4.4}
+\contentsline {subsubsection}{\numberline {3.4.4}Ehdollisten palautusarvojen ja vaikutusten kuvaus}{13}{subsubsection.3.4.4}
 \contentsline {subsubsection}{\numberline {3.4.5}Komposiittiprosessit ja kontrollirakenteet}{14}{subsubsection.3.4.5}
 \contentsline {subsection}{\numberline {3.5}Maadoitus}{15}{subsection.3.5}
-\contentsline {section}{\numberline {4}Pohdintaa}{16}{section.4}
+\contentsline {section}{\numberline {4}Pohdintaa}{17}{section.4}
 \contentsline {section}{L\IeC {\"a}hteet}{17}{section*.2}
 \select@language {finnish}
 \select@language {finnish}

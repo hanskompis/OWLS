@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  30 SEP 2013 21:36
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  1 OCT 2013 22:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1033,6 +1033,13 @@ ffect\T1/lmr/m/n/10.95 (-20) [[]].
  []
 
 
+Overfull \hbox (95.51982pt too wide) in paragraph at lines 450--451
+\T1/lmr/m/n/10.95 (-20) jäl-keen pa-lau-te-taan pa-luu-ar-vo-na len-to-suun-ni-
+tel-ma (\T1/lmtt/m/n/10.95 #BookFlight_PreferredFlightItinerary"\T1/lmr/m/n/10.
+95 (-20) )
+ []
+
+
 Overfull \hbox (35.95424pt too wide) in paragraph at lines 487--487
 []        \T1/lmtt/m/n/9 "http://www.daml.org/services/owl-s/1.2/generic/Expres
 sion.owl#AlwaysTrue"/>[] 
@@ -1051,10 +1058,10 @@ t_ReservationID"/>[]
  []
 
 [13]
-Overfull \hbox (146.67693pt too wide) in paragraph at lines 494--495
-\T1/lmr/m/n/10.95 (-20) ker-too, et-tä si-dom-me pa-lau-tet-ta-van ar-von pa-lu
-u-ar-vo-muut-tu-jaan \T1/lmtt/m/n/10.95 #BookFlight_PreferredFlightItinerary\T1
-/lmr/m/n/10.95 (-20) .
+Overfull \hbox (169.40385pt too wide) in paragraph at lines 494--495
+\T1/lmr/m/n/10.95 (-20) ar-vo ker-too, et-tä si-dom-me pa-lau-tet-ta-van ar-von
+ pa-luu-ar-vo-muut-tu-jaan \T1/lmtt/m/n/10.95 #BookFlight_PreferredFlightItiner
+ary\T1/lmr/m/n/10.95 (-20) .
  []
 
 
@@ -1076,10 +1083,22 @@ siteProcess\T1/lmr/m/n/10.95 (-20) , jol-la on ta-san yk-si \T1/lmtt/m/n/10.95
 composedOf
  []
 
-[14] [15]
+[14]
+Overfull \hbox (24.60669pt too wide) in paragraph at lines 526--527
+\T1/lmr/m/it/10.95 (-20) ding.owl \T1/lmr/m/n/10.95 (-20) -tiedostoon, jo-ka tu
+-lee tuo-da maa-doi-tus-do-ku-men-tin käyt-töön \T1/lmtt/m/n/10.95 owl:import
+ []
+
+[15]
 Overfull \hbox (44.32396pt too wide) in paragraph at lines 550--550
  []    \T1/lmtt/m/n/10 "http://www.daml.org/services/owl-s/1.2/BravoAirProcess.
 owl#LogIn"/>[] 
+ []
+
+
+Overfull \hbox (18.892pt too wide) in paragraph at lines 557--559
+[]\T1/lmtt/m/n/10.95 wsdlInput \T1/lmr/m/n/10.95 (-20) -oliossa ku-va-taan jo-k
+ai-nen ku-vat-ta-van pro-ses-sin syö-te WSDL:ssä
  []
 
 
@@ -1128,13 +1147,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 595.
  ) 
 Here is how much of TeX's memory you used:
- 9748 strings out of 493488
- 144796 string characters out of 3141326
- 276747 words of memory out of 3000000
+ 9749 strings out of 493488
+ 144807 string characters out of 3141326
+ 275785 words of memory out of 3000000
  12673 multiletter control sequences out of 15000+200000
  66632 words of font info for 123 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 35i,8n,35p,1010b,586s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,8n,35p,1010b,610s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/20
 12/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2012/texmf-d
@@ -1147,10 +1166,10 @@ al/texlive/2012/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2
 dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts
 /type1/public/lm/lmtt10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/pub
 lic/lm/lmtt9.pfb>
-Output written on template-fi.pdf (19 pages, 368964 bytes).
+Output written on template-fi.pdf (19 pages, 370238 bytes).
 PDF statistics:
- 370 PDF objects out of 1000 (max. 8388607)
- 331 compressed objects within 4 object streams
- 58 named destinations out of 1000 (max. 500000)
+ 377 PDF objects out of 1000 (max. 8388607)
+ 338 compressed objects within 4 object streams
+ 59 named destinations out of 1000 (max. 500000)
  20646 words of extra memory for PDF output out of 20736 (max. 10000000)
 
